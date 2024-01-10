@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Fisika</title>
+
+    <!-- Sweeper Js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Math Js -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <!-- my style -->
+    <link rel="icon" href="/img/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+
+  <body class="overflow-x-hidden relative">
+
+    <!-- Pop-up Start -->
+    <div class="hidden" id="popUp">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="popUpCnt" id="popUpCnt">
+          <p id="textPopUp"></p>
+          <i class="fa-regular fa-circle-check fa-beat text-[2.3rem] text-green-600"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden" id="popUpLoading">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="loading" id="loading"></div>
+      </div>
+    </div>
+    <!-- Pop=up end -->
+
+  <!-- Next Button Start-->
+  <div class="w-full fixed bottom-0 right-0 left-0 bg-primary h-14 flex justify-between z-30 container mx-auto items-center p-4 text-white text-[2rem] gap-8">
+    <a href="/src/Argumentasi/Argumentasi.html" class="nextButton" id="previousButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
+
+    <p class="text-xs text-center">Argumentasi Toulmin</p>
+
+    <a href="/src/Argumentasi/KuisArgumentasi.html" class="nextButton" id="nextButton"><i class="fa-solid fa-circle-chevron-right ransition-all duration-150"></i></a>
+  </div>
+  <!-- Next Button End -->
+
+    <header class="fixed top-0 right-0 w-screen z-[998] bg-secondary">
+      <!-- Navbar start -->
+      <nav class="navbar layout">
+
+        <div class="logo flex items-center gap-[0.1rem]">
+          <div class="flex items-center gap-[0.1rem]">
+            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]">
+            <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+          </div>
+          <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
+        </div>
+
+        <div class="nav-list initial-style">
+          <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6">
+            <li><a href="/src/beranda.html">Beranda</a></li>
+
+            <li class="active relative">
+              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative diskusiMenu">
+              <a>Diskusi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Evaluasi<i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Bank Soal <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="menuToggle lg:hidden"></div>
+      </nav>
+      <!-- Navbar End -->
+
+      <!-- List Materi Start -->
+      <div class="contentList">
+        <div class="flex flex-col py-8 w-full h-[--tinggiListMateri] transition-all duration-500 bg-gradient-to-b from-secondary from-[50%] to-[#3a3c42] overflow-y-auto">
+          <ul>
+            <!-- Argumentasi Toulmin Start -->
+            <li class="listClass">
+              <div class="dropdown-button putar-icon classBtnDropdown" data-index="30" id="materiArgumentasi">
+                <div class="gap-4 flex items-center">
+                  <i class="iconClass fa-solid fa-people-arrows transition-all duration-500"></i>
+                  <p class="textClass">Argumentasi Sains</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon0"></i>
+              </div>
+
+              <ul class="dropdown dropdown30 hidden">
+                <li>
+                  <div class="dropdown-button chapterBtnDropdown" data-index="31">
+                    <div class="flex items-center gap-4">
+                      <i class="fa-solid fa-solid fa-people-group text-amber-500 w-4 text-center"></i>
+                      <a>Bagaimana berargumen dengan baik</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown31 hidden relative bg-primary/60">
+                    <ul class="subChapterContent">
+                      <li>
+                        <a href="/src/Argumentasi/Argumentasi.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pentingnya Berargumen dengan Baik</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/src/Argumentasi/ArgumentasiiToulmin.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pola Argumentasi Toulmin</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/src/Argumentasi/KuisArgumentasi.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Kuis pola argumentasi</p></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <!-- Argumentasi Toulmin Start -->
+
+            <!-- KD kelas 10 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 10 start-->
+
+              <div class="opacity-50 classBtnDropdown relative" data-index="1" id="kelas10">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary" id="lockKelas10"></i>
+
+                <div class="gap-4 flex items-center">
+                  <i class="iconClass fa-solid fa-temperature-arrow-down"></i>
+                  <p class="textClass">Kelas 10</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon1"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 10 end-->
+
+              <!-- Materi kelas 10 start-->
+              <ul class="dropdown dropdown1 hidden" id="dropdown1">
+                <!-- Hakikat Fisika -->
+                <!-- Hakikat Fisika End -->
+
+                <!-- Energi start -->
+                <!-- Energi End -->
+
+                <!-- Pemanasan Global -->
+                <li>
+                  <div class="dropdown-button chapterBtnDropdown" data-index="6">
+                    <div class="flex items-center gap-4">
+                      <i class="fa-solid fa-earth-asia text-amber-500 w-4 text-center"></i>
+                      <a>Gejala Pemanasan Global</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown6 hidden relative bg-primary/60">
+                    <ul class="subChapterContent">
+                      <li>
+                        <a href="/src/materi kelas 10/Pemanasan Global/PemanasanGlobal.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pemanasan Global</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="PenyebabPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Penyebab Pemansan Global</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="DampakPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Dampak Pemanasan Global</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="SolusiPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Upaya Penanganan Pemanasan Global</p></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <!-- Pemanasan Global End-->
+              </ul>
+              <!-- Materi kelas 10  End-->
+            </li>
+            <!-- KD kelas 10 end -->
+
+            <!-- KD kelas 11 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 11 start-->
+              <div class="relative opacity-50 classBtnDropdown" data-index="2">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
+
+                <div class="flex items-center gap-4">
+                  <i class="iconClass fa-solid fa-gears"></i>
+                  <p class="textClass">Kelas 11</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon2"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 11 end-->
+
+              <!-- Materi kelas 11 start-->
+              <!-- Materi kelas 11  End-->
+            </li>
+            <!-- KD kelas 11 end -->
+
+            <!-- KD kelas 12 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 12 start-->
+              <div class="relative opacity-50 classBtnDropdown" data-index="3">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
+
+                <div class="flex items-center gap-4">
+                  <i class="iconClass fa-solid fa-atom"></i>
+                  <p class="textClass">Kelas 12</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon3"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 12 end-->
+
+              <!-- Materi kelas 12 start-->
+              <!-- Materi kelas 12  End-->
+            </li>
+            <!-- KD kelas 12 end -->
+          </ul>
+        </div>
+
+        <!-- Tombol munculkan materi semua kelas start -->
+        <div class="h-8 w-8 bg-amber-500 rounded-r-md flex justify-center items-center" id="listIcon">
+          <i class="openIcon fa-solid fa-list text-[1rem]"></i>
+          <i class="closeIcon fa-solid fa-xmark text-[1rem] hidden"></i>
+        </div>
+        <!-- Tombol munculkan materi semua kelas end -->
+      </div>
+      <!-- List Materi End -->
+    </header>
+
+    <main class="materi layout mt-20 mb-16">
+      <section id="ToulminArgumentationPatern">
+        <article>
+          <div class="bg-forth rounded-tr-md rounded-bl-md relative mt-6 h-12 flex items-center justify-center mb-3">
+            <h1>Pola Argumentasi Toulmin</h1>
+            <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" /></div>
+          </div>
+          <img src="/img/SMA Bingung.png" alt="karakter" class="w-24 float-left p-4" />
+          <p class="border-1 border-gray-400">
+            Menurut Stepan E. Toulmin salah satu faktor yang menentukan valid tidaknya argumen adalah struktur argumen. Setidaknya ada 5 komponen dari suatu argumen yang lengkap. Komponen tersebut terdiri dari: Data, Claim, Warrant,
+            Rebuttal, dan Qualifier. Oleh karena itu, pada bagian ini kita akan mempelajari bagimana menggunakan 5 komponen argumen dan bagaimana hubungan tiap komponen tersebut.
+          </p>
+          <h2>1. Data dan Claim</h2>
+          <p>Untuk memahami data dan claim perhatikan ilustrasi berikut:</p>
+          <p>Sutau hari pian menmghampiri sopi di kelas dan mengajukan pernyataan tentang temannya Romli:</p>
+
+          <!-- Diskusi -->
+          <div class="flex flex-col w-full h-72 bg-primary/20 p-3 rounded-md relative -z-20 my-3">
+            <div class="h-[45%] w-full bg-blue-300 p-3 relative rounded-md text-xs">
+              <a id="textArgumen1" class="leading-[1.2rem]"
+                ><span class="bg-green-200">Romli kecanduan bermain game, ia menghabiskan uang dan waktunya untuk bermain game tiap hari,</span><br /><span class="bg-red-200"
+                  >jadi menurutku bermain game itu tidak ada manfaatnya sama sekali</span
+                >.</a
+              >
+              <span class="absolute w-6 h-6 skew-x-12 rotate-45 -bottom-2 left-1 bg-blue-300 -z-10"></span>
+            </div>
+
+            <div class="flex h-[55%]">
+              <div class="w-1/2 h-full relative"><img src="/img/PianArgumen1.png" alt="karakter" class="h-[7rem] absolute left-0 bottom-0" /></div>
+
+              <div class="w-1/2 h-full relative"><img src="/img/SopiArgumen1.png" alt="karakter" class="h-[7rem] absolute right-0 bottom-0" /></div>
+            </div>
+          </div>
+          <!-- Diskusi end -->
+
+          <p>
+            Pernyataan "bermain game itu tidak ada manfaatnya sama sekali" merupakan <span class="highlight">claim</span> atau <span class="font-semibold">kesimpulan</span> yang Pian ambil. Ia berkesimpulan demikian karena ia memiliki
+            <span class="font-semibold">Data</span> berupa fakta dampak negatif yang dialami temannya Romli.
+          </p>
+          <p>Pernyataan Pian merupakan argumen sederhana yang terdiri dari dua bagian yaitu:</p>
+          <ul class="list-disc">
+            <li><span class="highlight">Claim</span> yaitu kesimpulan yang ingin dibuktikan kebenarannya</li>
+            <li><span class="highlight">Data</span> yaitu fakta atau bukti yang mendasari kesimpulan yang diambil</li>
+          </ul>
+          <p>
+            Dalam membuat argumen yang baik claim harus didasari oleh data. Kesimpulan tanpa adanya data yang mendukung bukan merupakan argumen. Kesimpulan Pian bahwa bermain game tidak bermanfaat tidak dapat dibenarkan jika tidak didasari
+            oleh fakta yang mendukung.
+          </p>
+          <p>
+            Contoh lain: Misalkan dalam topik energi dan pemanasan global. kamu berpendapat bahwa: <span class="bg-green-200"> “Penggunaan mobil listrik tidak menghasilkan gas \(CO_{2}\)</span>,
+            <span class="bg-red-200">jadi mobil listrik merupakan kendaran yang ramah lingkungan”</span> Selanjutnya yang perlu diperhatikan adalah data yang digunakan pada sebuah argumen harus bersifat relevan dan menguatkan kesimpulan
+            yang diambil. Sekrang coba perhatikan argumen berikut: <span class="bg-green-200">“Penggunaan mobil listrik lebih hemat dari segi biaya</span>,
+            <span class="bg-red-200">, jadi mobil listrik merupakan kendaraan yang ramah lingkungan”.</span> Pada pernyataan diatas, data yang diajukan menjelaskan keunggulan mobil listrik dari segi biaya pernyataan ini tidak relevan dengan
+            kesimpulan bahwa mobil listrik merupakan kendaraan ramah lingkungan yang memaparkan karakteristik mobil lsitrik dari segi dampak terhadap lingkungan.
+          </p>
+
+          <!-- Rangkuman start -->
+          <div class="rangkuman">
+            <div class="bg-gray-400 w-fit p-2 -rotate-12"><i class="fa-solid fa-list-check fa-beat"></i></div>
+            <ul class="list-disc">
+              <li><span class="highlight">Claim</span> merupakan kesimpulan yang ingin dibuktikan kebenarannya</li>
+              <li><span class="highlight">Data</span> merupakan fakta yang mendukung kesimpulan</li>
+              <li>Setiap kesimpulan (claim) harus ada fakta (data) yang mendukungnya</li>
+              <li>Fakta yang digunakan harus sesuai dengan kesimpulan yag diambil</li>
+            </ul>
+          </div>
+          <!-- Rangkuman End -->
+        </article>
+        <article>
+          <h2>2. Warrant</h2>
+          <p>
+            Mari kita lanjutkan cerita Pian dan Sopi diatas. Penggunaan data untuk mendukung kesimpulan nampaknya belum cukup untuk menghasilkan argumen yang kuat dan mudah dibantah. Untuk mengatasi hal tersebut diperlukan informasi yang
+            terbukti kevalidannya untuk mendukung argumen yang dibuat. <span class="bg-yellow-200">Infromasi ini bisa berupa data statistik, hasil penelitian, wawancara ekspert atau sumber lain</span>. Misalnya dalam kasus kecanduan game
+            tadi kita dapat menambahkan informasi statistik tentang dampak negatif game untuk memperkuat argumen tersebut.
+          </p>
+
+          <div class="flex flex-col w-full h-72 bg-primary/20 p-3 rounded-md relative -z-20 my-3">
+            <div class="h-[45%] w-full bg-blue-300 p-3 relative rounded-md text-[0.6rem]">
+              <a id="textArgumen1" class="leading-[0.5rem] text-justify"
+                ><span
+                  >Alasan yang mendukung kesimpulan saya didasarkan pada data statistik yang diterbitkan oleh Mpowerwellness yang menyatakan bahwa gamers menghabiskan 8-12 jam dalam seminggu. Data lain menyatakan bahwa 1 dari 10 gamers muda
+                  menggunakan uang hasil berhutang untuk membeli lootbox dalam game</span
+                >.</a
+              >
+              <span class="absolute w-6 h-6 skew-x-12 rotate-45 -bottom-2 left-1 bg-blue-300 -z-10"></span>
+            </div>
+
+            <div class="flex h-[55%]">
+              <div class="w-1/2 h-full relative"><img src="/img/PianArgumen2.png" alt="karakter" class="h-[7rem] absolute left-0 bottom-0" /></div>
+
+              <div class="w-1/2 h-full relative"><img src="/img/SopiArgumen1.png" alt="karakter" class="h-[7rem] absolute right-0 bottom-0" /></div>
+            </div>
+          </div>
+
+          <p>
+            Informasi data statistik yang digunakan oleh Pian mengukuhkan kebenaran dari argumen yang ia buat. Data statistk tersebut berperan sebagai <span class="highlight">Warrant</span> (jaminan) yang menghubungkan dan memperkuat data
+            dan claim yang diambil. Ketiga komponen argumen yang tekah kita gunakan yaitu, Data, Claim, dan Warrant merupakan struktur utama dalam mebentuk suatu argumen yang kuat. Jika digambarkan dalam diagram, hubungan data claim dan
+            warrant digambarkan sebagai berikut:
+          </p>
+          <img src="/img/struktur3.png" alt="Struktur" class="gambar"/>
+          <figcaption>Gambar 3.</figcaption>
+
+          <!-- Rangkuman start -->
+          <div class="rangkuman mt-8">
+            <div class="bg-gray-400 w-fit p-2 -rotate-12"><i class="fa-solid fa-list-check fa-beat"></i></div>
+            <ul class="list-disc">
+              <li><span class="highlight">Warrrant</span> merupakan alasan atau pernyataan yang menghubungkan dan memperkuat data dan claim yang diambil</li>
+              <li>Warrant dapat berupa data statistik, hasil penelitian, pendapat ekspert, laporan ilmiah, dan bukti ilmiah lain. Bukti ilmiah merupakan kunci dalam membuat argumen yang kuat.</li>
+            </ul>
+          </div>
+          <!-- Rangkuman End -->
+        </article>
+
+        <article>
+          <h2>3. Rebuttal</h2>
+          <p>
+            Ketidaksetujuan merupakan sesuatu yang biasa dalam seni berargumen. Pernyataan ketidaksetujuan ini berupa kritik atau sanggahan yang menguji kebenaran dari argumen yang diberikan. Sanggahan yang diberikan tentunya perlu
+            diperkuat dengan bukti ilmiah seperti halnya warrant namun dalam posisi yang berlawanan. Misalnya dalam kasus Pian, sopi dapat memeberikan sangghan berupa pernyataan sebagai berikut:
+          </p>
+
+          <div class="flex flex-col w-full h-[20rem] bg-primary/20 p-3 rounded-md relative -z-20 my-3">
+            <div class="h-[50%] w-full bg-yellow-300 p-3 relative rounded-md text-[0.6rem]">
+              <a id="textArgumen1" class="leading-[0.5rem] text-justify"
+                ><span
+                  >Saya tidak setuju dengan Anda, menurut saya bermain game justru memberi manfaat secara osikologis jika dilakukan secara tidak berlebihan. Penelitian terbaru yang dilakukan oleh Feiyue Li, dkk (2023) mengungkapkan bahwa
+                  terdapat dua manfaat yang dirasakan oleh mahasiswa yaitu meningkatkan peforma akademik dan memenuhi kebutuhan sosial.</span
+                ></a
+              >
+              <span class="absolute w-6 h-6 skew-x-12 rotate-45 -bottom-2 right-1 bg-yellow-300 -z-10"></span>
+            </div>
+
+            <div class="flex h-[55%]">
+              <div class="w-1/2 h-full relative"><img src="/img/PianArgumen1.png" alt="karakter" class="h-[7rem] absolute left-0 bottom-0" /></div>
+
+              <div class="w-1/2 h-full relative"><img src="/img/SopiArgumen2.png" alt="karakter" class="h-[7rem] absolute right-0 bottom-0" /></div>
+            </div>
+          </div>
+          <p>
+            Pernyataan di atas dikatogorikan sebagai <span class="highlight">rebuttal</span> yaitu pernyataan sanggahan yang menguji kebenaran dari argument. Sopi menguji argumen dari Pian dengan menunjukan hasil penelitian yang memaparkan
+            manfaat dari bermain game terhadap psikologi mahasiwa.
+          </p>
+          <!-- Rangkuman start -->
+          <div class="rangkuman mt-8">
+            <div class="bg-gray-400 w-fit p-2 -rotate-12"><i class="fa-solid fa-list-check fa-beat"></i></div>
+            <ul class="list-disc">
+              <li><span class="highlight">Rebuttal</span> merupakan pernyataan yang menyatakan kritik atau sanggahan untuk menguji kebenaran argument.</li>
+              <li>Sama halnya dengan warrant untuk menghasilkan sanggahan yang meyakinkan diperlukan bukti ilmiah seperti data statistik, hasil penelitian, pendapat ekspert, laporan ilmiah, dan bukti ilmiah lainnya.</li>
+            </ul>
+          </div>
+          <!-- Rangkuman End -->
+        </article>
+
+        <article>
+          <h2>4. Qualifier</h2>
+          <p>
+            Tidak dapat dipungkiri bahwa setiap argumen memiliki keterbatasan yang menyatakan pengecualian, syarat, atau pernyataan yang menguji seberapa universal argumen itu dapat diterapkan. Pernyataan jenis ini kita sebut dengan qualifier.
+          </p>
+          <p>Mari kembali pada diskusi Pian dan Sopi! Dari argumen yang diberikan oleh Pian terkait manfaat bermain game Pian dapat memberikan qualifier sebagai berikut:</p>
+
+          <div class="flex flex-col w-full h-72 bg-primary/20 p-3 rounded-md relative -z-20 my-3">
+            <div class="h-[45%] w-full bg-blue-300 p-3 relative rounded-md text-[0.6rem]">
+              <a id="textArgumen1" class="leading-[0.5rem] text-justify">
+                <span>Benar juga, mungkin jika dilakukan berlebihan, bermain game dapat memberikan dampak negatif, tetapi jika dilakukan secukupnya dapat bermanfaat bagi psikologis.</span></a
+              >
+              <span class="absolute w-6 h-6 skew-x-12 rotate-45 -bottom-2 left-1 bg-blue-300 -z-10"></span>
+            </div>
+
+            <div class="flex h-[55%]">
+              <div class="w-1/2 h-full relative"><img src="/img/PianArgumen1.png" alt="karakter" class="h-[7rem] absolute left-0 bottom-0" /></div>
+
+              <div class="w-1/2 h-full relative"><img src="/img/SopiArgumen2.png" alt="karakter" class="h-[7rem] absolute right-0 bottom-0" /></div>
+            </div>
+          </div>
+
+          <p>
+            Pernyataan di atas membatasi argumen yang menyatakan bahwa bermain game tidak bermanfaat dengan mengajukan syarat bahwa dalam durasi yang cukup bermain game dapat memberikan manfaat positif. Lima bagian argumen yang telah kita
+            pelajari sampai bagaian ini dapat digambarkan dalam diagram berikut:
+          </p>
+
+          <img src="/img/struktur5.png" alt="struktur" class="my-3 gambar" />
+
+          <p>
+            Berikut beberapa contoh lain dari penggunaan qualifier. <br />
+            Contoh 1:
+          </p>
+          <p>
+            “Pembangunan jalan raya mungkin menyebabkan dampak negatif tetapi jika dampak positif yang diberikan lebih banyak maka pembangunan jalan raya dapat dilakukan” Argumen di atas menyatakan syarat yang harus dipenuhi agar argumen
+            Pembangunan jalan raya dapat dilakukan yang mempertimbangkan dampak positif dan negatif.
+          </p>
+          <p>
+            Contoh 2: <br />
+            “Adit mendapatkan niali 100 dalam ulangan fisika, Adit adalah anak yang pintar” Kita dapat memberikan qualifier untuk argument di atas misalnya: “Adit mungkin pintar dalam fisika tetapi belum tentu ia pintar dalam bidang seni”
+            Pernyataan di atas menguji seberapa universal argumen yang diberikan dengan menyatakan bahwa mendapatkan nilai 100 dalam fisika belum berarti Adit merupakan siswa yang pintar. Adit hanya pintar dalam bidang fisika saja, dan
+            belum tentu dalam bidang seni ia menmperoleh nilai yang sama.
+          </p>
+          <p>
+            Dalam seni berargumen, menyertakan qualifier atau pernyataan keterbatasan dari argumentasi kita sejatinya adalah tanda kebijaksanaan dan kejujuran. Meskipun beberapa orang mungkin berpendapat bahwa menyertakan keterbatasan dapat
+            melemahkan argumen, namun sebaliknya, penggunaan qualifier justru dapat memperkuat argumen yang dibuat. Adanya qualifier menciptakan rasa kepercayaan dari pihak yang mendengarkan. Mereka tahu bahwa kita tidak berusaha menyajikan
+            argumen sebagai kebenaran mutlak, melainkan sebagai pandangan yang diakui memiliki batasannya. Ini menciptakan nuansa argumen yang lebih terbuka dan bersifat kolaboratif. Jadi, meskipun mungkin terdengar paradoks, menyertakan
+            qualifier pada argumen sejatinya memperkuat argument agar dapat diterima oleh lawan bicara.
+          </p>
+
+          <!-- Rangkuman start -->
+          <div class="rangkuman mt-8">
+            <div class="bg-gray-400 w-fit p-2 -rotate-12"><i class="fa-solid fa-list-check fa-beat"></i></div>
+            <ul class="list-disc">
+              <li><span class="highlight">Qualifier</span> berisi keterbatasan dari sebuah argumen yang menyatakan pengecualian, syarat, atau pernyataan yang menguji seberapa universal argumen itu dapat diterapkan.</li>
+              <li>Menyatakan keterbatasan pada argumen tidak melemahkan argumen yang dibuat, tetapi jusru memperkuat argumen dan memudahkan agar argumen yang dibuat dapat diterima oleh lawan bicara</li>
+            </ul>
+          </div>
+          <!-- Rangkuman End -->
+        </article>
+      </section>
+    </main>
+
+    <script src="/src/general.js"></script>
+    <script src="/src/Argumentasi/ArgumentasiToulmin.js"></script>
+  </body>
+</html>

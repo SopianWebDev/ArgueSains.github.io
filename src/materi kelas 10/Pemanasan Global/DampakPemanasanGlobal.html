@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEB</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- my style -->
+    <link rel="icon" href="/img/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+
+  <body class="overflow-x-hidden">
+    <div class="hidden" id="popUp">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="popUpCnt" id="popUpCnt">
+          <p id="textPopUp"></p>
+          <i class="fa-regular fa-circle-check fa-beat text-[2.3rem] text-green-600"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden" id="popUpLoading">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="loading" id="loading"></div>
+      </div>
+    </div>
+
+    <!-- Next Button Start-->
+    <aside class="w-full fixed bottom-0 right-0 left-0 bg-primary h-14 flex justify-between z-30 container mx-auto items-center p-4 text-white text-[2rem] gap-8">
+      <a href="/src/materi kelas 10/Pemanasan Global/PenyebabPemanasanGlobal.html" class="nextButton" id="previousButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
+      <p class="text-xs text-center">Dampak Pemanasan Global</p>
+
+      <a class="nextButton" id="nextButton"><i class="fa-solid fa-lock ransition-all duration-150 opacity-50"></i></a>
+    </aside>
+    <!-- Next Button End -->
+
+    <header class="fixed top-0 right-0 w-screen z-[998] bg-secondary">
+      <!-- Navbar start -->
+      <nav class="navbar layout">
+
+        <div class="logo flex items-center gap-[0.1rem]">
+          <div class="flex items-center gap-[0.1rem]">
+            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]">
+            <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+          </div>
+          <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
+        </div>
+
+
+        <div class="nav-list initial-style">
+          <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6">
+            <li><a href="/src/beranda.html">Beranda</a></li>
+
+            <li class="relative active">
+              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative diskusiMenu">
+              <a>Diskusi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Evaluasi<i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Bank Soal <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="menuToggle lg:hidden"></div>
+      </nav>
+      <!-- Navbar End -->
+      <!-- List Materi Start -->
+      <div class="contentList">
+        <div class="flex flex-col py-8 w-full h-[--tinggiListMateri] transition-all duration-500 bg-gradient-to-b from-secondary from-[50%] to-[#3a3c42] overflow-y-auto">
+          <ul>
+            <!-- Argumentasi Toulmin Start -->
+            <li class="listClass">
+              <div class="dropdown-button putar-icon classBtnDropdown" data-index="30" id="materiArgumentasi">
+                <div class="gap-4 flex items-center">
+                  <i class="iconClass fa-solid fa-people-arrows transition-all duration-500"></i>
+                  <p class="textClass">Argumentasi Sains</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon0"></i>
+              </div>
+
+              <ul class="dropdown dropdown30 hidden">
+                <li>
+                  <div class="dropdown-button chapterBtnDropdown" data-index="31">
+                    <div class="flex items-center gap-4">
+                      <i class="fa-solid fa-solid fa-people-group text-amber-500 w-4 text-center"></i>
+                      <a>Bagaimana berargumen dengan baik</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown31 hidden relative bg-primary/60">
+                    <ul class="subChapterContent">
+                      <li>
+                        <a href="/src/Argumentasi/Argumentasi.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pentingnya Berargumen dengan Baik</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/src/Argumentasi/ArgumentasiiToulmin.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pola Argumentasi Toulmin</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/src/Argumentasi/KuisArgumentasi.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Kuis pola argumentasi</p></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <!-- Argumentasi Toulmin Start -->
+
+            <!-- KD kelas 10 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 10 start-->
+
+              <div class="opacity-50 classBtnDropdown relative" data-index="1" id="kelas10">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary" id="lockKelas10"></i>
+
+                <div class="gap-4 flex items-center">
+                  <i class="iconClass fa-solid fa-temperature-arrow-down"></i>
+                  <p class="textClass">Kelas 10</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon1"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 10 end-->
+
+              <!-- Materi kelas 10 start-->
+              <ul class="dropdown dropdown1 hidden" id="dropdown1">
+                <!-- Hakikat Fisika -->
+                <!-- Hakikat Fisika End -->
+
+                <!-- Energi start -->
+                <!-- Energi End -->
+
+                <!-- Pemanasan Global -->
+                <li>
+                  <div class="dropdown-button chapterBtnDropdown" data-index="6">
+                    <div class="flex items-center gap-4">
+                      <i class="fa-solid fa-earth-asia text-amber-500 w-4 text-center"></i>
+                      <a>Gejala Pemanasan Global</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown6 hidden relative bg-primary/60">
+                    <ul class="subChapterContent">
+                      <li>
+                        <a href="/src/materi kelas 10/Pemanasan Global/PemanasanGlobal.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pemanasan Global</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="PenyebabPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Penyebab Pemansan Global</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="DampakPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Dampak Pemanasan Global</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="SolusiPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Upaya Penanganan Pemanasan Global</p></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <!-- Pemanasan Global End-->
+              </ul>
+              <!-- Materi kelas 10  End-->
+            </li>
+            <!-- KD kelas 10 end -->
+
+            <!-- KD kelas 11 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 11 start-->
+              <div class="relative opacity-50 classBtnDropdown" data-index="2">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
+
+                <div class="flex items-center gap-4">
+                  <i class="iconClass fa-solid fa-gears"></i>
+                  <p class="textClass">Kelas 11</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon2"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 11 end-->
+
+              <!-- Materi kelas 11 start-->
+              <!-- Materi kelas 11  End-->
+            </li>
+            <!-- KD kelas 11 end -->
+
+            <!-- KD kelas 12 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 12 start-->
+              <div class="relative opacity-50 classBtnDropdown" data-index="3">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
+
+                <div class="flex items-center gap-4">
+                  <i class="iconClass fa-solid fa-atom"></i>
+                  <p class="textClass">Kelas 12</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon3"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 12 end-->
+
+              <!-- Materi kelas 12 start-->
+              <!-- Materi kelas 12  End-->
+            </li>
+            <!-- KD kelas 12 end -->
+          </ul>
+        </div>
+
+        <!-- Tombol munculkan materi semua kelas start -->
+        <div class="h-8 w-8 bg-amber-500 rounded-r-md flex justify-center items-center" id="listIcon">
+          <i class="openIcon fa-solid fa-list text-[1rem]"></i>
+          <i class="closeIcon fa-solid fa-xmark text-[1rem] hidden"></i>
+        </div>
+        <!-- Tombol munculkan materi semua kelas end -->
+      </div>
+      <!-- List Materi End -->
+    </header>
+
+    <main class="materi mt-16 layout">
+      <!-- Materi Pemanasan Global -->
+      <section id="DampakPemanasanGlobal" class="my-8">
+        <article>
+          <!-- Judul -->
+          <div class="bg-forth rounded-tr-md rounded-bl-md relative h-12 mb-3 flex justify-center items-center">
+            <h1>Dampak Pemnasan Global</h1>
+            <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" /></div>
+          </div>
+
+          <h2>1. Mencairnya es di kutub-kutub bumi</h2>
+          <p>Menurut The Worl Count, sebanyak 750 miliar ton es mencari setiap tahun akibat pemanasan global. Hal itu berarti 24.000 ton air lelehan ditambahkan setiap detiknya, atau sama dengan 10 kolam renang olimpiade.</p>
+
+          <video controls class="py-2">
+            <source src="/img/Dampak Pemanasan Global/es laut artic meleleh.mp4" type="video/mp4" />
+            Browsermu tidak mendukung tag ini, upgrade donk!
+          </video>
+
+          <p>
+            Dengan adanya peristiwa es mencari idi kutub-kutub Bumi. Tentu kurang menguntungkan bagi manusia. Daratan es berwarna putih memiliki kemampuan untuk memantulkan sinar matahari. Semakin sedikit lapisan es maka dapat memicu
+            peningkatan suhu permukaan bumi.
+          </p>
+
+          <img src="/img/Dampak Pemanasan Global/grafik peningkatan permukaan air laut indonesia.png" alt="grafik peningkatan permukaan air laut" class="py-2 gambar" />
+          <span class="text-[0.5rem] font-semibold">Sumber: <span class="italic">National Oceanic and Atmospheric Administration (NOAA)</span></span>
+
+          <figcaption>grafik kenaikan air laut Indonesia tiap tahun</figcaption>
+
+          <p>
+            Dampak lain yang ditimbulkan yaitu naiknya permukaan air. Data yang dipublikasikan oleh International Monetary Fund (IMF), lewat amatan satelt Jason 3, permukaan air laut Indonesia meningkat 62,3 milimeter (mm) per 11 Maret 202
+            yang menempatkan Indonesia ke posisi ke empat secara global. Setiap tahunnya, Indonesia mengalami kenaikan mencapai 4 mm, lebih tinggi dari rata-rata global yaitu sebesar 3 mm. Hal ini tentunya sangat merugikan terutama bagi
+            masyarakat pesisir pantai.
+          </p>
+
+          <img src="/img/Dampak Pemanasan Global/karakter permukaan air laut naik.png" alt="karakter" class="py-2" />
+
+          <p>Bukti nyata terjadinya kenaikan permukaan air laut adalah masjid Al-Wadhuna yang sampai saat ini masih berdiri.</p>
+
+          <img src="/img/Dampak Pemanasan Global/mesjid al-wadhuna.jpeg" alt="mesjid al-wadhuna" />
+          <span class="text-[0.5rem] font-semibold">Sumber: cnnindonesia.com</span>
+          <figcaption>gambar mesjid al-wadhuna terendam air rob</figcaption>
+        </article>
+
+        <article>
+          <h2>2. Perubahan Iklim</h2>
+          <p>
+            Peningkatan suhu sebagai akibat dari pemanasan global mengakibatkan terjadinya perubahan iklim. Pada daerah subtropis bagian utara, salju yang mnyelimuti pegunungan akan semakin cepat mencair. Musim tanam akan lebih panjang di
+            beberapa daerah. Suhu pada musim dingin dan malam hari akan semakin meningkat. Sedangkan di daerah tropis, udara akan menjadi lebih lembab akibat semakin banyak pernguapan dari air laut. Kelembapan yang tinggi akan meningkatkan
+            curah hujan. Air pada tanah akan semakin cepat menguap akibatnya beberapa daerah akan lebih kering daripada sebelumnya. Selain itu pola cuaca semakin tidak terprediksi dan ekstrem dan timbulnya bencana alam seperti banjir,
+            longsor, badai, dan kekeringan.
+          </p>
+        </article>
+
+        <article>
+          <h2>3. Timbulnya Wabah Penyakit</h2>
+          <p>
+            Pemanasan global mempunyai dampak yang beragam terhadap kesehatan manusia. Menurut National Institutes of Health pemanasan global memberi dampak secara langsung dan tidak langsung terhadap kesehatan.:
+          </p>
+
+          <ul class="list-disc">
+            <li>
+              <p>Efek langsung pada kondisi Kesehatan</p>
+              <ol class="list-decimal">
+                <li><span class="font-semibold text-amber-700">Gelombang Panas</span> <br>Peningkatan angka kematian dalam jangka pendek, terutama di antara mereka yang menderita penyakit kardiovaskular dan/atau pernapasan, dan peningkatan jumlah pasien sengatan panas</li>
+                <li><span class="font-semibold text-amber-700">Efek samping polusi udara</span> <br> Peningkatan jumlah pasien asma dan alergi</li>
+                <li><span class="font-semibold text-amber-700">Badai dan banjir</span> <br>Peningkatan angka kematian akibat kecelakaan dan sakit </li>
+              </ol>
+            </li>
+            <li class="pt-6">
+              <p>Dampak tidak langsung terhadap penyakit menular</p>
+              <ol class="list-decimal">
+                <li><span class="font-semibold text-amber-700"> Perluasan wilayah yang dipenuhi nyamuk dan kutu</span> <br>Peningkatan jumlah pasien penyakit menular yang ditularkan oleh nyamuk (misalnya demam berdarah dan malaria) </li>
+                <li><span class="font-semibold text-amber-700">Kontaminasi air dan makanan dengan bakteri</span> <br> Peningkatan jumlah penderita penyakit menular yang ditularkan melalui air dan makanan serta penyakit diare.</li>
+              </ol>
+            </li>
+          </ul>
+          <img src="/img/Dampak Pemanasan Global/virus mencair.png" alt="karakter" class="py-2">
+          <p>Selain itu menurut The Guardian mengatakan bahwa pandemi berikutnya mungkin bukan disebabkan oleh kelelawar atau burung, melainkan dari materi es yang mencair. ketika suhu global meningkat Karena perubahan iklim, virus dan bakteri yang terkurung di gletser dan lapisan es akan semakin besar kemungkinannya untuk bangkit kembali dan menginfeksi satwa liar setempat. Misalnya, pada tahun 2016, wabah antraks di Siberia utara yang menewaskan seorang anak dan menginfeksi setidaknya tujuh orang lainnya disebabkan oleh gelombang panas yang mencairkan lapisan es dan mengekspos bangkai rusa kutub yang terinfeksi. </p>
+        </article>
+
+        <article>
+          <h2>4. Punahnya Flora dan Fauna</h2>
+          <img src="/img/Dampak Pemanasan Global/badak punah.png" alt="karakter" >
+         <p> Indonesia mempunyai jumlah spesies terancam tertinggi keempat di dunia dengan 772 spesies. Meski kaya akan keanekaragaman hayati, Indonesia juga terkenal sebagai negara yang memiliki daftar panjang satwa liar yang terancam punah. Menurut IUCN (2011) satwa liar yang terancam punah di Indonesia antara lain 184 mamalia, 119 burung, 32 reptil, 32 amfibi, dan 140 ikan. Satwa liar ini pada akhirnya akan punah jika tidak ada tindakan untuk menyelamatkan mereka dari kepunahan. </p>
+
+         <p>Salah satu penyebab utama meningkatnya kepunahan spesies di Indonesia adalah perubahan iklim. Perubahan iklim mengganggu keseimbangan ekosistem. Flora dan fauna akan kehilangan habitat aslinya akibat kebakaran hutan, polusi, banjir dan lain-lain.</p>
+
+        </article>
+
+
+
+        <form action="https://script.google.com/macros/s/AKfycbwtZ7hArRh9nXm2wSQco47ChOuLiZxIcxFyNzz4ouh483ubGA0U10xSo-i5Y1n_gWGOpw/exec" method="POST" id="my-form" class="mt-8 bg-primary/20 rounded-xl p-4">
+          <div class="hidden">
+            <input type="text" name="Nama" id="NamaSiswa" class="border-black border-2 px-2 rounded-md" />
+            <select name="Kelas" id="Kelas" class="border-[1px] border-third px-2">
+              <option value="">Pilih Kelas</option>
+              <option value="X-1">X-1</option>
+              <option value="X-2">X-2</option>
+              <option value="X-3">X-3</option>
+              <option value="X-4">X-4</option>
+              <option value="XBIL-1">XBIL-1</option>
+              <option value="XBIL-2">XBIL-2</option>
+            </select>
+          </div>
+
+          <div class="w-full p-2 bg-third text-white rounded-tl-md rounded-br-md">
+            <p>Mari Refleksi Diri</p>
+          </div>
+
+          <div class="mt-8">
+            <p class="block">Apakah kamu memahami cara bla bla bla ....</p>
+
+            <div class="flex flex-col items-center gap-2">
+              <i class="refleksiIcon fa-regular fa-face-meh fa-beat text-yellow-500 iconRefleksiSize"></i>
+              <p class="textRefleksi">Cukup Mengerti</p>
+              <input type="range" min="1" max="5" value="3" class="refleksiInput w-44" name="Soal1" />
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <p class="block">Apakah kamu memahami cara bla bla bla ....</p>
+            <div class="flex flex-col items-center gap-2">
+              <i class="refleksiIcon fa-regular fa-face-meh fa-beat text-yellow-500 iconRefleksiSize"></i>
+              <p class="textRefleksi">Cukup Mengerti</p>
+              <input type="range" min="1" max="5" value="3" class="refleksiInput w-44" name="Soal2" />
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <p class="block">Apakah kamu memahami cara bla bla bla ....</p>
+            <div class="flex flex-col items-center gap-2">
+              <i class="refleksiIcon fa-regular fa-face-meh fa-beat text-yellow-500 iconRefleksiSize"></i>
+              <p class="textRefleksi">Cukup Mengerti</p>
+              <input type="range" min="1" max="5" value="3" class="refleksiInput w-44" name="Soal3" />
+            </div>
+          </div>
+
+          <button class="buttonElemen">Kirim</button>
+        </form>
+
+        <a href="/src/materi kelas 10/Pemanasan Global/SolusiPemanasanGlobal.html" class="w-full flex justify-center mt-8 mb-20"><button class="buttonElemen hidden" id="lanjutAktivitas5">Lanjut Materi</button></a>
+
+        <div class="hidden" id="notifTidakLulus">
+          <div class="flex w-full justify-center items-center mt-8 mb-20 p-6 gap-3 rounded-md bg-primary/70 text-white">
+            <img src="/img/pian.png" alt="icon" class="w-20" />
+            <p id="textNotifTidakLulus">Sepertinya kamu belum memahami sebagain materi, sebelum lanjut silahkan pelajari lagi materi sebelumnya. Jika sudah merasa paham, isi kembali lembar refleksi di atas. Semangat...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="/src/general.js"></script>
+    <script src="/src/materi kelas 10/Pemanasan Global/DampakPemanasanGlobal.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+  </body>
+</html>

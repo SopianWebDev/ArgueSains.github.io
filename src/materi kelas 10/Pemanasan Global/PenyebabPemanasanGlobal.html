@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEB</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Math Js -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- my style -->
+    <link rel="icon" href="/img/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+
+  <body class="overflow-x-hidden">
+    <div class="hidden" id="popUp">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="popUpCnt" id="popUpCnt">
+          <p id="textPopUp"></p>
+          <i class="fa-regular fa-circle-check fa-beat text-[2.3rem] text-green-600"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden" id="popUpLoading">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="loading" id="loading"></div>
+      </div>
+    </div>
+
+    <!-- Next Button Start-->
+    <aside class="w-full fixed bottom-0 right-0 left-0 bg-primary h-14 flex justify-between z-30 container mx-auto items-center p-4 text-white text-[2rem] gap-8">
+      <a href="/src/materi kelas 10/Pemanasan Global/PemanasanGlobal.html" class="nextButton" id="previousButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
+      <p class="text-xs text-center">Penyebab Pemanasan Global</p>
+
+      <a class="nextButton" id="nextButton"><i class="fa-solid fa-lock ransition-all duration-150 opacity-50"></i></a>
+    </aside>
+    <!-- Next Button End -->
+
+    <header class="fixed top-0 right-0 w-screen z-[998] bg-secondary">
+      <!-- Navbar start -->
+      <nav class="navbar layout">
+
+        <div class="logo flex items-center gap-[0.1rem]">
+          <div class="flex items-center gap-[0.1rem]">
+            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]">
+            <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+          </div>
+          <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
+        </div>
+
+
+        <div class="nav-list initial-style">
+          <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6">
+            <li><a href="/src/beranda.html">Beranda</a></li>
+
+            <li class="relative active">
+              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative diskusiMenu">
+              <a>Diskusi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Evaluasi<i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Bank Soal <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="menuToggle lg:hidden"></div>
+      </nav>
+      <!-- Navbar End -->
+      <!-- List Materi Start -->
+      <div class="contentList">
+        <div class="flex flex-col py-8 w-full h-[--tinggiListMateri] transition-all duration-500 bg-gradient-to-b from-secondary from-[50%] to-[#3a3c42] overflow-y-auto">
+          <ul>
+            <!-- Argumentasi Toulmin Start -->
+            <li class="listClass">
+              <div class="dropdown-button putar-icon classBtnDropdown" data-index="30" id="materiArgumentasi">
+                <div class="gap-4 flex items-center">
+                  <i class="iconClass fa-solid fa-people-arrows transition-all duration-500"></i>
+                  <p class="textClass">Argumentasi Sains</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon0"></i>
+              </div>
+
+              <ul class="dropdown dropdown30 hidden">
+                <li>
+                  <div class="dropdown-button chapterBtnDropdown" data-index="31">
+                    <div class="flex items-center gap-4">
+                      <i class="fa-solid fa-solid fa-people-group text-amber-500 w-4 text-center"></i>
+                      <a>Bagaimana berargumen dengan baik</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown31 hidden relative bg-primary/60">
+                    <ul class="subChapterContent">
+                      <li>
+                        <a href="/src/Argumentasi/Argumentasi.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pentingnya Berargumen dengan Baik</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/src/Argumentasi/ArgumentasiiToulmin.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pola Argumentasi Toulmin</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/src/Argumentasi/KuisArgumentasi.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Kuis pola argumentasi</p></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <!-- Argumentasi Toulmin Start -->
+
+            <!-- KD kelas 10 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 10 start-->
+
+              <div class="opacity-50 classBtnDropdown relative" data-index="1" id="kelas10">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary" id="lockKelas10"></i>
+
+                <div class="gap-4 flex items-center">
+                  <i class="iconClass fa-solid fa-temperature-arrow-down"></i>
+                  <p class="textClass">Kelas 10</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon1"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 10 end-->
+
+              <!-- Materi kelas 10 start-->
+              <ul class="dropdown dropdown1 hidden" id="dropdown1">
+                <!-- Hakikat Fisika -->
+                <!-- Hakikat Fisika End -->
+
+                <!-- Energi start -->
+                <!-- Energi End -->
+
+                <!-- Pemanasan Global -->
+                <li>
+                  <div class="dropdown-button chapterBtnDropdown" data-index="6">
+                    <div class="flex items-center gap-4">
+                      <i class="fa-solid fa-earth-asia text-amber-500 w-4 text-center"></i>
+                      <a>Gejala Pemanasan Global</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown6 hidden relative bg-primary/60">
+                    <ul class="subChapterContent">
+                      <li>
+                        <a href="/src/materi kelas 10/Pemanasan Global/PemanasanGlobal.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pemanasan Global</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="PenyebabPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Penyebab Pemansan Global</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="DampakPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Dampak Pemanasan Global</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="SolusiPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Upaya Penanganan Pemanasan Global</p></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <!-- Pemanasan Global End-->
+              </ul>
+              <!-- Materi kelas 10  End-->
+            </li>
+            <!-- KD kelas 10 end -->
+
+            <!-- KD kelas 11 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 11 start-->
+              <div class="relative opacity-50 classBtnDropdown" data-index="2">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
+
+                <div class="flex items-center gap-4">
+                  <i class="iconClass fa-solid fa-gears"></i>
+                  <p class="textClass">Kelas 11</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon2"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 11 end-->
+
+              <!-- Materi kelas 11 start-->
+              <!-- Materi kelas 11  End-->
+            </li>
+            <!-- KD kelas 11 end -->
+
+            <!-- KD kelas 12 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 12 start-->
+              <div class="relative opacity-50 classBtnDropdown" data-index="3">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
+
+                <div class="flex items-center gap-4">
+                  <i class="iconClass fa-solid fa-atom"></i>
+                  <p class="textClass">Kelas 12</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon3"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 12 end-->
+
+              <!-- Materi kelas 12 start-->
+              <!-- Materi kelas 12  End-->
+            </li>
+            <!-- KD kelas 12 end -->
+          </ul>
+        </div>
+
+        <!-- Tombol munculkan materi semua kelas start -->
+        <div class="h-8 w-8 bg-amber-500 rounded-r-md flex justify-center items-center" id="listIcon">
+          <i class="openIcon fa-solid fa-list text-[1rem]"></i>
+          <i class="closeIcon fa-solid fa-xmark text-[1rem] hidden"></i>
+        </div>
+        <!-- Tombol munculkan materi semua kelas end -->
+      </div>
+      <!-- List Materi End -->
+    </header>
+
+    <main class="materi mt-16 layout">
+      <!-- Materi Pemanasan Global -->
+      <section id="PenyebabPemanasanGlobal" class="my-8">
+        <article>
+          <!-- Judul -->
+          <div class="bg-forth rounded-tr-md rounded-bl-md relative mt-6 h-12 flex items-center justify-center mb-3">
+            <h1>Penyebab Pemanasan Global</h1>
+            <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" /></div>
+          </div>
+
+          <img src="/img/Penyebab Pemanasan Global/bakar sampah.png" alt="karakter" class="py-3" />
+          <p>
+            Dalam kehidupan sehari-hari kita sering kali tak sadar telah turut memperparah masalah pemanasan global. Kegiatan-kegiatan seperti menggunakan AC, membakar sampah, dapat meningkatkan konsentrasi gas rumah kaca. Menurut IPCC
+            (Intergoveremental Panel on Climate Change) mengatakan bahwa peningakatan suhu rata-rata permukaan bumi disebabkan karena peningkatan kosentrasi gas rumah kaca yang berasal dari aktivitas manusia.
+          </p>
+          <p>Perhatikan grafik di bawah ini!</p>
+          <iframe src="https://ourworldindata.org/grapher/total-ghg-emissions?tab=chart&country=~OWID_WRL" loading="lazy" style="width: 100%; height: 600px; border: 0px none"></iframe>
+          <figcaption>grafik konsentrasi gas rumah kaca</figcaption>
+
+          <p>
+            Grafik di atas menunjukan peningkatan gas rumah kaca tiap tahun yang sebanding dengan grafik peningkatan suhu bumi di pembahasan sebelumnya. Adapun jenis dan sumber gas-gas rumah kaca yang dapat menyebabkan pemanasan global
+            ditunjukan dalam tabel berikut:
+          </p>
+
+          <table class="table-auto border border-slate-500">
+            <thead>
+              <tr>
+                <th>Gas Rumah Kaca</th>
+                <th>Sumber utama</th>
+                <th>Konsentrasi pra-Industri (ppb)</th>
+                <th>Konsentrasi 2011 (ppb)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Karbon Dioksida <br />(\(CO_{2}\))</td>
+                <td>Pembakaran bahan bakar fosil, Penggundulan hutan, Produksi semen.</td>
+                <td>278,000</td>
+                <td>390,000</td>
+              </tr>
+              <tr>
+                <td>
+                  Metana <br />
+                  (\(CH_{4}\))
+                </td>
+                <td>Produksi bahan bakar fosil, Pertanian, Tempat pembuangan sampah</td>
+                <td>722</td>
+                <td>1,803</td>
+              </tr>
+              <tr>
+                <td>
+                  Dinitrogen oksida <br />
+                  (\(N_{2}O\))
+                </td>
+                <td>Aplikasi pupuk, Bahan bakar fosil dan pembakaran biomassa, Proses industri</td>
+                <td>271</td>
+                <td>324</td>
+              </tr>
+              <tr>
+                <td>
+                  Cloroflorokarbon-12 <br />
+                  <span class="font-semibold italic">(CFC-12)</span>
+                </td>
+                <td>Mesin Pendingin</td>
+                <td>0</td>
+                <td>0.527</td>
+              </tr>
+              <tr>
+                <td>Hidroflorokarbon-23 <br /><span class="font-semibold italic">(HFC-23)</span></td>
+                <td>Mesin Pendingin</td>
+                <td>0</td>
+                <td>0.024</td>
+              </tr>
+              <tr>
+                <td>
+                  Sulfur Heksaflourida <br />
+                  (\(SF_{6}\))
+                </td>
+                <td>Transmisi Listrik</td>
+                <td>0</td>
+                <td>0.0073</td>
+              </tr>
+              <tr>
+                <td>
+                  Nitrogen Triflourida <br />
+                  (\(NF_{3}\))
+                </td>
+                <td>Manufaktur Semikonduktor</td>
+                <td>0</td>
+                <td>0.00086</td>
+              </tr>
+            </tbody>
+          </table>
+          <span class="text-[0.4rem] font-semibold">Keterangan: semua angka ditampilkan dalam <span class="italic">parts per billion</span></span>
+          <span class="text-[0.4rem] font-semibold block">sumber: IPCC, 2014</span>
+
+          <p>Oleh karena itu, pada bab ini kita akan mempelajari proses yang menyebabkan pemanasan global dan aktivitas-aktivitas manusia yang menyebabkan pemanasasn global</p>
+        </article>
+
+        <article>
+          <h2>1. Efek rumah kaca</h2>
+          <p>
+            Ketika kita duduk ditepi api unggun kita akan merasakan energi panas yang diradiasikan oleh api unggun. Matahari kita juga meradiasikan energi panasnya. Berdasarkan panjang gelombangnya, cahaya matahari dapat kita bagi menjadi:
+          </p>
+
+          <ol class="list-decimal layout">
+            <li>Gelombang cahaya dengan panjang gelombang panjang yaitu inframerah</li>
+            <li>Gelombang cahaya dengan panjang gelombang pendek yaitu cahaya tampak dan sinar ultra violet.</li>
+          </ol>
+
+          <p>Untuk memahami sifat cahaya tersebut, perhatikan gambar berikut!</p>
+
+          <img src="/img/Penyebab Pemanasan Global/Infrared tidak menembus kaca.jpg" alt="ilustrasi cahaya menembus benda" class="gambar py-2" />
+
+          <span class="text-[0.4rem] font-semibold block">sumber: https://www.spitzer.caltech.edu/system/avm_images/binaries/2154/large/sig08-004.jpg?1603797038 </span>
+
+          <figcaption>Gambar ilustrsi daya tembus cahaya inframerah</figcaption>
+
+          <div class="flex gap-2">
+            <img src="/img/SMA Bingung.png" alt="karakter" class="w-20 self-center" />
+            <p>
+              Pada gambar di atas terlihat seseorang berkacamata. Pada foto sebelah kiri, kita dapat melihat mata orang tersebut dengan jelas artinya cahaya tampak dapat menembus kaca pada kacamata. Namun ketika difoto dengan kamera
+              inframerah pada foto sebelah kanan, sinar inframerah tidak dapat menembus kaca dan mata orang tersebut nampak hitam .
+            </p>
+          </div>
+
+          <p>Dari gambar dapat membuktikan kedua gelombang mempunyai perilaku yang berbeda ketika mengenai kaca. yaitu:</p>
+
+          <ol class="list-decimal layout">
+            <li>Gelombang cahaya pendek dapat menembus kaca (cahaya tampak dan ultraviolet)</li>
+            <li>Gelombang cahaya panjang tidak dapat menembus kaca (cahaya inframerah)</li>
+          </ol>
+
+          <p>Dengan mengetahui sifat tersebut kita dapat menjelaskan bagaimana proses pemanasan terjadi akibat rumah kaca. Perhatikan gambar berikut!</p>
+
+          <img src="/img/Penyebab Pemanasan Global/skema rumah kaca.png" alt="proses pemanasan rumah kaca" class="gambar" />
+
+          <figcaption>gambar proses pemanasan pada rumah kaca</figcaption>
+
+          <p>
+            Ketika sinar matahari mengenai rumah kaca, radiasi gelombang panjang akan dipantulkan, sedangkan radiasi gelombang pendek akan menembus rumah kaca. Gelombang pendek yang menembus ini akan diserap oleh tanah dan dipancarkan
+            kembali sebagai gelombang panjang. Ingat! gelombang panjang tidak dapat menembus kaca akibatnya energi panas akan terperangkap dan terakumulasi di dalam rumah kaca yang membuatnya semakin menghangat inilah yang disebut
+            <span class="font-semibold text-amber-700">efek rumah kaca</span>. Kondisi ini menyediakan suhu yang optimal untuk pertumbuhan tanaman.
+          </p>
+        </article>
+
+        <article>
+          <p>Perhatikan gambar berikut!</p>
+          <img src="/img/Penyebab Pemanasan Global/Efek rumah kaca bumi.png" alt="efek rumaah kaca pada bumi" class="gambar" />
+
+          <figcaption>efek rumah kaca pada bumi</figcaption>
+
+          <p>
+            Seperti yang telah dijelaskan sebelumnya gelombang panjang yang menuju bumi akan dipantulkan oleh atmosfer dan cahaya dengan panjang gelombang pendek akan menembus atmosfer dan diserap oleh permukaan Bumi. Permukaan Bumi akan
+            memancarkan kembali Cahaya gelombang panjang (inframerah).
+          </p>
+
+          <div class="flex gap-2">
+            <div>
+              <p>
+                Yang perlu diperhatikan adalah gelombang inframerah yang dipancarkan oleh Bumi, <span class="font-semibold text-amber-700">tidak dipantulkan</span> oleh gas-gas rumah kaca di atmosfer, melainkan
+                <span class="font-semibold text-amber-700">diserap dan dipancarkan kembali</span>. Kita tahu, di atmosfer Bumi banyak sekali jenis gas, salah satunya yaitu oksigen yang digunakan untuk kita bernafas. Lalu mengapa oksigen
+                tidak menjadi gas rumah kaca dan hanya gas-gas tertentu yang menyebabkan efek rumah kaca?
+              </p>
+            </div>
+            <img src="/img/Penyebab Pemanasan Global/SMA bingung 2.png" alt="karakter" class="w-20 self-center" />
+          </div>
+
+          <p>Untuk memahami hal tersebut, kita akan mengilustrasikanya pada cerita berikut!</p>
+
+          <img src="/img/Penyebab Pemanasan Global/musik sefrekuensi.gif" alt="karakter" class="gambar" />
+
+          <p>
+            Pian seorang penggemar musik pop garis keras, ketika ia mendengar musik rock ia tidak bergoyang karena ia tidak suka (tidak sefrekuensi). Ketika ia mendengar musik pop badan dia langsung bergoyang dan mengajak teman-temannya
+            bergoyang juga (sefrekuensi).
+          </p>
+
+          <p>
+            Ilstrasi ini sama dengan gas rumah kaca. Pada dasarnya semua molekul bergetar dengan frekuensi alami tertentu.
+            <span class="font-semibold text-amber-700">Gelombang inframerah memiliki frekuensi alami yang sama dengan gas-gas rumah kaca</span>. Gelombang inframerah diserap dan membuat gas rumah kaca begoyang (bergetar dan bergerak).
+            Gas-gas rumah kaca yang menyerap inframerah ini menyebarkan kembali gelombang inframerah ke segala arah. Sebagian gelombang inframerah membuat gas-gas rumah kaca lainnya ikut bergoyang (bergetar dan bergerak), sebgaian
+            dipancarkan ke angkasa dan sebagian besar dipancarkan kembali ke permukaan Bumi. Semakin tebal lapisan gas rumah kaca, semakin banyak gelombang inframerah yang dipancarkan kembali ke permukaan bumi dan membuat bumi semakin
+            panas.
+          </p>
+
+          <img src="/img/Penyebab Pemanasan Global/penyerapan dan pemancaran gelombang inframerah oleh co2.gif" alt="proses penyerapan dan pemancaaran kembali gelombang inframerah" />
+
+          <span class="text-[0.4rem] font-semibold">Sumber: https://changingclimatelatvia.files.wordpress.com/2016/02/gh2.gif </span>
+
+          <figcaption>Ilustrasi penangkapan dan penyerapan gelombang inframerah oleh gas rumah kaca</figcaption>
+
+          <div class="flex gap-2">
+            <div>
+              <p>Lalu apakah efek rumah kaca berbahaya?</p>
+              <p>
+                Tanpa gas rumah kaca suhu di permukaan bumi akan menjadi -18℃. Hal ini tentunya tidak memungkin manusia untuk hidup. Namun pada kadar tertentu gas rumah kaca berguna untuk mempertahankan suhu bumi tetap optimal, masalahnya
+                jika gas rumah kaca yang terlalu banyak mengakibatkan peningkatan suhu yang signifikan dan berbahaya bagi kelangsungan makhluk hidup di Bumi. Berikut beberapa aktivitas manusia yang dapat meningkatkan konstrasi gas rumah
+                kaca.
+              </p>
+            </div>
+            <img src="/img/Penyebab Pemanasan Global/SMA bingung 2.png" alt="karakter" class="w-20 self-center" />
+          </div>
+        </article>
+
+        <article>
+          <h2>2. Penggunaa Bahan Bakar Fosil</h2>
+
+          <p>
+            Menurut UU no 22 tahun tahun 2001 tentang Minyak dan Gas Bumi, yang disebut bahan bakar minyak adalah bahan bakar yang berasal dan/atau diolah dari minyak bumi. Hasil pengolahan minyak bumi berupa produk BBM dan NonBBM. Minyak
+            bumi, gas bumi dan batu bara merupakan contoh bahan bakar fosil.
+          </p>
+
+          <div class="flex gap-2">
+            <img src="/img/Penyebab Pemanasan Global/orang tua kaget.png" alt="karakter" class="w-24 self-center" />
+            <div>
+              <p>
+                Pesatnya kemajuan ilmu pengetahuan dan teknologi mempercepat proses pertumbuhan transportasi dan industry. Peningkatan tersebut dibarengi dengan peningkatan penggunaan bahan bakar fosil tiap tahunnya. Menurut kementrian ESDM
+                pada tahun 2022 konsumsi energi Indonesia setara dengan 1,18 miliar barrel minyak. Jika bahan bakar ini dikonversikan menjadi energi listrik untuk rumahmu, kamu bisa menggunakannya sampai \(1,6 \times 10^9\) tahun tanpa
+                takut mati listrik. Gila banget…
+              </p>
+            </div>
+          </div>
+
+          <p>Perhatikan grafik berikut!</p>
+          <img src="/img/Penyebab Pemanasan Global/Data konsumsi bahan bakar fosil indonesia.png" alt="grafik konsumsi energi indonesia tahun 2020" class="gambar">
+          <span class="font-semibold text-[0.5rem]">Sumber: Statita.com</span>
+          <figcaption>Grafik konsumsi energi berdasarkan sumbernya di Indonesia tahun 2020</figcaption>
+          <p>Berdasarkan grafik tersebut, 94% energi yang dikonsumsi Indonesia masih berasal dari bahan bakar fosil. Pembakaran bahan bakar fosil ini menghasilkan gas-gs rumah kaca yang memicu pemanasan global. Sebagian besar gas yang dihasilkan dari pembakaran tersebut adalah gas \(CO_{2}\). Gas ini tidak hanya menyebabkan meningkatnya suhu bumi, gas \(CO_{2}\) jika bereaksi dengan air akan menghasilkan senyawa korosif.</p>
+        </article>
+
+        <article>
+          <h2>3. Penggunaan Gas CFC</h2>
+          <p>Gas CFC biasanya digunakan pada peralatan rumah tangga yaitu pada alat pendingin seperti kulkas dan AC. Istilah lain yang biasa digunakan untuk CFC adalah freon. Penggunaannya juga dapat ditemukan pada alat rumah tangga yang diekmas dalam botol aerosol seperti parfum, pewangi ruangan, pembasmi nyamuk, dan hair spray.</p>
+          <p>Gas CFC dapat mencapai lapisan stratosfer dimana terdapat lapisan ozon. Hal ini karena gas CFC merupakan senyawa kimia yang stabil dan tidak mudah diuraikan. Ozon merupakan molekul yang terdiri dari 3 atom oksigen  \(O_{3}\). Ozon memiliki kemampuan untuk menyerap radiasi sinar UV dari matahari terutama UV-B yang berbahaya bagi makhluk di Bumi.</p>
+
+          <p>Perhatikan animasi berikut!</p>
+          <img src="/img/Penyebab Pemanasan Global/reaksi cfc dengn ozon.gif" alt="reaksi gas cfc dengan ozon" class="gambar">
+          <span class="text-[0.5rem] font-semibold">Sumber: https://atmos.washington.edu</span>
+
+          <figcaption>Animasi reaksi gas cfc dengan ozon</figcaption>
+
+          <p>Pada lapisan stratosfer, gas CFC dipecah oleh radiasi sinar UV dan terurai melepaskan atom klorin (\(Cl\)). Atom klorin bereaksi dengan ozon dan memecahnya menjadi klorin monoksida dan molekul oksigen (\(O_{2}\)). Molekul klorin monoksida ((\(ClO\))) masih reaktif dan bereaksi dengan atom oksigen dan memecahnya menjadi oksigen (\(O_{2}\)) dan atom klorin tunggal. Atom klorin ini akan bereaksi kembali dengan ozon dan siklus ini terus berlangsung dan mengakibatkan penipisan lapisan ozon.</p>
+
+          <div class="w-full py-2">
+            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/O8k-FPTDqvE?si=Bww3206AKX8tt9Bc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+
+          <p>Ozon yang berlubang mengakibatkan peningkatan paparan radiasi sinar UV yang masuk ke permukaan Bumi. Hal ini akan menimbulkan masalah pada kesehatan manusia, antara lain kangker kulit, kerusakan pada mata, dan katarak.</p>
+        </article>
+
+        <article>
+          <h2>4. Sampah</h2>
+          <p>Tempat Pembuangan Akhir (TPA) menghasilkan gas yang merupakan hasil dari penguraian dari bahan organik di TPA. Gas ini terdiri dari 50% gas methana, 45% gas karbon dioksida dan 5% gas lainnya. </p>
+
+          <img src="/img/Penyebab Pemanasan Global/proses penguraian sampah organik.png" alt="proses penguraian sampah organik" class="gambar">
+          <figcaption>gambar proses penguraian smpah organik</figcaption>
+          <p>Menurut kementrian lingkungan hidup dan kehutanan, mencatat terdapat 18,89 juta ton timbulan sampah Indonesia tiap tahun dan 41,1% atau sekitar 7,76 juta ton diantaranya berupa sisa makanan yang berasal dari sampah rumah tangga. Setiap ton sampah menghasilkan 50 kg gas methana, itu artinya dari sampah organik terebut dapat menghasilkan 388.000 ton pertahun. Berat ini setara dengan 26.000 bus besar yang ditumpuk, gila banget…</p>
+          <img src="/img/Penyebab Pemanasan Global/kaget.png" alt="karakter" class="py-2">
+
+          <p>Tentu saja ini sangat berbahaya karena menurut IPCC, gas methana merupakan gas yang 28 kali lebih efektif untuk memerangkap panas daripada karbon dioksida sehingga permasalahan sampah ini perlu ditangani segera.</p>
+        </article>
+
+        <article>
+          <h2>5. Peternakan</h2>
+
+          <p>Percaya atau tidak, kentut dan sendawa sapi ternyata berperan dalam meningkatkan gas rumah kaca global.</p>
+
+          <img src="/img/Penyebab Pemanasan Global/kentut sapi.png" alt="karakter">
+
+          <p>Sapi merupakan hewan ruminansia yang memiliki rumen dan didalamnya terdapat mikroorganisme yang memecah selulosa pada sel tumbuhan. Pada proses tersebut terjadi fermentasi dan menghasilkan gas metana yang dikeluarkan dalam bentuk feses (kotoran sapi) dan gas buangan (kentut dan sendawa).</p>
+
+          <p>Menurut Food and Agriculture Organization (FAO), peternakan menghasilkan 14,5% dari total gas rumah kaca global.  Dari emisi tersebut peternakan bertanggung jawab atas peningkatan dinitrgen oksida (\(N_{2}O\)) sebesar 29%, karbon dioksida (\(CO_{2}\)) sebesar 27%, dan peningkatan emisi metana (\(CH_{4}\)) sebesar 44%.  Gas-gas tersebut tidak hanya dihasilkan dari kotoran dan gas buangan ternak saja, tetapi dihasilkan juga pada proses pengadaan pakan ternak, pengelolaan pupuk kotoran, dan pengadaan lahan.</p>
+        </article>
+
+        <article>
+          <h2>6. Deforestasi</h2>
+
+          <p>Indonesia sering disebut sebagai paru-paru dunia. Hal ini karena luasnya hutan di Indeonsia yang menyumbang oksigen untuk keberlangsungan kehidupan di Bumi. Namun selama bertahun-tahun hutan Indonesia telah mengalami deforestasi.</p>
+          <p>Menurut Global Forest Watch, sejak tahun 2001 sampai 2022 Indonesia telah kehilangan 29,4 juta hektar tutupan pohon. Luas ini sama dengan luas 2,3x pulau Jawa.</p>
+
+          <img src="/img/Penyebab Pemanasan Global/Luas tutupan pohon hilang di Indonesia.png" alt="karakter" class="py-2">
+
+          <p>Hal ini juga diperparah dengan kebakaran hutan yang sering terjadi. Kebakaran hutan terburuk terjadi pada tahun 2015 pada lahan seluas 1,6 juta hektar yang menghasilkan gas (\(CO_{2}\)) yang sangat banyak.</p>
+
+
+        </article>
+
+        <form action="https://script.google.com/macros/s/AKfycbxFFdcHtrJjKwhtAbw06gqy0sBNtPYSL5TArkoHAUuH2n_EAPU5H4-uejCzc8A3Eqw/exec " method="POST" id="my-form" class="mt-8 bg-primary/20 rounded-xl p-4">
+          <div class="hidden">
+            <input type="text" name="Nama" id="NamaSiswa" class="border-black border-2 px-2 rounded-md" />
+            <select name="Kelas" id="Kelas" class="border-[1px] border-third px-2">
+              <option value="">Pilih Kelas</option>
+              <option value="X-1">X-1</option>
+              <option value="X-2">X-2</option>
+              <option value="X-3">X-3</option>
+              <option value="X-4">X-4</option>
+              <option value="XBIL-1">XBIL-1</option>
+              <option value="XBIL-2">XBIL-2</option>
+            </select>
+          </div>
+
+          <div class="w-full p-2 bg-third text-white rounded-tl-md rounded-br-md">
+            <p>Mari Refleksi Diri</p>
+          </div>
+
+          <div class="mt-8">
+            <p class="block">Apakah kamu memahami cara bla bla bla ....</p>
+
+            <div class="flex flex-col items-center gap-2">
+              <i class="refleksiIcon fa-regular fa-face-meh fa-beat text-yellow-500 iconRefleksiSize"></i>
+              <p class="textRefleksi">Cukup Mengerti</p>
+              <input type="range" min="1" max="5" value="3" class="refleksiInput w-44" name="Soal1" />
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <p class="block">Apakah kamu memahami cara bla bla bla ....</p>
+            <div class="flex flex-col items-center gap-2">
+              <i class="refleksiIcon fa-regular fa-face-meh fa-beat text-yellow-500 iconRefleksiSize"></i>
+              <p class="textRefleksi">Cukup Mengerti</p>
+              <input type="range" min="1" max="5" value="3" class="refleksiInput w-44" name="Soal2" />
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <p class="block">Apakah kamu memahami cara bla bla bla ....</p>
+            <div class="flex flex-col items-center gap-2">
+              <i class="refleksiIcon fa-regular fa-face-meh fa-beat text-yellow-500 iconRefleksiSize"></i>
+              <p class="textRefleksi">Cukup Mengerti</p>
+              <input type="range" min="1" max="5" value="3" class="refleksiInput w-44" name="Soal3" />
+            </div>
+          </div>
+
+          <button class="buttonElemen">Kirim</button>
+        </form>
+
+        <a href="/src/materi kelas 10/Pemanasan Global/DampakPemanasanGlobal.html " class="w-full flex justify-center mt-8 mb-20"><button class="buttonElemen hidden" id="lanjutAktivitas4">Lanjut Materi</button></a>
+
+        <div class="hidden" id="notifTidakLulus">
+          <div class="flex w-full justify-center items-center mt-8 mb-20 p-6 gap-3 rounded-md bg-primary/70 text-white">
+            <img src="/img/pian.png" alt="icon" class="w-20" />
+            <p id="textNotifTidakLulus">Sepertinya kamu belum memahami sebagain materi, sebelum lanjut silahkan pelajari lagi materi sebelumnya. Jika sudah merasa paham, isi kembali lembar refleksi di atas. Semangat...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="/src/general.js"></script>
+    <script src="/src/materi kelas 10/Pemanasan Global/PenyebabPemanasanGlobal.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+  </body>
+</html>

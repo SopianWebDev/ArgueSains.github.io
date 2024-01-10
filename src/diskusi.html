@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WEB</title>
+    
+        <!-- AOS -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+        <!-- Sweeper Js -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+    
+        <!-- font awesome -->
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
+    
+        <!-- my style -->
+        <link rel="icon" href="/img/icon.png" type="image/x-icon" />
+        <link rel="stylesheet" href="/dist/output.css" />
+    
+      </head>
+<body class="bg-[#3F2280]">
+    <header class="fixed top-0 right-0 w-screen z-[999] bga-secondary bg-third">
+      <nav class="navbar layout ">
+
+        <div class="logo flex items-center gap-[0.1rem]">
+          <div class="flex items-center gap-[0.1rem]">
+            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]">
+            <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+          </div>
+          <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
+        </div>
+
+
+        <div class="nav-list initial-style">
+          <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6">
+            <li><a href="/src/beranda.html">Beranda</a></li>
+
+            <li class="relative">
+              <a href="/src/Argumentasi/Argumentasi.html" >Materi 
+            </li>
+
+            <li class="relative active">
+              <a href="#" >Diskusi 
+            </li>
+
+            <li class="relative">
+              <a class="opacity-50 diskusiMenu" id="evaluasi">Evaluasi<i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Bank Soal <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="menuToggle lg:hidden"></div>
+      </nav>
+    </header>
+    <main class=" container  mx-auto">
+     <div class="block pt-20 ">
+      <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/20trfnnfy7lxtet8" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"><div style="display:flex;align-items:center;"><img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Dibuat dengan Padlet"></div></a></div></div>
+     </div>
+      <section class="flex justify-center flex-col items-center h-28 bg-[#3F2280]">
+        <button class="buttonElemen mx-auto sudahDiskusi">Diskusi Selesai</button>
+        <a href="Evaluasi.html"><button class="buttonElemen mx-auto lanjutEvaluasi hidden">Lanjut Evaluasi</button></a>
+      </section>
+    </main>
+
+
+    <script src="/src/general.js"></script>
+    <script src="diskusi.js"></script>
+    
+</body>
+</html>

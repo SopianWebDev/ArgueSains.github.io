@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Fisika</title>
+
+    <!-- Sweeper Js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Math Js -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <!-- my style -->
+    <link rel="icon" href="/img/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+
+  <body class="overflow-x-hidden relative">
+    <div class="hidden" id="popUp">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="popUpCnt" id="popUpCnt">
+          <p id="textPopUp"></p>
+          <i class="fa-regular fa-circle-check fa-beat text-[2.3rem] text-green-600"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden" id="popUpLoading">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="loading" id="loading"></div>
+      </div>
+    </div>
+
+      <!-- Next Button Start -->
+      <div class="w-full fixed bottom-0 right-0 left-0 bg-primary h-14 flex justify-between z-30 container mx-auto items-center p-4 text-white text-[2rem] gap-8">
+
+        <a href="#" class="nextButton" id="nextButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
+  
+        <p class="text-xs text-center">Pentingnya Kemampuan Berargumentasi</p>
+  
+        <a href="/src/Argumentasi/ArgumentasiiToulmin.html" class="nextButton" id="previousButton"><i class="fa-solid fa-circle-chevron-right ransition-all duration-150"></i></a>
+      </div>
+      
+      <!-- Next Button End -->
+
+    <header class="fixed top-0 right-0 w-screen z-[998] bg-secondary">
+      <!-- Navbar start -->
+      <nav class="navbar layout">
+
+        <div class="logo flex items-center gap-[0.1rem]">
+        <div class="flex items-center gap-[0.1rem]">
+          <img src="/img/icon.png" alt="icon" class="h-[1.5rem]">
+          <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+        </div>
+        <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
+      </div>
+
+        <div class="nav-list initial-style">
+          <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6">
+            <li><a href="/src/beranda.html">Beranda</a></li>
+
+            <li class="active relative">
+              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative diskusiMenu">
+              <a>Diskusi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Evaluasi<i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Bank Soal <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="menuToggle lg:hidden"></div>
+      </nav>
+      <!-- Navbar End -->
+
+      <!-- List Materi Start -->
+      <div class="contentList">
+        <div class="flex flex-col py-8 w-full h-[--tinggiListMateri] transition-all duration-500 bg-gradient-to-b from-secondary from-[50%] to-[#3a3c42] overflow-y-auto">
+          <ul>
+            <!-- Argumentasi Toulmin Start -->
+            <li class="listClass">
+              <div class="dropdown-button putar-icon classBtnDropdown" data-index="30" id="materiArgumentasi">
+                <div class="gap-4 flex items-center">
+                  <i class="iconClass fa-solid fa-people-arrows transition-all duration-500"></i>
+                  <p class="textClass">Argumentasi Sains</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon0"></i>
+              </div>
+
+              <ul class="dropdown dropdown30 hidden">
+                <li>
+                  <div class="dropdown-button chapterBtnDropdown" data-index="31">
+                    <div class="flex items-center gap-4">
+                      <i class="fa-solid fa-solid fa-people-group text-amber-500 w-4 text-center"></i>
+                      <a>Bagaimana berargumen dengan baik</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown31 hidden relative bg-primary/60">
+                    <ul class="subChapterContent">
+                      <li>
+                        <a href="/src/Argumentasi/Argumentasi.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pentingnya Berargumen dengan Baik</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/src/Argumentasi/ArgumentasiiToulmin.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pola Argumentasi Toulmin</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/src/Argumentasi/KuisArgumentasi.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Kuis pola argumentasi</p></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <!-- Argumentasi Toulmin Start -->
+
+            <!-- KD kelas 10 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 10 start-->
+
+              <div class="opacity-50 classBtnDropdown relative" data-index="1" id="kelas10">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary" id="lockKelas10"></i>
+
+                <div class="gap-4 flex items-center">
+                  <i class="iconClass fa-solid fa-temperature-arrow-down"></i>
+                  <p class="textClass">Kelas 10</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon1"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 10 end-->
+
+              <!-- Materi kelas 10 start-->
+              <ul class="dropdown dropdown1 hidden" id="dropdown1">
+                <!-- Hakikat Fisika -->
+                <!-- Hakikat Fisika End -->
+
+                <!-- Energi start -->
+                <!-- Energi End -->
+
+                <!-- Pemanasan Global -->
+                <li>
+                  <div class="dropdown-button chapterBtnDropdown" data-index="6">
+                    <div class="flex items-center gap-4">
+                      <i class="fa-solid fa-earth-asia text-amber-500 w-4 text-center"></i>
+                      <a>Gejala Pemanasan Global</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown6 hidden relative bg-primary/60">
+                    <ul class="subChapterContent">
+                      <li>
+                        <a href="/src/materi kelas 10/Pemanasan Global/PemanasanGlobal.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pemanasan Global</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="PenyebabPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Penyebab Pemansan Global</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="DampakPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Dampak Pemanasan Global</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="SolusiPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Upaya Penanganan Pemanasan Global</p></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <!-- Pemanasan Global End-->
+              </ul>
+              <!-- Materi kelas 10  End-->
+            </li>
+            <!-- KD kelas 10 end -->
+
+            <!-- KD kelas 11 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 11 start-->
+              <div class="relative opacity-50 classBtnDropdown" data-index="2">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
+
+                <div class="flex items-center gap-4">
+                  <i class="iconClass fa-solid fa-gears"></i>
+                  <p class="textClass">Kelas 11</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon2"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 11 end-->
+
+              <!-- Materi kelas 11 start-->
+              <!-- Materi kelas 11  End-->
+            </li>
+            <!-- KD kelas 11 end -->
+
+            <!-- KD kelas 12 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 12 start-->
+              <div class="relative opacity-50 classBtnDropdown" data-index="3">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
+
+                <div class="flex items-center gap-4">
+                  <i class="iconClass fa-solid fa-atom"></i>
+                  <p class="textClass">Kelas 12</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon3"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 12 end-->
+
+              <!-- Materi kelas 12 start-->
+              <!-- Materi kelas 12  End-->
+            </li>
+            <!-- KD kelas 12 end -->
+          </ul>
+        </div>
+
+        <!-- Tombol munculkan materi semua kelas start -->
+        <div class="h-8 w-8 bg-amber-500 rounded-r-md flex justify-center items-center" id="listIcon">
+          <i class="openIcon fa-solid fa-list text-[1rem]"></i>
+          <i class="closeIcon fa-solid fa-xmark text-[1rem] hidden"></i>
+        </div>
+        <!-- Tombol munculkan materi semua kelas end -->
+      </div>
+      <!-- List Materi End -->
+    </header>
+
+    <main class="materi layout mt-20">
+      <section id="PentingnyaBerargumentasi">
+        <article>
+          <!-- Judul -->
+          <div class="bg-forth rounded-tr-md rounded-bl-md relative h-12 mb-3">
+            <h1>
+              Pentignya Berargumentasi <br />
+              dengan Baik
+            </h1>
+            <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" /></div>
+          </div>
+
+          <img src="/img/heliosentris.png" alt="gambar karakter" class="h-40 mx-auto" />
+          <figcaption>Gambar 1.</figcaption>
+          <p>
+            Bayangkan kamu adalah seorang ilmuwan pada tahun 1600-an yang pada waktu itu masyarakatnya percaya bahwa bumi adalah pusat tata surya. Mereka percaya berdasarkan ajaran agama dan keyakinan yang mereka anut, bahwa matahari dan
+            bulan mengelilingi Bumi. Namun, setelah kamu melakukan pengamatan terhadap benda-benda langit dan bentuk bumi dengan alat yang kamu buat selama bertahun-tahun. Berdasarkan pengamatan yang kamu lakukan, kamu menemukan bahwa
+            Mataharilah yang merupakan pusat tata surya. Bagaimanakah kamu menyampaikan kepada masyarakat agar mereka percaya dengan apa yang kamu katakan?
+          </p>
+          <img src="/img/marah.png" alt="gambar karakter" class="h-40 mx-auto" />
+          <figcaption>Gambar 2.</figcaption>
+          <p>
+            Tentunya pada masalah ini kamu perlu memberikan argumen yang kuat agar dapat dipercaya oleh masyarakat. Nah sekarang kamu tahu, ternyata menjadi seoranng ilmuwan tidak hanya harus terampil dalam fisika dan matematika saja, kamu
+            juga perlu terampil dalam menyampaikan argumen yang kuat agar penemuanmu dapat dipercaya. Kemampuan berargumentasi tidak hanya berguna dalam sains saja. Ketika kamu menjadi seorang pedagang kamu harus bisa membangun argumen yang
+            kuat untuk meyakinkan pembeli. Ketika kamu mencalonkan menjadi ketua osis, kamu perlu meyakinkan bahwa kamu adalah pemimpin yang baik. Bahkan ketika kamu meminang si Doi, kamu harus bisa meyakinkan mertua dan orang tua kamu agar
+            bisa menikah dengan dia. Bener gak?
+          </p>
+
+          <div class="flex flex-col items-center">
+            <div class="bg-gray-300 w-56 h-32 mx-auto mb-8 rounded-lg p-4 relative"><span class="w-10 h-10 rotate-45 bg-gray-300 absolute -bottom-4 left-1/2 -translate-x-1/2 -z-10"></span>
+            <h5 class="text-center text-[0.65rem] leading-4">Gimana udah penasaran? Pada bab selanjutnya kita akan mempelajari rahasia membuat argumen agar argumen kamu dapat dipercaya oleh lawan bicara kamu. Yuk belajar bersama!</h5></div>
+            <img src="/img/maribelajar.png" alt="karakter" class="w-48">
+          </div>
+        </article>
+      </section>
+
+
+    </main>
+
+    <script src="/src/general.js"></script>
+    <script src="Argumentasi.js"></script>
+  </body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Fisika</title>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Sweeper Js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- my style -->
+    <link rel="icon" href="/img/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+
+  <body class="overflow-x-hidden bg-secondary">
+
+    <header class="fixed top-0 right-0 left-0 w-screen z-[99] bg-secondary">
+      <!-- Navbar start -->
+      <nav class="navbar layout" data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
+
+        <div class="logo flex items-center gap-[0.1rem]">
+        <div class="flex items-center gap-[0.1rem]">
+          <img src="/img/icon.png" alt="icon" class="h-[1.5rem]">
+          <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+        </div>
+        <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
+      </div>
+
+        <div class="nav-list initial-style">
+          <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6">
+            <li class="active"><a href="/src/beranda.html">Beranda</a></li>
+
+            <li class="relative">
+              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="relative">
+              <a class="opacity-50">Diskusi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Evaluasi<i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Bank Soal <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex gap-3 items-center">
+          <button class="px-2 py-2 border-2 rounded-lg border-amber-400 text-amber-400 text-xs hover:border-white hover:text-white transition-all duration-300" id="logout">Logout</button>
+          <div class="menuToggle lg:hidden"></div>
+        </div>
+      </nav>
+      <!-- Navbar End -->
+    </header>
+
+    <main class="bg-secondary beranda">
+      <section class="hero overflow-hidden h-screen bg-secondary relative">
+        <img src="/img/wave2.svg" alt="wave" class="w-full absolute -bottom-[1.5rem] z-20" />
+
+        <div class="layout">
+          <div class="flex justify-center items-center flex-col h-full lg:flex-row">
+            <div class="h-[55%] md:h-[65%] lg:w-[50%] order-2 flex z-10 lg:h-full w-full justify-center" data-aos="fade-left" data-aos-delay="50" data-aos-duration="1000">
+              <div class="hero-img">
+                <img src="/img/hero.png" alt="Hero-img" class="absolute bottom-0" />
+              </div>
+            </div>
+
+            <div class="h-[45%] md:h-[35%] lg:w-[50%] order-1 z-20 lg:h-full" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
+              <div class="hero-desc">
+                <h1 class="hero-title">Yuk Belajar Fisika!</h1>
+                <p class="hero-paragraf">Selamat datang <span class="greetingSiswa"></span>, Mari menjelajahi dunia fisika bersama. Ayo mulai petualangan belajarmu sekarang!</p>
+                <a class="w-fit h-fit aktivitas1Lock"
+                  ><div class="opacity-50 buttonElemen relative" id="heroButton">Mulai Belajar <i class="fa-solid fa-lock absolute right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2 text-2xl text-primary"></i></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero-fitur relative bg-third">
+        <div class="layout text-white pb-24">
+          <article>
+            <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+              <h2>Fitur Website</h2>
+              <p class="font-normal text-sm text-center leading-6 tracking-wide">
+                Hallo <span class="greetingSiswa"></span>, Selamat datang di ArguSains, website yang dirancang khusus untuk melatih kemampuan argumentasi kamu. Di sini, kamu akan mendapatkan pengalaman pembelajaran yang menyenangkan dan
+                interaktif untuk membantu kamu menguasai seni merancang argumen yang kuat. Mengapa argumentasi? Karena kemampuan untuk menyusun ide, mempertahankan pendapat, dan merangkai kata-kata dengan efektif adalah keterampilan kunci
+                yang sangat penting untuk kamu kuasai.
+              </p>
+            </div>
+
+            <div class="lg:w-[60%] grid items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+              <article class="fitur" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
+                <span class="fitur-icon"><i class="fa-solid fa-people-group"></i></span>
+                <h5>Materi Argumentasi</h5>
+                <p class="text-[0.7rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ratione?</p>
+              </article>
+
+              <article class="fitur" data-aos="fade-left" data-aos-delay="50" data-aos-duration="1000">
+                <span class="fitur-icon"><i class="fa-solid fa-atom"></i></span>
+                <h5>Materi Fisika</h5>
+                <p class="text-[0.7rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ratione?</p>
+              </article>
+
+              <article class="fitur" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
+                <span class="fitur-icon"><i class="fa-solid fa-photo-film"></i></span>
+                <h5>Multimedia yang Menarik</h5>
+                <p class="text-[0.7rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ratione?</p>
+              </article>
+
+              <article class="fitur" data-aos="fade-left" data-aos-delay="50" data-aos-duration="1000">
+                <span class="fitur-icon"><i class="fa-regular fa-comments"></i></span>
+                <h5>Diskusi Grup</h5>
+                <p class="text-[0.7rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ratione?</p>
+              </article>
+
+              <article class="fitur" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
+                <span class="fitur-icon"><i class="fa-solid fa-list-check"></i></span>
+                <h5>Template Argumentasi</h5>
+                <p class="text-[0.7rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ratione?</p>
+              </article>
+
+              <article class="fitur" data-aos="fade-left" data-aos-delay="50" data-aos-duration="1000">
+                <span class="fitur-icon"><i class="fa-solid fa-people-robbery"></i></span>
+                <h5>Real World Problem Issue</h5>
+                <p class="text-[0.7rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ratione?</p>
+              </article>
+            </div>
+          </article>
+
+          <div class="h-full flex flex-col justify-center items-center text-center mt-8" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+            <h2 class="text-center font-semibold text-transparent bg-gradient-to-r from-amber-500 to-amber-200 bg-clip-text my-4 text-[1.6rem] relative">Petunjuk Penggunaan</h2>
+            <p class="mb-4">Sebelum Kamu mengeksplore materi, tonton terlebih dahulu video penggunaan web berikut</p>
+            <div class="w-full h-44 bg-primary rounded-md">
+              <p class="mt-20">Disini Video</p>
+            </div>
+
+            <a id="tombolSudahMenonton"><button class="buttonElemen">Sudah nonton</button></a>
+
+            <a id="tombolLanjutMateri" class="hidden" href="Argumentasi/Argumentasi.html"><button class="buttonElemen">Lihat Materi</button></a>
+          </div>
+        </div>
+
+        <img src="/img/wave.svg" alt="wave" class="w-full absolute -bottom-[15px]" />
+      </section>
+
+      <!-- Kontributor Start -->
+      <section class="pb-8 text-white relative" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="1000">
+        <h2>Kontributor</h2>
+        <div class="layout mySwiper overflow-x-hidden relative">
+          <div class="swiper-wrapper">
+            <article class="kontributor swiper-slide group">
+              <div class="avatar">
+                <img src="/img/Opi 1.jpg" alt="" />
+              </div>
+              <div class="kontributor-info">
+                <h5>Opi Sopian</h5>
+                <small>Student</small>
+              </div>
+              <div class="kontributor-body">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente enim, suscipit ab quae sequi accusamus voluptate accusantium .</p>
+              </div>
+            </article>
+
+            <article class="kontributor swiper-slide group">
+              <div class="avatar">
+                <img src="/img/placeholder image.png" alt="" />
+              </div>
+              <div class="kontributor-info">
+                <h5>Rizki Zakwandi, S.Pd., M.Pd.</h5>
+                <small>Dosen</small>
+              </div>
+              <div class="kontributor-body">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente enim, suscipit ab quae sequi accusamus voluptate accusantium .</p>
+              </div>
+            </article>
+
+            <article class="kontributor swiper-slide group">
+              <div class="avatar">
+                <img src="/img/placeholder image.png" alt="" />
+              </div>
+              <div class="kontributor-info">
+                <h5>Drs. Dedi Sasmita, M.Si.</h5>
+                <small>Dosen</small>
+              </div>
+              <div class="kontributor-body">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente enim, suscipit ab quae sequi accusamus voluptate accusantium .</p>
+              </div>
+            </article>
+
+            <article class="kontributor swiper-slide group">
+              <div class="avatar">
+                <img src="/img/placeholder image.png" alt="" />
+              </div>
+              <div class="kontributor-info">
+                <h5>Annonymous</h5>
+                <small>Student</small>
+              </div>
+              <div class="kontributor-body">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente enim, suscipit ab quae sequi accusamus voluptate accusantium .</p>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+      <!-- Kontributor End -->
+    </main>
+
+    <footer class="bg-third text-[0.9rem] text-white font-normal" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+      <div class="layout grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div class="footer-1">
+          <a href="beranda.html" class="footer-logo"
+            ><h1 class="text-lg md:text-xl"><span class="text-2xl md:text-3xl tracking-wide text-amber-400 font-bold">S</span>opian</h1></a
+          >
+        </div>
+
+        <div class="footer-1">
+          <h4>ArguSains</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus adipisci culpa earum facilis, voluptatum quas, molestiae aliquid quam recusandae numquam perspiciatis, repellendus praesentium!</p>
+        </div>
+
+        <div class="footer-2">
+          <h4>Afiliasi</h4>
+          <img src="../img/Logo UPI.png" alt="Logo Upi" class="w-10 mb-4" />
+          <a href="#">Univeritas Pendidikan Indonesia</a>
+        </div>
+
+        <div class="footer-3">
+          <h4>Contact Us</h4>
+          <div class="flex flex-col gap-4">
+            <a href="#">+6282127583854</a>
+            <a href="#">opisopian@upi.edu</a>
+          </div>
+          <ul class="flex gap-6 text-[1.4rem] mt-8">
+            <li>
+              <a href="mailto:sopyan595@gmail.com?subject=Web%20Fisika&body=Assalamualaikum%20Sopian,%20Saya%20ingin%20Bertanya"><i class="fa-regular fa-envelope"></i></a>
+            </li>
+            <li>
+              <a href="https://wa.me/+6282127583854?text=Assalamualaikum%20Sopian,"><i class="fa-brands fa-whatsapp"></i></a>
+            </li>
+            <li>
+              <a href="https://instagram.com/sopiannn_opi?igshid=MzNlNGNkZWQ4Mg=="><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/opi-sopian-28132624a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center mt-8 py-[1.2rem] border-t-2 w-full">
+        <small>Copyright &copy; Opi Sopian 2023 All Reserved</small>
+      </div>
+    </footer>
+
+    <!-- Pop Up -->
+    <div class="hidden" id="popUp">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="popUpCnt w-full" id="popUpCnt">
+          <h6 id="textPopUp" class="text-sm">Apakah Kamu Yakin? Semua progres pada website akan direset</h6>
+          <i class="fa-solid fa-triangle-exclamation fa-beat text-[2.3rem] text-yellow-600"></i>
+          <div class="flex justify-between w-40">
+            <button class="buttonYesConfirmation">Ya</button>
+            <button class="buttonNoConfirmation">Tidak</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="general.js"></script>
+    <script src="beranda.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        once: true,
+      });
+  </script>
+
+
+    <!-- Swipper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+      let swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+          },
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+
+  </body>
+</html>

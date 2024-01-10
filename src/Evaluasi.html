@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEB</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- my style -->
+    <link rel="icon" href="/img/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+
+  <body class="overflow-x-hidden relative">
+
+    <div class="hidden" id="popUp">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="popUpCnt" id="popUpCnt">
+          <p id="textPopUp"></p>
+          <i class="fa-regular fa-circle-check fa-beat text-[2.3rem] text-green-600"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden" id="popUpLoading">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="loading" id="loading"></div>
+      </div>
+    </div>
+
+
+    <header class="fixed top-0 right-0 left-0 w-screen z-[999] bg-secondary">
+      <!-- Navbar start -->
+      <nav class="navbar layout">
+
+        <div class="logo flex items-center gap-[0.1rem]">
+          <div class="flex items-center gap-[0.1rem]">
+            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]">
+            <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+          </div>
+          <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
+        </div>
+
+
+        <div class="nav-list initial-style">
+          <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6">
+            <li><a href="/src/beranda.html">Beranda</a></li>
+
+            <li class="relative">
+              <a href="Argumentasi/Argumentasi.html">Materi</a>
+            </li>
+
+            <li class="relative">
+              <a href="diskusi.html">Diskusi</a>
+            </li>
+
+            <li class="active relative">
+              <a href="Evaluasi.html">Evaluasi</a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Bank Soal <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="menuToggle lg:hidden"></div>
+      </nav>
+      <!-- Navbar End -->
+    </header>
+
+    <main class="materi layout mt-20">
+      <div>
+        <section id="KuisMateriArgumentasi">
+
+          <article>
+
+            
+            <section>
+              <!--PG Section Start  -->
+              <div class="bg-forth rounded-tr-md rounded-bl-md relative mt-6 h-12 flex items-center justify-center mb-3">
+                <h1>Kuis Argumentasi</h1>
+                <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" /></div>
+              </div>
+
+              <form action="https://script.google.com/macros/s/AKfycbwUocoYVVAthCt5DZeqFWBCMci2fOq4syADJg9NEjW8uNuSr2Db5E1bN_12QpM6wgXQ/exec" method="POST" class="my-8 text-[0.75rem]" id="kuisForm">
+
+                <div class="flex-col flex gap-2 mb-8 w-[200px]">
+                  <input type="text" name="Nama" id="NamaKuis" class="hidden" autocomplete="off" />
+                  <select name="Kelas" id="KelasKuis" class="hidden">
+                    <option value="">Pilih Kelas</option>
+                    <option value="X-1">X-1</option>
+                    <option value="X-2">X-2</option>
+                    <option value="X-3">X-3</option>
+                    <option value="X-4">X-4</option>
+                    <option value="XBIL-1">XBIL-1</option>
+                    <option value="XBIL-2">XBIL-2</option>
+                  </select>
+                </div>
+
+              <div class="PG h-fit">
+                <div class="question-cnt">
+                  <p class="PGInstruction">Soal no 1</p>
+                  <div class="question">
+                    <p>Perhatikan dialog berikut!</p>
+                   <p> Pian: Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, voluptate?</p>
+                    <p>Sopi: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ratione veritatis voluptas architecto minima dolore.</p>
+                    <p>
+                    Berikut adalah yang termasuk dalam kategori qualifier adalah.</p>
+                  </div>
+      
+                  <div class="optionCnt">
+                    <div class="overflow-y-auto">
+                      <div class="options radioButtonStyle">
+                        <p class="PGInstruction">Pilihlah Opsi di Bawah Ini!</p>
+      
+                        <div class="option">
+                          <input type="radio" name="PG01" value="A" id="S1A" />
+                          <label for="S1A">
+                            <div class="optionItem">
+                              <p>A.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG01" value="B" id="S1B" />
+                          <label for="S1B">
+                            <div class="optionItem">
+                              <p>B.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG01" value="C" id="S1C" />
+                          <label for="S1C">
+                            <div class="optionItem">
+                              <p>C.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG01" value="D" id="S1D" />
+                          <label for="S1D">
+                            <div class="optionItem">
+                              <p>D.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG01" value="E" id="S1E" />
+                          <label for="S1E">
+                            <div class="optionItem">
+                              <p>E.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="feedback">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+      
+                  </div>
+                </div>
+              </div>
+      
+              <div class="PG my-8">
+                <div class="question-cnt">
+                  <p class="PGInstruction">Soal no 2</p>
+                  <div class="question">
+                    <p>Perhatikan dialog berikut!</p>
+                   <p> Pian: Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, voluptate?</p>
+                    <p>Sopi: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ratione veritatis voluptas architecto minima dolore.</p>
+                    <p>
+                    Berikut adalah yang termasuk dalam kategori qualifier adalah.</p>
+                  </div>
+      
+                  <div class="optionCnt">
+                    <div class="overflow-y-auto">
+                      <div class="options radioButtonStyle">
+                        <p class="PGInstruction">Pilihlah Opsi di Bawah Ini!</p>
+      
+                        <div class="option">
+                          <input type="radio" name="PG02" value="A" id="S2A" />
+                          <label for="S2A">
+                            <div class="optionItem">
+                              <p>A.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG02" value="B" id="S2B" />
+                          <label for="S2B">
+                            <div class="optionItem">
+                              <p>B.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG02" value="C" id="S2C" />
+                          <label for="S2C">
+                            <div class="optionItem">
+                              <p>C.</p>
+                              <p> Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG02" value="D" id="S2D" />
+                          <label for="S2D">
+                            <div class="optionItem">
+                              <p>D.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing. </p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG02" value="E" id="S2E" />
+                          <label for="S2E">
+                            <div class="optionItem">
+                              <p>E.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="feedback">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="PG my-8">
+                <div class="question-cnt">
+                  <p class="PGInstruction">Soal no 3</p>
+                  <div class="question">
+                    <p>Perhatikan dialog berikut!</p>
+                   <p> Pian: Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, voluptate?</p>
+                    <p>Sopi: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ratione veritatis voluptas architecto minima dolore.</p>
+                    <p>
+                    Berikut adalah yang termasuk dalam kategori qualifier adalah.</p>
+                  </div>
+      
+                  <div class="optionCnt">
+                    <div class="overflow-y-auto">
+                      <div class="options radioButtonStyle">
+                        <p class="PGInstruction">Pilihlah Opsi di Bawah Ini!</p>
+      
+                        <div class="option">
+                          <input type="radio" name="PG03" value="A" id="S3A" />
+                          <label for="S3A">
+                            <div class="optionItem">
+                              <p>A.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG03" value="B" id="S3B" />
+                          <label for="S3B">
+                            <div class="optionItem">
+                              <p>B.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG03" value="C" id="S3C" />
+                          <label for="S3C">
+                            <div class="optionItem">
+                              <p>C.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG03" value="D" id="S3D" />
+                          <label for="S3D">
+                            <div class="optionItem">
+                              <p>D.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG03" value="E" id="S3E" />
+                          <label for="S3E">
+                            <div class="optionItem">
+                              <p>E.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="feedback">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="PG my-8">
+                <div class="question-cnt">
+                  <p class="PGInstruction">Soal no 4</p>
+                  <div class="question">
+                    <p>Perhatikan dialog berikut!</p>
+                   <p> Pian: Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, voluptate?</p>
+                    <p>Sopi: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ratione veritatis voluptas architecto minima dolore.</p>
+                    <p>
+                    Berikut adalah yang termasuk dalam kategori qualifier adalah.</p>
+                  </div>
+      
+                  <div class="optionCnt">
+                    <div class="overflow-y-auto">
+                      <div class="options radioButtonStyle">
+                        <p class="PGInstruction">Pilihlah Opsi di Bawah Ini!</p>
+      
+                        <div class="option">
+                          <input type="radio" name="PG04" value="A" id="S4A" />
+                          <label for="S4A">
+                            <div class="optionItem">
+                              <p>A.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG04" value="B" id="S4B" />
+                          <label for="S4B">
+                            <div class="optionItem">
+                              <p>B.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG04" value="C" id="S4C" />
+                          <label for="S4C">
+                            <div class="optionItem">
+                              <p>C.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG04" value="D" id="S4D" />
+                          <label for="S4D">
+                            <div class="optionItem">
+                              <p>D.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG04" value="E" id="S4E" />
+                          <label for="S4E">
+                            <div class="optionItem">
+                              <p>E.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="feedback">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="PG my-8">
+                <div class="question-cnt">
+                  <p class="PGInstruction">Soal no 5</p>
+                  <div class="question">
+                    <p>Perhatikan dialog berikut!</p>
+                    <p> Pian: Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, voluptate?</p>
+                     <p>Sopi: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ratione veritatis voluptas architecto minima dolore.</p>
+                     <p>
+                     Berikut adalah yang termasuk dalam kategori qualifier adalah.</p>
+                  </div>
+      
+                  <div class="optionCnt">
+                    <div class="overflow-y-auto">
+                      <div class="options radioButtonStyle">
+                        <p class="PGInstruction">Pilihlah Opsi di Bawah Ini!</p>
+      
+                        <div class="option">
+                          <input type="radio" name="PG05" value="A" id="S5A" />
+                          <label for="S5A">
+                            <div class="optionItem">
+                              <p>A.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG05" value="B" id="S5B" />
+                          <label for="S5B">
+                            <div class="optionItem">
+                              <p>B.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG05" value="C" id="S5C" />
+                          <label for="S5C">
+                            <div class="optionItem">
+                              <p>C.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG05" value="D" id="S5D" />
+                          <label for="S5D">
+                            <div class="optionItem">
+                              <p>D.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG05" value="E" id="S5E" />
+                          <label for="S5E">
+                            <div class="optionItem">
+                              <p>E.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="feedback">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="PG my-8">
+                <div class="question-cnt">
+                  <p class="PGInstruction">Soal no 6</p>
+                  <div class="question">
+                    <p>Perhatikan dialog berikut!</p>
+                   <p> Pian: Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, voluptate?</p>
+                    <p>Sopi: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ratione veritatis voluptas architecto minima dolore.</p>
+                    <p>
+                    Berikut adalah yang termasuk dalam kategori qualifier adalah.</p>
+                  </div>
+      
+                  <div class="optionCnt">
+                    <div class="overflow-y-auto">
+                      <div class="options radioButtonStyle">
+                        <p class="PGInstruction">Pilihlah Opsi di Bawah Ini!</p>
+      
+                        <div class="option">
+                          <input type="radio" name="PG06" value="A" id="S6A" />
+                          <label for="S6A">
+                            <div class="optionItem">
+                              <p>A.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG06" value="B" id="S6B" />
+                          <label for="S6B">
+                            <div class="optionItem">
+                              <p>B.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG06" value="C" id="S6C" />
+                          <label for="S6C">
+                            <div class="optionItem">
+                              <p>C.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG06" value="D" id="S6D" />
+                          <label for="S6D">
+                            <div class="optionItem">
+                              <p>D.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="option">
+                          <input type="radio" name="PG06" value="E" id="S6E" />
+                          <label for="S6E">
+                            <div class="optionItem">
+                              <p>E.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </div>
+                          </label>
+                        </div>
+      
+                        <div class="feedback">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--PG Section End  -->
+            </section>
+
+           
+          
+
+              <div class="soalDiskusi">
+                <div class="imageSoalDiskusi">
+                  <img src="/img/Pemanasan Global/Grafik suhu rata-rata permukaan bumi.png" alt="gambar" class="gambar"/>
+                </div>
+                <div class="textSoalDiskusi border-2 border-gray-400">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id hic atque ducimus sapiente veritatis sed velit eligendi soluta quibusdam doloribus repudiandae, fugiat blanditiis officia dolorum mollitia rem eum ab nobis
+                    laborum quod repellat. Adipisci nesciunt cum inventore dicta aut, iure sed, debitis ipsam similique consectetur iusto perspiciatis eius eligendi ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+                    cum dolore corrupti voluptatum deleniti nostrum necessitatibus nemo. Laboriosam fugit est sit aut odio quae at quo, quibusdam modi. Enim suscipit doloribus, corrupti voluptatum id ipsa iste. Assumenda deleniti distinctio
+                    modi fugiat quasi labore esse pariatur libero error corrupti, vel, quis est illo autem quas molestiae minus repellat doloribus aut beatae unde dolor cumque numquam tenetur! Dolorem maxime repellendus ex expedita aliquam,
+                    similique ea, provident id praesentium cumque earum ut possimus?
+                  </p>
+                </div>
+              </div>
+
+              <div class="diskusi">
+                <div class="diskusiCharacter">
+                  <div class="diskusiBanner">
+                    <h3>Diskusi Bareng Bang Pian</h3>
+                  </div>
+                  <div class="character">
+                    <div class="imageCharacter">
+                      <img src="/img/pian.png" alt="char" />
+                    </div>
+
+                    <div class="bubbleChatCharacter">
+                      <div class="textBubbleChatCharacter">
+                        <p>Apakah kamu sudah membaca artikel di atas?</p>
+                      </div>
+                      <span class="bubbleChatSpan"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="textAreaDikusiCnt">
+                  <div class="textAreaDikusi">
+                    <textarea name="Claims" id="Diskusi1" rows="6" type="text" class="hidden" style="resize: none" placeholder="Masukan Jawaban Anda di Sini1">Saya setuju dengan ......</textarea>
+
+                    <textarea name="Warrants" id="Diskusi2" rows="6" type="text" class="hidden" style="resize: none" placeholder="Masukan Jawaban Anda di Sini2">Alasan saya untuk mendukung pernyataan saya adalah.....</textarea>
+
+                    <textarea name="Rebuttals" id="Diskusi3" rows="6" type="text" class="hidden" style="resize: none" placeholder="Masukan Jawaban Anda di Sini3">Gagasan Anda tidak dapat dianggap benar karena..... </textarea>
+
+                    <textarea name="Qualifiers" id="Diskusi4" rows="6" type="text" class="hidden" style="resize: none" placeholder="Masukan Jawaban Anda di Sini3">Dengan syarat........ saya akan.......</textarea>
+                  </div>
+
+                  <button class="diskusiButton PGButton bg-blue-400" type="button">Sudah</button>
+                </div>
+              </div>
+            </form>
+
+          </article>
+        </section>
+
+
+    </main>
+    <footer></footer>
+
+    <script src="general.JS"></script>
+    <script src="Evaluasi.js"></script>
+  </body>
+</html>
