@@ -22,7 +22,7 @@ window.addEventListener("load", function () {
     popUpLoading.classList.remove("hidden");
     setTimeout(() => {
       popUpLoading.classList.add("hidden");
-      window.location.href = "/src/beranda.html";
+      window.location.href = "src/beranda.html";
     }, 2000);
   }
 
