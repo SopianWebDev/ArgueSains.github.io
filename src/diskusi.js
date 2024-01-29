@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const AktivitasEvaluasiKey = "AKTIVITASEVALUASIKEY";
-  const AktivitasEvaluasi = localStorage.getItem(AktivitasEvaluasiKey);
   const sudahDiskusi = document.querySelector(".sudahDiskusi");
   const lanjutEvaluasi = document.querySelector(".lanjutEvaluasi");
-  const menuDiskusi = document.querySelector(".diskusiMenu");
-  const menuDiskusiLockIcon = document.querySelector(".diskusiMenu i");
 
   const navList = document.querySelector(".nav-list");
 
@@ -24,13 +21,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function renderEvaluasi() {
+    //evaluasi
     if (localStorage.getItem(AktivitasEvaluasiKey) === "true") {
-      sudahDiskusi.classList.add("hidden");
+      const evaluasi = document.querySelector(".evaluasiMenu");
+      const evaluasiLink = document.querySelector(".evaluasiMenu a");
+      const evaluasiIcon = document.querySelector(".evaluasiMenu i");
+      const sudahDiskusi = document.querySelector('.sudahDiskusi');
+      const lanjutEvaluasi = document.querySelector('.lanjutEvaluasi');
+
+
+      evaluasi.classList.remove("opacity-50");
+      evaluasi.classList.add("opacity-100");
+
+      evaluasiLink.setAttribute("href", "/src/evaluasi.html");
+      evaluasiIcon.classList.add("hidden");
       lanjutEvaluasi.classList.remove("hidden");
-      menuDiskusi.classList.remove("opacity-50");
-      menuDiskusi.classList.add("opacity-100");
-      menuDiskusiLockIcon.classList.add("hidden");
-      menuDiskusi.setAttribute('href', '/src/Evaluasi.html')
+      sudahDiskusi.classList.add("hidden")
     }
   }
 });
