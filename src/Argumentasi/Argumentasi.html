@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Belajar Fisika</title>
+    <title>Argumentasi</title>
 
     <!-- Sweeper Js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -27,10 +27,10 @@
 
     <!-- my style -->
     <link rel="icon" href="/img/icon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="/src/output.css" />
   </head>
 
-  <body class="overflow-x-hidden relative">
+  <body class="overflow-x-hidden relative w-full">
     <div class="hidden" id="popUp">
       <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
         <div class="popUpCnt" id="popUpCnt">
@@ -46,48 +46,35 @@
       </div>
     </div>
 
-      <!-- Next Button Start -->
-      <div class="w-full fixed bottom-0 right-0 left-0 bg-primary h-14 flex justify-between z-30 container mx-auto items-center p-4 text-white text-[2rem] gap-8">
-
-        <a href="#" class="nextButton" id="nextButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
-  
-        <p class="text-xs text-center">Pentingnya Kemampuan Berargumentasi</p>
-  
-        <a href="/src/Argumentasi/ArgumentasiiToulmin.html" class="nextButton" id="previousButton"><i class="fa-solid fa-circle-chevron-right ransition-all duration-150"></i></a>
-      </div>
-      
-      <!-- Next Button End -->
-
     <header class="fixed top-0 right-0 w-screen z-[998] bg-secondary">
       <!-- Navbar start -->
       <nav class="navbar layout">
-
         <div class="logo flex items-center gap-[0.1rem]">
-        <div class="flex items-center gap-[0.1rem]">
-          <img src="/img/icon.png" alt="icon" class="h-[1.5rem]">
-          <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+          <div class="flex items-center gap-[0.1rem]">
+            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]" />
+            <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+          </div>
+          <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
         </div>
-        <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
-      </div>
 
         <div class="nav-list initial-style">
           <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6">
             <li><a href="/src/beranda.html">Beranda</a></li>
 
             <li class="active relative">
-              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock listIcon"></i></a>
             </li>
 
             <li class="opacity-50 relative diskusiMenu">
-              <a>Diskusi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+              <a>Diskusi <i class="fa-solid fa-lock listIcon"></i></a>
+            </li>
+
+            <li class="opacity-50 relative evaluasiMenu">
+              <a>Evaluasi<i class="fa-solid fa-lock listIcon"></i></a>
             </li>
 
             <li class="opacity-50 relative">
-              <a>Evaluasi<i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
-            </li>
-
-            <li class="opacity-50 relative">
-              <a>Bank Soal <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+              <a>Bank Soal <i class="fa-solid fa-lock listIcon"></i></a>
             </li>
           </ul>
         </div>
@@ -97,7 +84,7 @@
 
       <!-- List Materi Start -->
       <div class="contentList">
-        <div class="flex flex-col py-8 w-full h-[--tinggiListMateri] transition-all duration-500 bg-gradient-to-b from-secondary from-[50%] to-[#3a3c42] overflow-y-auto">
+        <div class="contentListMateri">
           <ul>
             <!-- Argumentasi Toulmin Start -->
             <li class="listClass">
@@ -261,7 +248,7 @@
         </div>
 
         <!-- Tombol munculkan materi semua kelas start -->
-        <div class="h-8 w-8 bg-amber-500 rounded-r-md flex justify-center items-center" id="listIcon">
+        <div class="listIconToggle" id="listIcon">
           <i class="openIcon fa-solid fa-list text-[1rem]"></i>
           <i class="closeIcon fa-solid fa-xmark text-[1rem] hidden"></i>
         </div>
@@ -270,27 +257,44 @@
       <!-- List Materi End -->
     </header>
 
-    <main class="materi layout mt-20">
+    <!-- Next Button Start -->
+    <div class="nextButtonPart">
+      <a href="#" class="nextButton" id="nextButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
+
+      <p class="text-xs text-center">Pentingnya Kemampuan Berargumentasi</p>
+
+      <a href="/src/Argumentasi/ArgumentasiiToulmin.html" class="nextButton" id="previousButton"><i class="fa-solid fa-circle-chevron-right ransition-all duration-150"></i></a>
+    </div>
+
+    <!-- Next Button End -->
+
+    <main class="materi">
       <section id="PentingnyaBerargumentasi">
         <article>
           <!-- Judul -->
-          <div class="bg-forth rounded-tr-md rounded-bl-md relative h-12 mb-3">
+          <div class="bg-forth rounded-tr-md rounded-bl-md relative h-12 mb-3 lg:h-16">
             <h1>
               Pentignya Berargumentasi <br />
               dengan Baik
             </h1>
-            <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" /></div>
+            <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" loading="lazy" /></div>
           </div>
 
-          <img src="/img/heliosentris.png" alt="gambar karakter" class="h-40 mx-auto" />
-          <figcaption>Gambar 1.</figcaption>
+          <div class="mx-auto lg:mx-4 lg:float-left">
+            <img src="/img/heliosentris.png" alt="gambar karakter" class="h-40 lg:h-28 mx-auto" loading="lazy" />
+            <figcaption>Gambar 1.</figcaption>
+          </div>
           <p>
             Bayangkan kamu adalah seorang ilmuwan pada tahun 1600-an yang pada waktu itu masyarakatnya percaya bahwa bumi adalah pusat tata surya. Mereka percaya berdasarkan ajaran agama dan keyakinan yang mereka anut, bahwa matahari dan
             bulan mengelilingi Bumi. Namun, setelah kamu melakukan pengamatan terhadap benda-benda langit dan bentuk bumi dengan alat yang kamu buat selama bertahun-tahun. Berdasarkan pengamatan yang kamu lakukan, kamu menemukan bahwa
             Mataharilah yang merupakan pusat tata surya. Bagaimanakah kamu menyampaikan kepada masyarakat agar mereka percaya dengan apa yang kamu katakan?
           </p>
-          <img src="/img/marah.png" alt="gambar karakter" class="h-40 mx-auto" />
-          <figcaption>Gambar 2.</figcaption>
+        </article>
+        <article>
+          <div class="mx-auto lg:m-4 lg:float-right">
+            <img src="/img/marah.png" alt="gambar karakter" class="h-40 lg:h-32 mx-auto" loading="lazy" />
+            <figcaption>Gambar 2.</figcaption>
+          </div>
           <p>
             Tentunya pada masalah ini kamu perlu memberikan argumen yang kuat agar dapat dipercaya oleh masyarakat. Nah sekarang kamu tahu, ternyata menjadi seoranng ilmuwan tidak hanya harus terampil dalam fisika dan matematika saja, kamu
             juga perlu terampil dalam menyampaikan argumen yang kuat agar penemuanmu dapat dipercaya. Kemampuan berargumentasi tidak hanya berguna dalam sains saja. Ketika kamu menjadi seorang pedagang kamu harus bisa membangun argumen yang
@@ -298,15 +302,15 @@
             bisa menikah dengan dia. Bener gak?
           </p>
 
-          <div class="flex flex-col items-center">
-            <div class="bg-gray-300 w-56 h-32 mx-auto mb-8 rounded-lg p-4 relative"><span class="w-10 h-10 rotate-45 bg-gray-300 absolute -bottom-4 left-1/2 -translate-x-1/2 -z-10"></span>
-            <h5 class="text-center text-[0.65rem] leading-4">Gimana udah penasaran? Pada bab selanjutnya kita akan mempelajari rahasia membuat argumen agar argumen kamu dapat dipercaya oleh lawan bicara kamu. Yuk belajar bersama!</h5></div>
-            <img src="/img/maribelajar.png" alt="karakter" class="w-48">
+          <div class="flex flex-col items-center w-full">
+            <div class="bg-gray-300 w-56 h-32 mx-auto mb-8 rounded-lg p-4 relative">
+              <span class="w-10 h-10 rotate-45 bg-gray-300 absolute -bottom-4 left-1/2 -translate-x-1/2 -z-10"></span>
+              <h5 class="text-center text-[0.65rem] leading-4">Gimana udah penasaran? Pada bab selanjutnya kita akan mempelajari rahasia membuat argumen agar argumen kamu dapat dipercaya oleh lawan bicara kamu. Yuk belajar bersama!</h5>
+            </div>
+            <img src="/img/maribelajar.png" alt="karakter" class="w-48" loading="lazy" />
           </div>
         </article>
       </section>
-
-
     </main>
 
     <script src="/src/general.js"></script>
