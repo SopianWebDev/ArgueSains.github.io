@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const aktivitas5Key = "AKTIVITAS5KEY";
   const localAktivitas5 = localStorage.getItem(aktivitas5Key);
 
+  const AktivitasDiskusiKey = "AKTIVITASDISKUSIKEY";
+  const AktivitasDiskusi = localStorage.getItem(AktivitasDiskusiKey);
+  const AktivitasEvaluasiKey = "AKTIVITASEVALUASIKEY";
+  const AktivitasEvaluasi = localStorage.getItem(AktivitasEvaluasiKey);
+
   const notifTidakLulus = document.getElementById("notifTidakLulus");
 
   // Kirim Refleksi dan Tampilkan Pop-up
@@ -20,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const popUp = document.getElementById("popUp");
 
   const navList = document.querySelector(".nav-list");
+  const lebarPerangkat = window.screen.width;
 
   window.addEventListener("load", function () {
     navList.classList.remove("initial-style");
@@ -43,19 +49,28 @@ document.addEventListener("DOMContentLoaded", function () {
     if (localAktivitas5 === null) {
       localStorage.setItem(aktivitas5Key, false);
     }
+    if (AktivitasDiskusi === null) {
+      localStorage.setItem(AktivitasDiskusiKey, false);
+    }
+    if (AktivitasEvaluasi === null) {
+      localStorage.setItem(AktivitasEvaluasiKey, false);
+    }
 
     // List Materi
-    // Memunculkan materi ketika list-icon di klik
-    const listIcon = document.querySelector("#listIcon");
+    const contentList = document.querySelector(".contentList");
     const openIcon = document.querySelector("#listIcon .openIcon");
     const closeIcon = document.querySelector("#listIcon .closeIcon");
-    const contentList = document.querySelector(".contentList");
+    const listIcon = document.getElementById("listIcon");
 
-    listIcon.addEventListener("click", function () {
-      openIcon.classList.toggle("hidden");
-      closeIcon.classList.toggle("hidden");
-      contentList.classList.toggle("active");
-    });
+    if (lebarPerangkat >= 1024) {
+      contentList.classList.add("active");
+    } else {
+      listIcon.addEventListener("click", function () {
+        openIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+        contentList.classList.toggle("active");
+      });
+    }
 
     // Mendengarkan klik pada semua tombol dropdown
     const buttons = document.querySelectorAll(".dropdown-button");
@@ -165,6 +180,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
       diskusiLink.setAttribute("href", "/src/diskusi.html");
       diskusiIcon.classList.add("hidden");
+    }
+
+    //  Diskusi
+    if (localStorage.getItem(AktivitasDiskusiKey) === "true") {
+      const diskusi = document.querySelector(".diskusiMenu");
+      const diskusiLink = document.querySelector(".diskusiMenu a");
+      const diskusiIcon = document.querySelector(".diskusiMenu i");
+
+      diskusi.classList.remove("opacity-50");
+      diskusi.classList.add("opacity-100");
+
+      diskusiLink.setAttribute("href", "/src/diskusi.html");
+      diskusiIcon.classList.add("hidden");
+    }
+
+    //evaluasi
+    if (localStorage.getItem(AktivitasEvaluasiKey) === "true") {
+      const evaluasi = document.querySelector(".evaluasiMenu");
+      const evaluasiLink = document.querySelector(".evaluasiMenu a");
+      const evaluasiIcon = document.querySelector(".evaluasiMenu i");
+
+      evaluasi.classList.remove("opacity-50");
+      evaluasi.classList.add("opacity-100");
+
+      evaluasiLink.setAttribute("href", "/src/evaluasi.html");
+      evaluasiIcon.classList.add("hidden");
     }
   }
 
@@ -344,28 +385,31 @@ document.addEventListener("DOMContentLoaded", function () {
   // zoom gambar
   const gambar = document.querySelectorAll(".gambar");
   // event zoom
-  gambar.forEach((element) => {
-    element.addEventListener("click", function () {
-      const currentPicturePath = element.getAttribute("src");
-      const newElementContainer = document.createElement("div");
-      const zoomImage = document.createElement("img");
-      zoomImage.setAttribute("src", currentPicturePath);
-      newElementContainer.appendChild(zoomImage);
-      document.body.appendChild(newElementContainer);
+  if (lebarPerangkat < 1024) {
+    console.log(lebarPerangkat);
+    gambar.forEach((element) => {
+      element.addEventListener("click", function () {
+        const currentPicturePath = element.getAttribute("src");
+        const newElementContainer = document.createElement("div");
+        const zoomImage = document.createElement("img");
+        zoomImage.setAttribute("src", currentPicturePath);
+        newElementContainer.appendChild(zoomImage);
+        document.body.appendChild(newElementContainer);
 
-      newElementContainer.classList.add("zoomImageCnt");
-      zoomImage.classList.add("zoomImage");
+        newElementContainer.classList.add("zoomImageCnt");
+        zoomImage.classList.add("zoomImage");
 
-      newElementContainer.addEventListener("click", function () {
-        zoomImage.remove();
-        newElementContainer.remove();
+        newElementContainer.addEventListener("click", function () {
+          zoomImage.remove();
+          newElementContainer.remove();
+        });
+
+        newElementContainer.classList.add("scale-0");
+        setTimeout(() => {
+          newElementContainer.classList.remove("scale-0");
+          newElementContainer.classList.add("scale-100");
+        }, 1);
       });
-
-      newElementContainer.classList.add("scale-0");
-      setTimeout(() => {
-        newElementContainer.classList.remove("scale-0");
-        newElementContainer.classList.add("scale-100");
-      }, 1);
     });
-  });
+  }
 });
