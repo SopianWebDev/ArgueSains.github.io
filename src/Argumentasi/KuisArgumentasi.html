@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Belajar Fisika</title>
+    <title>Kuis Argumentasi</title>
 
     <!-- Sweeper Js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -27,7 +27,7 @@
 
     <!-- my style -->
     <link rel="icon" href="/img/icon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="/src/output.css" />
   </head>
 
   <body class="overflow-x-hidden relative">
@@ -47,7 +47,7 @@
     </div>
 
     <!-- Next Button Start-->
-    <aside class="w-full fixed bottom-0 right-0 left-0 bg-primary h-14 flex justify-between z-30 container mx-auto items-center p-4 text-white text-[2rem] gap-8">
+    <aside class="nextButtonPart">
       <a href="/src/Argumentasi/ArgumentasiiToulmin.html" class="nextButton" id="previousButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
       <p class="text-xs text-center">Kuis Argumentasi</p>
 
@@ -74,19 +74,19 @@
             <li><a href="/src/beranda.html">Beranda</a></li>
 
             <li class="active relative">
-              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock listIcon"></i></a>
             </li>
 
             <li class="opacity-50 relative diskusiMenu">
-              <a>Diskusi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+              <a>Diskusi <i class="fa-solid fa-lock listIcon"></i></a>
+            </li>
+
+            <li class="opacity-50 relative evaluasiMenu">
+              <a>Evaluasi<i class="fa-solid fa-lock listIcon"></i></a>
             </li>
 
             <li class="opacity-50 relative">
-              <a>Evaluasi<i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
-            </li>
-
-            <li class="opacity-50 relative">
-              <a>Bank Soal <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+              <a>Bank Soal <i class="fa-solid fa-lock listIcon"></i></a>
             </li>
           </ul>
         </div>
@@ -96,7 +96,7 @@
 
       <!-- List Materi Start -->
       <div class="contentList">
-        <div class="flex flex-col py-8 w-full h-[--tinggiListMateri] transition-all duration-500 bg-gradient-to-b from-secondary from-[50%] to-[#3a3c42] overflow-y-auto">
+        <div class="contentListMateri">
           <ul>
            <!-- Argumentasi Toulmin Start -->
            <li class="listClass">
@@ -260,7 +260,7 @@
         </div>
 
         <!-- Tombol munculkan materi semua kelas start -->
-        <div class="h-8 w-8 bg-amber-500 rounded-r-md flex justify-center items-center" id="listIcon">
+        <div class="listIconToggle" id="listIcon">
           <i class="openIcon fa-solid fa-list text-[1rem]"></i>
           <i class="closeIcon fa-solid fa-xmark text-[1rem] hidden"></i>
         </div>
@@ -751,14 +751,12 @@
               <!--PG Section End  -->
             </section>
 
-           
-          
-
-              <div class="soalDiskusi">
+            <div class="lg:flex lg:flex-row-reverse lg:items-center lg:gap-6">
+              <div class="soalDiskusi ">
                 <div class="imageSoalDiskusi">
                   <img src="/img/Pemanasan Global/Grafik suhu rata-rata permukaan bumi.png" alt="gambar" class="gambar"/>
                 </div>
-                <div class="textSoalDiskusi border-2 border-gray-400">
+                <div class="textSoalDiskusi">
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Id hic atque ducimus sapiente veritatis sed velit eligendi soluta quibusdam doloribus repudiandae, fugiat blanditiis officia dolorum mollitia rem eum ab nobis
                     laborum quod repellat. Adipisci nesciunt cum inventore dicta aut, iure sed, debitis ipsam similique consectetur iusto perspiciatis eius eligendi ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
@@ -790,7 +788,7 @@
 
                 <div class="textAreaDikusiCnt">
                   <div class="textAreaDikusi">
-                    <textarea name="Claims" id="Diskusi1" rows="6" type="text" class="hidden" style="resize: none" placeholder="Masukan Jawaban Anda di Sini1">Saya setuju dengan ......</textarea>
+                    <textarea name="Claims" id="Diskusi1" rows="8" type="text" class="hidden" style="resize: none" placeholder="Masukan Jawaban Anda di Sini1">Saya setuju dengan ......</textarea>
 
                     <textarea name="Warrants" id="Diskusi2" rows="6" type="text" class="hidden" style="resize: none" placeholder="Masukan Jawaban Anda di Sini2">Alasan saya untuk mendukung pernyataan saya adalah.....</textarea>
 
@@ -799,15 +797,17 @@
                     <textarea name="Qualifiers" id="Diskusi4" rows="6" type="text" class="hidden" style="resize: none" placeholder="Masukan Jawaban Anda di Sini3">Dengan syarat........ saya akan.......</textarea>
                   </div>
 
-                  <button class="diskusiButton PGButton bg-blue-400" type="button">Sudah</button>
+                  <button class="diskusiButton" type="button">Sudah</button>
                 </div>
               </div>
+            </div>
+              
             </form>
 
           </article>
         </section>
 
-        <form action="https://script.google.com/macros/s/AKfycbynYKDyezbZRyCeaxDucIiuENMocxB6DwseDvEenQzlQqXXh6jEHVQemp8wh_eM1nDUdA/exec" method="POST" id="my-form" class="mt-8 bg-primary/20 rounded-xl p-4">
+        <form action="https://script.google.com/macros/s/AKfycbynYKDyezbZRyCeaxDucIiuENMocxB6DwseDvEenQzlQqXXh6jEHVQemp8wh_eM1nDUdA/exec" method="POST" id="my-form" class="mt-8 bg-slate-200 rounded-xl p-4 md:w-[80%] lg:w-[70%] mx-auto">
           <div class="hidden">
             <input type="text" name="Nama" id="NamaSiswa" class="border-black border-2 px-2 rounded-md" />
 
@@ -854,10 +854,10 @@
             </div>
           </div>
 
-          <button class="buttonElemen">Kirim</button>
+          <button class="diskusiButton">Kirim</button>
         </form>
 
-        <a href="/src/materi kelas 10/Pemanasan Global/PemanasanGlobal.html" class="w-full flex justify-center mt-8 mb-20"><button class="buttonElemen hidden" id="lanjutAktivitas2">Lanjut Materi</button></a>
+        <a href="/src/materi kelas 10/Pemanasan Global/PemanasanGlobal.html" class="w-full flex justify-center mt-8 mb-20"><button class="diskusiButton hidden" id="lanjutAktivitas2">Lanjut Materi</button></a>
 
         <div class="hidden" id="notifTidakLulus">
           <div class="flex w-full justify-center items-center mt-8 mb-20 p-6 gap-3 rounded-md bg-primary/70 text-white">
