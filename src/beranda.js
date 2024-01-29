@@ -4,6 +4,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const localAktivitas1 = localStorage.getItem(aktivitas1Key);
   const aktivitas2Key = "AKTIVITAS2KEY";
   const localAktivitas2 = localStorage.getItem(aktivitas2Key);
+  const aktivitas3Key = "AKTIVITAS3KEY";
+  const localAktivitas3 = localStorage.getItem(aktivitas3Key);
+  const aktivitas4Key = "AKTIVITAS4KEY";
+  const localAktivitas4 = localStorage.getItem(aktivitas4Key);
+  const aktivitas5Key = "AKTIVITAS5KEY";
+  const localAktivitas5 = localStorage.getItem(aktivitas5Key);
+  const AktivitasDiskusiKey = "AKTIVITASDISKUSIKEY";
+  const AktivitasDiskusi = localStorage.getItem(AktivitasDiskusiKey);
+  const AktivitasEvaluasiKey = "AKTIVITASEVALUASIKEY";
+  const AktivitasEvaluasi = localStorage.getItem(AktivitasEvaluasiKey);
+
   const heroButton = document.getElementById("heroButton");
   const menuList1 = document.querySelector(".nav-list .aktivitas1Lock");
   const tombolLanjutMateri = document.getElementById("tombolLanjutMateri");
@@ -25,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     yesConfirmation.addEventListener("click", function () {
       popUp.classList.add("hidden");
       localStorage.clear();
-      window.location.href = "../index.html";
+      window.location.href = "/index.html";
     });
 
     noConfirmation.addEventListener("click", function () {
@@ -47,6 +58,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (localAktivitas2 === null) {
       localStorage.setItem(aktivitas2Key, false);
+    }
+
+    if (localAktivitas3 === null) {
+      localStorage.setItem(aktivitas3Key, false);
+    }
+    if (localAktivitas4 === null) {
+      localStorage.setItem(aktivitas4Key, false);
+    }
+    if (localAktivitas5 === null) {
+      localStorage.setItem(aktivitas5Key, false);
+    }
+    if (AktivitasDiskusi === null) {
+      localStorage.setItem(AktivitasDiskusiKey, false);
+    }
+    if (AktivitasEvaluasi === null) {
+      localStorage.setItem(AktivitasEvaluasiKey, false);
     }
 
     tombolSudahMenonton.addEventListener("click", function () {
@@ -77,6 +104,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
       tombolSudahMenonton.classList.add("hidden");
       tombolLanjutMateri.classList.remove("hidden");
+    }
+
+    //  Diskusi
+    if (localStorage.getItem(AktivitasDiskusiKey) === "true") {
+      const diskusi = document.querySelector(".diskusiMenu");
+      const diskusiLink = document.querySelector(".diskusiMenu a");
+      const diskusiIcon = document.querySelector(".diskusiMenu i");
+
+      diskusi.classList.remove("opacity-50");
+      diskusi.classList.add("opacity-100");
+
+      diskusiLink.setAttribute("href", "/src/diskusi.html");
+      diskusiIcon.classList.add("hidden");
+    }
+
+    //evaluasi
+    if (localStorage.getItem(AktivitasEvaluasiKey) === "true") {
+      const evaluasi = document.querySelector(".evaluasiMenu");
+      const evaluasiLink = document.querySelector(".evaluasiMenu a");
+      const evaluasiIcon = document.querySelector(".evaluasiMenu i");
+
+      evaluasi.classList.remove("opacity-50");
+      evaluasi.classList.add("opacity-100");
+
+      evaluasiLink.setAttribute("href", "/src/evaluasi.html");
+      evaluasiIcon.classList.add("hidden");
     }
   }
 });
