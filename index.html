@@ -23,10 +23,10 @@
 
     <!-- my style -->
     <link rel="icon" href="/img/icon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="dist/output.css" />
+    <link rel="stylesheet" href="/src/output.css" />
   </head>
 
-  <body class="bg-gradient-to-br from-third to-primary">
+  <body class="bg-gradient-to-br  from-third to-primary">
     <div class="hidden" id="popUp">
       <div class="fixed top-0 bottom-0 w-screen z-[99] bg-black/70 flex justify-center items-center">
         <div class="popUpCnt" id="popUpCnt">
@@ -52,9 +52,9 @@
       </div>
     </nav>
 
-    <div class="h-[100vh] layout">
-      <div class="flex flex-col gap-4 justify-center items-center">
-        <div class="h-[380px] w-full bg-gradient-to-br from-white/60 rounded-lg shadow-lg p-3 mt-3" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
+    <div class="h-[100vh] layout relative">
+      <div class="flex flex-col gap-4 justify-center items-center lg:h-[90vh] md:h-[100vh]">
+        <div class="h-[24rem] w-full bg-gradient-to-br from-white/60 rounded-lg shadow-lg p-3 mt-3 md:w-[80%] md:h-[32rem] " data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
 
           <!-- Form untuk melihat siapa yang login -->
           <form action="https://script.google.com/macros/s/AKfycbypnQBpRKLUi0pQk1rwmH1vnlqikwZqAuhmxOWarSdOF5JG7VbJi5R9gAGnfRKJ8N2n/exec" method="POST" autocomplete="on" class="flex flex-col justify-evenly gap-4 h-full" id="my-form">
@@ -65,13 +65,14 @@
                 type="text"
                 name="Nama"
                 placeholder="Masukan nama"
-                class="px-3 py-2 border shadow rounded-lg w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500"
+                autocomplete="off"
+                class="px-3 py-2 border shadow rounded-lg w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 lg:py-3"
               />
             </label>
 
             <label for="Kelas">
               <span class="block font-semibold mb-3 text-slate-700 after:content-['*'] after:text-pink-500">Kelas</span>
-              <select name="Kelas" id="Kelas" class="border-[1px] border-third p-2 w-full rounded-lg border-transparent text-sm">
+              <select name="Kelas" id="Kelas" class="border-[1px] border-third p-2 w-full rounded-lg border-transparent text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 lg:py-3">
                 <option value="">Pilih Kelas</option>
                 <option value="X-1">X-1</option>
                 <option value="X-2">X-2</option>
@@ -87,8 +88,9 @@
               <input
                 id="token"
                 type="text"
-                placeholder="Tokennya: 1234"
-                class="px-3 py-2 border shadow rounded-lg w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500"
+                placeholder="Isi Token"
+                autocomplete="off"
+                class="px-3 py-2 border shadow rounded-lg w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 lg:py-3"
               />
             </label>
             <button type="submit" class="py-2 bg-third rounded-lg border-[1px] border-transparent text-white hover:text-third hover:border-third hover:bg-transparent transition-all duration-300" id="loginButton">Login</button>
@@ -96,12 +98,13 @@
 
 
         </div>
-        <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
-          <img src="/img/login.png" alt="login" class="opacity-50" />
+        <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" class="flex items-center justify-center lg:absolute lg:-z-10">
+          <img src="/img/login.png" alt="login" class="opacity-50 md:w-[60%] md:pt-12 lg:opacity-10" />
         </div>
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="index.js"></script>
     <!-- AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
