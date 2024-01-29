@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WEB</title>
+    <title>Evaluasi</title>
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,7 +21,7 @@
 
     <!-- my style -->
     <link rel="icon" href="/img/icon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="output.css" />
   </head>
 
   <body class="overflow-x-hidden relative">
@@ -60,19 +60,19 @@
             <li><a href="/src/beranda.html">Beranda</a></li>
 
             <li class="relative">
-              <a href="Argumentasi/Argumentasi.html">Materi</a>
+              <a  href="/src/argumentasi/argumentasi.html">Materi </a>
             </li>
 
-            <li class="relative">
-              <a href="diskusi.html">Diskusi</a>
+            <li class="relative diskusiMenu">
+              <a href="/src/diskusi.html">Diskusi</a>
             </li>
 
-            <li class="active relative">
-              <a href="Evaluasi.html">Evaluasi</a>
+            <li class="relative evaluasiMenu active">
+              <a href="/src/evaluasi.html">Evaluasi</a>
             </li>
 
             <li class="opacity-50 relative">
-              <a>Bank Soal <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+              <a>Bank Soal <i class="fa-solid fa-lock listIcon"></i></a>
             </li>
           </ul>
         </div>
@@ -81,7 +81,7 @@
       <!-- Navbar End -->
     </header>
 
-    <main class="materi layout mt-20">
+    <main class="materi evaluasi">
       <div>
         <section id="KuisMateriArgumentasi">
 
@@ -562,9 +562,7 @@
               </div>
               <!--PG Section End  -->
             </section>
-
-           
-          
+        
 
               <div class="soalDiskusi">
                 <div class="imageSoalDiskusi">
@@ -602,7 +600,7 @@
 
                 <div class="textAreaDikusiCnt">
                   <div class="textAreaDikusi">
-                    <textarea name="Claims" id="Diskusi1" rows="6" type="text" class="hidden" style="resize: none" placeholder="Masukan Jawaban Anda di Sini1">Saya setuju dengan ......</textarea>
+                    <textarea name="Claims" id="Diskusi1" rows="8" type="text" class="hidden" style="resize: none" placeholder="Masukan Jawaban Anda di Sini1">Saya setuju dengan ......</textarea>
 
                     <textarea name="Warrants" id="Diskusi2" rows="6" type="text" class="hidden" style="resize: none" placeholder="Masukan Jawaban Anda di Sini2">Alasan saya untuk mendukung pernyataan saya adalah.....</textarea>
 
@@ -611,7 +609,7 @@
                     <textarea name="Qualifiers" id="Diskusi4" rows="6" type="text" class="hidden" style="resize: none" placeholder="Masukan Jawaban Anda di Sini3">Dengan syarat........ saya akan.......</textarea>
                   </div>
 
-                  <button class="diskusiButton PGButton bg-blue-400" type="button">Sudah</button>
+                  <button class="diskusiButton" type="button">Sudah</button>
                 </div>
               </div>
             </form>
