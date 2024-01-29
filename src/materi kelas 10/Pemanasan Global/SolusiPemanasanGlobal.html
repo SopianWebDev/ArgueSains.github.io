@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WEB</title>
+    <title>Solusi Pemanasan Global</title>
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,12 +19,15 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- Math Js -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- my style -->
     <link rel="icon" href="/img/icon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="/src/output.css" />
   </head>
 
   <body class="overflow-x-hidden">
@@ -43,9 +46,9 @@
       </div>
     </div>
 
-     <!-- Next Button Start-->
-     <aside class="w-full fixed bottom-0 right-0 left-0 bg-primary h-14 flex justify-between z-30 container mx-auto items-center p-4 text-white text-[2rem] gap-8">
-      <a href="/src/materi kelas 10/Pemanasan Global/DampakPemanasanGlobal.html" class="nextButton " id="previousButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
+    <!-- Next Button Start-->
+    <aside class="nextButtonPart">
+      <a href="/src/materi kelas 10/Pemanasan Global/DampakPemanasanGlobal.html" class="nextButton" id="previousButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
       <p class="text-xs text-center">Upaya Penanganan Pemanasan Global</p>
 
       <a class="nextButton" id="nextButton"><i class="fa-solid fa-lock ransition-all duration-150 opacity-50"></i></a>
@@ -55,34 +58,32 @@
     <header class="fixed top-0 right-0 w-screen z-[998] bg-secondary">
       <!-- Navbar start -->
       <nav class="navbar layout">
-
         <div class="logo flex items-center gap-[0.1rem]">
           <div class="flex items-center gap-[0.1rem]">
-            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]">
+            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]" />
             <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
           </div>
           <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
         </div>
-
 
         <div class="nav-list initial-style">
           <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6">
             <li><a href="/src/beranda.html">Beranda</a></li>
 
             <li class="relative active">
-              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock listIcon"></i></a>
             </li>
 
             <li class="opacity-50 relative diskusiMenu">
-              <a>Diskusi <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+              <a>Diskusi <i class="fa-solid fa-lock listIcon"></i></a>
+            </li>
+
+            <li class="opacity-50 relative evaluasiMenu">
+              <a>Evaluasi<i class="fa-solid fa-lock listIcon"></i></a>
             </li>
 
             <li class="opacity-50 relative">
-              <a>Evaluasi<i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
-            </li>
-
-            <li class="opacity-50 relative">
-              <a>Bank Soal <i class="fa-solid fa-lock absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-primary"></i></a>
+              <a>Bank Soal <i class="fa-solid fa-lock listIcon"></i></a>
             </li>
           </ul>
         </div>
@@ -91,7 +92,7 @@
       <!-- Navbar End -->
       <!-- List Materi Start -->
       <div class="contentList">
-        <div class="flex flex-col py-8 w-full h-[--tinggiListMateri] transition-all duration-500 bg-gradient-to-b from-secondary from-[50%] to-[#3a3c42] overflow-y-auto">
+        <div class="contentListMateri">
           <ul>
             <!-- Argumentasi Toulmin Start -->
             <li class="listClass">
@@ -158,10 +159,10 @@
 
               <!-- Materi kelas 10 start-->
               <ul class="dropdown dropdown1 hidden" id="dropdown1">
-                <!-- Hakikat Fisika -->          
+                <!-- Hakikat Fisika -->
                 <!-- Hakikat Fisika End -->
 
-                <!-- Energi start -->             
+                <!-- Energi start -->
                 <!-- Energi End -->
 
                 <!-- Pemanasan Global -->
@@ -205,7 +206,6 @@
                           <div><p>Upaya Penanganan Pemanasan Global</p></div>
                         </a>
                       </li>
-
                     </ul>
                   </div>
                 </li>
@@ -229,7 +229,7 @@
               </div>
               <!-- Tombol munculkan list materi kelas 11 end-->
 
-              <!-- Materi kelas 11 start-->         
+              <!-- Materi kelas 11 start-->
               <!-- Materi kelas 11  End-->
             </li>
             <!-- KD kelas 11 end -->
@@ -256,7 +256,7 @@
         </div>
 
         <!-- Tombol munculkan materi semua kelas start -->
-        <div class="h-8 w-8 bg-amber-500 rounded-r-md flex justify-center items-center" id="listIcon">
+        <div class="listIconToggle" id="listIcon">
           <i class="openIcon fa-solid fa-list text-[1rem]"></i>
           <i class="closeIcon fa-solid fa-xmark text-[1rem] hidden"></i>
         </div>
@@ -269,46 +269,116 @@
       <!-- Materi Pemanasan Global -->
       <section id="PemanasanGlobal" class="my-8">
         <article>
+          <!-- Judul -->
+          <div class="bg-forth rounded-tr-md rounded-bl-md relative mt-6 h-12 flex items-center justify-center mb-3">
+            <h1>Upaya Penanganan Pemanasan Global</h1>
+            <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" /></div>
+          </div>
 
-           <!-- Judul -->
-         <div class="bg-forth rounded-tr-md rounded-bl-md relative mt-6 h-12 flex items-center justify-center mb-3">
-          <h1>Upaya Penanganan Pemanasan Global</h1>
-          <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" /></div>
-        </div>
-
-          <p>Menurut para ahli, pemanasan global dan perubahan iklim tidak dapat dihentikan, namun dapat diperlambat. Karbon dioksida dan gas-gas lain yang memerangkap panas adalah penyebab utama pemanasan global. Untuk menghindari dampak terburuk perubahan iklim, kita harus mencapai net zero emission pada tahun 2050 atau lebih cepat lagi. Net Zero Emission merupakan situasi di mana jumlah jejak karbon yang bersumber dari aktivitas manusia tidak melebihi jumlah emisi yang dapat bumi serap. </p>
           <p>
-            Beberapa aktivitas yang dapat kita lakukan untuk menghambat pemanasan global sebagai berikut:
+            Menurut para ahli, pemanasan global dan perubahan iklim tidak dapat dihentikan, namun dapat diperlambat. Karbon dioksida dan gas-gas lain yang memerangkap panas adalah penyebab utama pemanasan global. Untuk menghindari dampak
+            terburuk perubahan iklim, kita harus mencapai net zero emission pada tahun 2050 atau lebih cepat lagi. Net Zero Emission merupakan situasi di mana jumlah jejak karbon yang bersumber dari aktivitas manusia tidak melebihi jumlah
+            emisi yang dapat bumi serap.
           </p>
-          <ol class="list-decimal font-semibold layout ">
-
-            <li><p>Mengurangi konsumsi daging dan mengggantinya dengan sumber makanan nabati.</p> <br>
-              <img src="/img/Solusi Pemanasan Global/karakter makan sayur.png" alt="karakter" class="w-[70%] mx-auto py-2">
+          <p>Beberapa aktivitas yang dapat kita lakukan untuk menghambat pemanasan global sebagai berikut:</p>
+          <ol class="list-decimal font-semibold layout">
+            <li>
+              <p>Mengurangi konsumsi daging dan mengggantinya dengan sumber makanan nabati.</p>
+              <br />
+              <img src="/img/Solusi Pemanasan Global/karakter makan sayur.png" alt="karakter" class="w-[70%] mx-auto py-2 md:w-[40%] lg:w-[25%]" />
             </li>
 
-            <li><p>Penanaman hutan kembali atau reboisasi, hutan memiliki fungsi vital terutama dalam mengurangi gas CO2.</p> <br>
-              <img src="/img/Solusi Pemanasan Global/menanam pohon.png" alt="karakter" class="w-[70%] mx-auto py-2">
+            <li>
+              <p>Penanaman hutan kembali atau reboisasi, hutan memiliki fungsi vital terutama dalam mengurangi gas CO2.</p>
+              <br />
+              <img src="/img/Solusi Pemanasan Global/menanam pohon.png" alt="karakter" class="w-[70%] mx-auto py-2 md:w-[40%] lg:w-[25%]" />
             </li>
 
-            <li><p>Mengurangi penggunaan kendaraan pribadi dan beralih menggunakan transportasi umum.</p> <br>
-              <img src="/img/Solusi Pemanasan Global/mobil pribadi.png" alt="karakter" class="w-[70%] mx-auto py-2">
+            <li>
+              <p>Mengurangi penggunaan kendaraan pribadi dan beralih menggunakan transportasi umum.</p>
+              <br />
+              <img src="/img/Solusi Pemanasan Global/mobil pribadi.png" alt="karakter" class="w-[70%] mx-auto py-2 md:w-[40%] lg:w-[25%]" />
             </li>
 
-            <li><p>Menghemat energi dengan cara mematikan lampu di siang hari, menggunakan lampu hemet energi, mematikan alat elektronik jika tidak digunakan dan menggunakan sumber energi alternatif.</p> <br>
+            <li>
+              <p>Menghemat energi dengan cara mematikan lampu di siang hari, menggunakan lampu hemet energi, mematikan alat elektronik jika tidak digunakan dan menggunakan sumber energi alternatif.</p>
+              <br />
             </li>
 
-            <li><p>Mengurangi penggunaan plastik</p> <br>
-              <img src="/img/Solusi Pemanasan Global/mengurangi plastik.png" alt="karakter" class="w-[70%] mx-auto py-2">
+            <li>
+              <p>Mengurangi penggunaan plastik</p>
+              <br />
+              <img src="/img/Solusi Pemanasan Global/mengurangi plastik.png" alt="karakter" class="w-[70%] mx-auto py-2 md:w-[40%] lg:w-[25%]" />
             </li>
 
-            <li><p>Melakukan pengelolaan sampah dengan benar.</p> 
-            </li>
-
-
+            <li><p>Melakukan pengelolaan sampah dengan benar.</p></li>
           </ol>
         </article>
 
-        <form action="https://script.google.com/macros/s/AKfycbz7cKawZcsRMpdxocpTRAW1pj5fGPhc-Rtb8_QRe_S1bemO0FAafxf4YOmFJp1UGfSCnw/exec" method="POST" id="my-form" class="mt-8 bg-primary/20 rounded-xl p-4">
+        <article>
+          <p>
+            Dari sekian banyak solusi, kia-kira mana yang paling efektif? Jika kamu mengisi air dalam ember yang bocor dan kamu ingin agar air dalam ember tidak tumpah. Mengurangi aliran air dalam keran mungkin merupakan solusi yang bisa
+            dilakukan, tapi pertambahan air akan tetap terjadi. Cara yang paling ampuh adalah perbesar lubang dibawah ember untuk membuang lebih banyak air. Begitupula dengan pemansan global, mengurangi emisi mungkin akan memperlambat
+            kenaikan suhu yang tejadi, namun tidak menyelesaikan masalah utama yaitu konsentrasi gas rumah kaca yang tinggi. Oleh karena itu, cara yang paling ampuh adalah menanam pohon untuk menyerap gas \(CO_{2}\).
+          </p>
+        </article>
+        <article>
+          <p>
+            Pemanasan global merupakan tanggung jawab semua manusia di Bumi, oleh karena itu setiap negara harus mampu bersinergi dalam mengatasi pemanasan global. Bebrapa pertemuan atau konferensi antarnegara disenggalarakan untuk membahas
+            isu tersebut. Dari pertemuan tersebut, terbentuk beberapa keepakatan internasional, diantaranya sebagai berikut:
+          </p>
+          <img src="/img/Solusi Pemanasan Global/kesepakatan internasional.png" alt="karakter" loading="lazy" class="w-[60%] mx-auto py-4 md:w-[40%] lg:w-[25%]" />
+        </article>
+
+        <ol class="list-decimal pl-4">
+          <li class="font-semibold">
+            <p>Intergevernmental Panel on Climate Change (IPCC)</p>
+          </li>
+          <article>
+            <p>
+              Intergevernmental Panel on Climate Change (IPCC) atau Panel Antar-Pemerintah tentang Perubahan Iklim merupakan salah satu badan internasional di bawah Perserikatan Bangsa-Bangsa (PBB) yang dibentuk pada tahun 1988. IPCC
+              terbentuk karena adanya inisiasi dari United Nations Environment Programme (UNEP) dan World Metereological Organizaton (WMO).
+            </p>
+            <p>
+              Badan ini berperan penting dalam Upaya meminimalkan dampak dari pemanasan global karena IPCC dibentuk sebagai reaksi untuk mengurangi pengguanaan gas rumah kaca. Setiap tahunnya, perwakilan dari 195 negara yang ikut serta
+              menjadi anggota IPCC berkumpul untuk mengkaji tentang perubahan iklim. Proses pengkajian dilakukan dalam durasi tertentu, yang disebut dengan istilah siklus, dimana satu siklus berkisar enam hingga tujuh tahun.
+            </p>
+            <p>
+              Hasil dari pengkajian tersebut dibuat dalam bentuk laporan yang komprehensif tentang perubahan iklim dan dipublikasikan di akhir siklus. Pengkajian tersebut meliputi dampak negatif dari perubahan iklim, resiko perubahan
+              iklim di masa depan, Hasil pengkajiaan dari IPCC menjadi referensi yang sangat penting bagi pemerintah seluruh negara dalam menyusun kebijakan mengenai perubahan iklim.
+            </p>
+          </article>
+          <li class="font-semibold">
+            <p>Protokol Kyoto</p>
+          </li>
+          <article>
+            <p>Dampak dari penggunaan bahan bakar fosil yang kurang effisien menghasilkan gas rumah kaca menimbulkan kecemasan masyarakat internasional. Oleh karena itu, masyarakat internasional berusaha mengatasinya dengan cara mengikat negara-negara industri untuk menekan emisi gas rumah kaca melalui suatu perjanjian internasional yang dikenal dengan Protokol Kyoto.</p>
+
+            <p>Protokol Kyoto merupakan suatu persetujuan internasiona yang merupakan penjabaran lebih lanjut dari Konverensi Kerangka Kerja PBB mengenasi perubahan iklim, yaitu Konferensi Tingkat Tinggi Bumi (Earth Summit). KTT Bumi yang dilaksanakan di Rio de Janeiro, Brazil diikuti 150 negara pada tahun 1992. Pada pertemuan tersebut, negara yang berpartisipasi menyetujui untuk membuat perjanjian dengan tujuan mengurangi gas-gas rumah kaca.</p>
+            <p>
+              Protokol Kyoto dilaksanakan di Jepang pada tahun 1997 yang diikuti oleh 160 negara. Namun Protokol Kyoto mulai berlaku pada 16 Februari 2005 setelah retrifikasi resmi yang dilakukan oleh Rusia pada tahun 2004. Tujuan terbentuknya Protokol Kyoto adalah untuk menjaga kesetabilan konsentrasi gas rumah kaca di atmosfer agar berada pada tingkat tertentu. Kesetabilan tersebut dapat diwujudkan dnegan mencegah aktivitas manusia yang dapat menyumbangkan gas rumah kaca dan melakukan komitmen pada negara-negara industri.
+            </p>
+          </article>
+
+          <li class="font-semibold">
+            <p>Asia-Pasific Partnership on Clean Development and Climate (APPCDC)</p>
+          </li>
+          <article>
+            <p>
+              Asia-Pasific Partnership on Clean Development and Climate (APPCDC) merupakan sebuah kerja sama internasional yang bersifat sukarela. Kerja sama ini diumumkan pada pertengahan tahun 2005 dan diluncurkan pada awal tahun 2006. Negara-negara yang terlibat dalam kerja sama ini adalah Australia, Kanada, Amerika Serikat, Jepang, Tiongkok, India, dan Korea Selatan. Dalam kerja sama ini, para Menteri luar negeri serta Menteri lingkungan dan energi dari negara-negara tersebut bersepakat untuk bekerja sama dan melakukan alih teknologi yang berikaitan dengan Upaya untuk mengurangi emisi gas rumah kaca.
+            </p>
+          </article>
+          <li class="font-semibold">
+            <p>Sustainable Development Goals (SDGs)</p>
+          </li>
+          <article>
+            <p>
+              Sustainable Development Goals (SDGs) atau Tjuan Pembangunan Berkelanjutan (TPB) merupakan kesepakatan Pembangunan baru yang mendorong perubahan ke arah pembangunan berkelanjutan berdasarkan Hak Asasi Manusia (HAM), kesetaraan untuk Pembangunan sosial, ekonomi, dan lingkungan hidup. Kesepakatan ini diprakarsai oleh negara-negara anggota perserikatan Bangsa-Bangsa (PBB). Terdapat tujuh belas tujuan pembangunan berkelanjutan. Inti dari ketujuh eblas tujuan tersebut adalah seruan mendesak untuk bertindak mengatasi kemiskinan seiring dengan strategi peningkatan kualitas kesehatan dan pendidikan, mengurangi kesenjangan, serta mendorong pertumbuhan ekonomi. Namun, tetap memperhtikan kelestarian lingkungan dan perubahan iklim.
+            </p>
+          </article>
+        </ol>
+
+        <form action="https://script.google.com/macros/s/AKfycbz7cKawZcsRMpdxocpTRAW1pj5fGPhc-Rtb8_QRe_S1bemO0FAafxf4YOmFJp1UGfSCnw/exec" method="POST" id="my-form" class="mt-8 bg-slate-200 rounded-xl p-4 md:w-[80%] mx-auto lg:w-[50%]">
           <div class="hidden">
             <input type="text" name="Nama" id="NamaSiswa" class="border-black border-2 px-2 rounded-md" />
             <select name="Kelas" id="Kelas" class="border-[1px] border-third px-2">
@@ -354,19 +424,18 @@
             </div>
           </div>
 
-          <button class="buttonElemen">Kirim</button>
+          <button class="diskusiButton">Kirim</button>
         </form>
 
-        <a href="/src/diskusi.html" class="w-full flex justify-center mt-8 mb-20"><button class="buttonElemen hidden" id="lanjutAktvitasDiskusi">Lanjut Diskusi</button></a>
+        <a href="/src/diskusi.html" class="w-full flex justify-center mt-8 mb-20"><button class="diskusiButton hidden" id="lanjutAktvitasDiskusi">Lanjut Diskusi</button></a>
 
         <div class="hidden" id="notifTidakLulus">
-          <div class="flex w-full justify-center items-center my-8 p-6 gap-3 rounded-md bg-primary/70 text-white">
+          <div class="flex w-full justify-center items-center my-8 p-6 gap-3 rounded-md bg-slate-400 text-white lg:w-[50%] mx-auto">
             <img src="/img/pian.png" alt="icon" class="w-20" />
             <p id="textNotifTidakLulus">Sepertinya kamu belum memahami sebagain materi, sebelum lanjut silahkan pelajari lagi materi sebelumnya. Jika sudah merasa paham, isi kembali lembar refleksi di atas. Semangat...</p>
           </div>
         </div>
       </section>
-
     </main>
 
     <footer></footer>
