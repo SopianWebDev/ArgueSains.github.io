@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Argumentasi</title>
-
     <!-- Sweeper Js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
@@ -62,7 +61,7 @@
             <li><a href="/src/beranda.html">Beranda</a></li>
 
             <li class="active relative">
-              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock listIcon"></i></a>
+              <a class="opacity-50 argumentasiToulminLock">Materi <i class="fa-solid fa-lock listIcon"></i></a>
             </li>
 
             <li class="opacity-50 relative diskusiMenu">
@@ -88,7 +87,8 @@
           <ul>
             <!-- Argumentasi Toulmin Start -->
             <li class="listClass">
-              <div class="dropdown-button putar-icon classBtnDropdown" data-index="30" id="materiArgumentasi">
+
+              <div class="dropdown-button  putar-icon classBtnDropdown" dropdown = "KelasArgumentasiToulmin" id="materiArgumentasi">
                 <div class="gap-4 flex items-center">
                   <i class="iconClass fa-solid fa-people-arrows transition-all duration-500"></i>
                   <p class="textClass">Argumentasi Sains</p>
@@ -96,16 +96,16 @@
                 <i class="fa-solid fa-plus transition-all duration-500" id="icon0"></i>
               </div>
 
-              <ul class="dropdown dropdown30 hidden">
+              <ul class="dropdown hidden dropdownKelasArgumentasiToulmin">
                 <li>
-                  <div class="dropdown-button chapterBtnDropdown" data-index="31">
+                  <div class="dropdown-button chapterBtnDropdown" dropdown = "BabCaraBerargumen">
                     <div class="flex items-center gap-4">
                       <i class="fa-solid fa-solid fa-people-group text-amber-500 w-4 text-center"></i>
                       <a>Bagaimana berargumen dengan baik</a>
                     </div>
                   </div>
 
-                  <div class="dropdown31 hidden relative bg-primary/60">
+                  <div class="dropdownBabCaraBerargumen hidden relative bg-primary/60">
                     <ul class="subChapterContent">
                       <li>
                         <a href="/src/Argumentasi/Argumentasi.html" class="flex gap-2 items-center">
@@ -115,7 +115,7 @@
                       </li>
 
                       <li>
-                        <a href="/src/Argumentasi/ArgumentasiiToulmin.html" class="flex gap-2 items-center">
+                        <a href="/src/Argumentasi/ArgumentasiToulmin.html" class="flex gap-2 items-center">
                           <div class="contentListCircle"></div>
                           <div><p>Pola Argumentasi Toulmin</p></div>
                         </a>
@@ -132,13 +132,13 @@
                 </li>
               </ul>
             </li>
-            <!-- Argumentasi Toulmin Start -->
+            <!-- Argumentasi Toulmin end-->
 
             <!-- KD kelas 10 -->
             <li class="listClass">
               <!-- Tombol munculkan list materi kelas 10 start-->
 
-              <div class="opacity-50 classBtnDropdown relative" data-index="1" id="kelas10">
+              <div class="opacity-50 classBtnDropdown relative" dropdown="Kelas10" id="kelas10">
                 <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary" id="lockKelas10"></i>
 
                 <div class="gap-4 flex items-center">
@@ -150,7 +150,7 @@
               <!-- Tombol munculkan list materi kelas 10 end-->
 
               <!-- Materi kelas 10 start-->
-              <ul class="dropdown dropdown1 hidden" id="dropdown1">
+              <ul class="dropdown hidden dropdownKelas10">
                 <!-- Hakikat Fisika -->
                 <!-- Hakikat Fisika End -->
 
@@ -159,14 +159,14 @@
 
                 <!-- Pemanasan Global -->
                 <li>
-                  <div class="dropdown-button chapterBtnDropdown" data-index="6">
+                  <div class="dropdown-button chapterBtnDropdown" dropdown="BabPemanasanGlobal">
                     <div class="flex items-center gap-4">
                       <i class="fa-solid fa-earth-asia text-amber-500 w-4 text-center"></i>
                       <a>Gejala Pemanasan Global</a>
                     </div>
                   </div>
 
-                  <div class="dropdown6 hidden relative bg-primary/60">
+                  <div class="dropdownBabPemanasanGlobal hidden relative bg-primary/60">
                     <ul class="subChapterContent">
                       <li>
                         <a href="/src/materi kelas 10/Pemanasan Global/PemanasanGlobal.html" class="flex gap-2 items-center">
@@ -210,7 +210,7 @@
             <!-- KD kelas 11 -->
             <li class="listClass">
               <!-- Tombol munculkan list materi kelas 11 start-->
-              <div class="relative opacity-50 classBtnDropdown" data-index="2">
+              <div class="relative opacity-50 classBtnDropdown" dropdown="Kelas11">
                 <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
 
                 <div class="flex items-center gap-4">
@@ -229,7 +229,7 @@
             <!-- KD kelas 12 -->
             <li class="listClass">
               <!-- Tombol munculkan list materi kelas 12 start-->
-              <div class="relative opacity-50 classBtnDropdown" data-index="3">
+              <div class="relative opacity-50 classBtnDropdown" dropdown = "Kelas12">
                 <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
 
                 <div class="flex items-center gap-4">
@@ -263,7 +263,7 @@
 
       <p class="text-xs text-center">Pentingnya Kemampuan Berargumentasi</p>
 
-      <a href="/src/Argumentasi/ArgumentasiiToulmin.html" class="nextButton" id="previousButton"><i class="fa-solid fa-circle-chevron-right ransition-all duration-150"></i></a>
+      <a href="/src/Argumentasi/ArgumentasiToulmin.html" class="nextButton" id="previousButton"><i class="fa-solid fa-circle-chevron-right ransition-all duration-150"></i></a>
     </div>
 
     <!-- Next Button End -->
