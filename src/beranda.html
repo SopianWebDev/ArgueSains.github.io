@@ -31,24 +31,22 @@
   </head>
 
   <body class="overflow-x-hidden bg-secondary">
-
     <header class="fixed top-0 right-0 left-0 w-screen z-[99] bg-secondary">
       <!-- Navbar start -->
       <nav class="navbar layout" data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
-
         <div class="logo flex items-center gap-[0.1rem]">
-        <div class="flex items-center gap-[0.1rem]">
-          <img src="/img/icon.png" alt="icon" class="h-[1.5rem]">
-          <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+          <div class="flex items-center gap-[0.1rem]">
+            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]" />
+            <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+          </div>
+          <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
         </div>
-        <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
-      </div>
 
         <div class="nav-list initial-style lg:ml-auto">
           <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6 lg:pr-8">
             <li class="active"><a href="/src/beranda.html">Beranda</a></li>
             <li class="relative">
-              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock listIcon"></i></a>
+              <a class="opacity-50 argumentasiToulminLock">Materi <i class="fa-solid fa-lock listIcon"></i></a>
             </li>
 
             <li class="relative opacity-50 diskusiMenu">
@@ -88,7 +86,7 @@
               <div class="hero-desc">
                 <h1 class="hero-title">Yuk Belajar Fisika!</h1>
                 <p class="hero-paragraf">Selamat datang <span class="greetingSiswa"></span>, Mari menjelajahi dunia fisika bersama. Ayo mulai petualangan belajarmu sekarang!</p>
-                <a class="w-fit h-fit aktivitas1Lock"
+                <a class="w-fit h-fit argumentasiToulminLock"
                   ><div class="opacity-50 buttonElemen relative" id="heroButton">Mulai Belajar <i class="fa-solid fa-lock absolute right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2 text-2xl text-primary"></i></div>
                 </a>
               </div>
@@ -109,7 +107,7 @@
               </p>
             </div>
 
-            <div class=" grid items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 lg:gap-x-12 lg:gap-y-14">
+            <div class="grid items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 lg:gap-x-12 lg:gap-y-14">
               <article class="fitur" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
                 <span class="fitur-icon"><i class="fa-solid fa-people-group"></i></span>
                 <h5>Materi Argumentasi</h5>
@@ -150,6 +148,9 @@
 
           <div class="h-full flex flex-col justify-center items-center text-center mt-8" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
             <h2 class="text-center font-semibold text-transparent bg-gradient-to-r from-amber-500 to-amber-200 bg-clip-text my-4 text-[1.6rem] relative">Petunjuk Penggunaan</h2>
+            <p class="w-[70%]">Jika kamu belum memiliki akun padlet, silahkaan login dengan menekan tombol di bawah ini!</p>
+            <a href="https://padlet.com/auth/login" target="_blank"><button class="buttonElemen hover:cursor-pointer mb-8">Buat Akun Padlet</button></a>
+
             <p class="mb-4 w-[70%]">Sebelum Kamu mengeksplore materi, tonton terlebih dahulu video penggunaan web berikut</p>
             <div class="w-full h-44 bg-primary rounded-md md:h-60 grid place-content-center lg:h-96 lg:mt-8">
               <p class="">Disini Video</p>
@@ -161,12 +162,12 @@
           </div>
         </div>
 
-        <img src="/img/wave.svg" alt="wave" class="w-full absolute -bottom-[1rem] lg:-bottom-[7rem] " />
+        <img src="/img/wave.svg" alt="wave" class="w-full absolute -bottom-[1rem] lg:-bottom-[7rem]" />
       </section>
 
       <!-- Kontributor Start -->
       <div class="relative overflow-x-hidden">
-        <section class="pb-8 text-white relative lg:pb-[8rem] lg:pt-[4rem]" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="1000" >
+        <section class="pb-8 text-white relative lg:pb-[8rem] lg:pt-[4rem]" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="1000">
           <h2>Kontributor</h2>
           <div class="layout mySwiper overflow-x-hidden relative">
             <div class="swiper-wrapper">
@@ -182,7 +183,7 @@
                   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente enim, suscipit ab quae sequi accusamus voluptate accusantium .</p>
                 </div>
               </article>
-  
+
               <article class="kontributor swiper-slide group">
                 <div class="avatar">
                   <img src="/img/placeholder.jpg" alt="placeholder" />
@@ -195,7 +196,7 @@
                   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente enim, suscipit ab quae sequi accusamus voluptate accusantium .</p>
                 </div>
               </article>
-  
+
               <article class="kontributor swiper-slide group">
                 <div class="avatar">
                   <img src="/img/placeholder.jpg" alt="" />
@@ -208,7 +209,7 @@
                   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente enim, suscipit ab quae sequi accusamus voluptate accusantium .</p>
                 </div>
               </article>
-  
+
               <article class="kontributor swiper-slide group">
                 <div class="avatar">
                   <img src="/img/placeholder.jpg" alt="" />
@@ -231,7 +232,6 @@
 
     <footer class="bg-third text-[0.9rem] text-white font-normal" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
       <div class="layout grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
-
         <div class="footer-1">
           <h4>ArguSains</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus adipisci culpa earum facilis, voluptatum quas, molestiae aliquid quam recusandae numquam perspiciatis, repellendus praesentium!</p>
@@ -243,7 +243,7 @@
           <a href="#">Univeritas Pendidikan Indonesia</a>
         </div>
 
-        <div class="footer-3  md:col-span-2 lg:col-span-1">
+        <div class="footer-3 md:col-span-2 lg:col-span-1">
           <h4>Contact Us</h4>
           <div class="flex flex-col gap-4">
             <a href="#">+6282127583854</a>
@@ -274,7 +274,7 @@
     <div class="hidden" id="popUp">
       <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
         <div class="popUpCnt w-full" id="popUpCnt">
-          <h6 id="textPopUp" class="text-sm">Apakah Kamu Yakin? Semua progres pada website akan direset</h6>
+          <h6 id="textPopUp" class="text-sm">Apakah Kamu Yakin? Nama dan kelas akan di reset</h6>
           <i class="fa-solid fa-triangle-exclamation fa-beat text-[2.3rem] text-yellow-600 md:text-[3rem]"></i>
           <div class="flex justify-between w-40 md:mt-[2rem]">
             <button class="buttonYesConfirmation">Ya</button>
@@ -290,12 +290,11 @@
 
     <!-- AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
+    <script>
+      AOS.init({
         once: true,
       });
-  </script>
-
+    </script>
 
     <!-- Swipper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -320,6 +319,5 @@
         },
       });
     </script>
-
   </body>
 </html>
