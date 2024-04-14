@@ -2,11 +2,13 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-  
+     scale=1.0" />
     <title>Argumentation Pattern</title>
 
     <!-- Sweeper Js -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" 
+     href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,7 +33,6 @@
   </head>
 
   <body class="overflow-x-hidden relative">
-
     <!-- Pop-up Start -->
     <div class="hidden" id="popUp">
       <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
@@ -49,23 +50,22 @@
     </div>
     <!-- Pop=up end -->
 
-  <!-- Next Button Start-->
-  <div class="nextButtonPart">
-    <a href="/src/Argumentasi/Argumentasi.html" class="nextButton" id="previousButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
+    <!-- Next Button Start-->
+    <div class="nextButtonPart">
+      <a href="/src/Argumentasi/Argumentasi.html" class="nextButton" id="previousButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
 
-    <p class="text-xs text-center">Argumentasi Toulmin</p>
+      <p class="text-xs text-center">Argumentasi Toulmin</p>
 
-    <a href="/src/Argumentasi/KuisArgumentasi.html" class="nextButton" id="nextButton"><i class="fa-solid fa-circle-chevron-right ransition-all duration-150"></i></a>
-  </div>
-  <!-- Next Button End -->
+      <a href="/src/Argumentasi/KuisArgumentasi.html" class="nextButton" id="nextButton"><i class="fa-solid fa-circle-chevron-right ransition-all duration-150"></i></a>
+    </div>
+    <!-- Next Button End -->
 
     <header class="fixed top-0 right-0 w-screen z-[998] bg-secondary">
       <!-- Navbar start -->
       <nav class="navbar layout">
-
         <div class="logo flex items-center gap-[0.1rem]">
           <div class="flex items-center gap-[0.1rem]">
-            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]">
+            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]" />
             <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
           </div>
           <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
@@ -76,7 +76,7 @@
             <li><a href="/src/beranda.html">Beranda</a></li>
 
             <li class="active relative">
-              <a class="opacity-50 aktivitas1Lock">Materi <i class="fa-solid fa-lock listIcon"></i></a>
+              <a class="opacity-50 argumentasiToulminLock">Materi <i class="fa-solid fa-lock listIcon"></i></a>
             </li>
 
             <li class="opacity-50 relative diskusiMenu">
@@ -102,7 +102,8 @@
           <ul>
             <!-- Argumentasi Toulmin Start -->
             <li class="listClass">
-              <div class="dropdown-button putar-icon classBtnDropdown" data-index="30" id="materiArgumentasi">
+
+              <div class="dropdown-button  putar-icon classBtnDropdown" dropdown = "KelasArgumentasiToulmin" id="materiArgumentasi">
                 <div class="gap-4 flex items-center">
                   <i class="iconClass fa-solid fa-people-arrows transition-all duration-500"></i>
                   <p class="textClass">Argumentasi Sains</p>
@@ -110,16 +111,16 @@
                 <i class="fa-solid fa-plus transition-all duration-500" id="icon0"></i>
               </div>
 
-              <ul class="dropdown dropdown30 hidden">
+              <ul class="dropdown hidden dropdownKelasArgumentasiToulmin">
                 <li>
-                  <div class="dropdown-button chapterBtnDropdown" data-index="31">
+                  <div class="dropdown-button chapterBtnDropdown" dropdown = "BabCaraBerargumen">
                     <div class="flex items-center gap-4">
                       <i class="fa-solid fa-solid fa-people-group text-amber-500 w-4 text-center"></i>
                       <a>Bagaimana berargumen dengan baik</a>
                     </div>
                   </div>
 
-                  <div class="dropdown31 hidden relative bg-primary/60">
+                  <div class="dropdownBabCaraBerargumen hidden relative bg-primary/60">
                     <ul class="subChapterContent">
                       <li>
                         <a href="/src/Argumentasi/Argumentasi.html" class="flex gap-2 items-center">
@@ -129,7 +130,7 @@
                       </li>
 
                       <li>
-                        <a href="/src/Argumentasi/ArgumentasiiToulmin.html" class="flex gap-2 items-center">
+                        <a href="/src/Argumentasi/ArgumentasiToulmin.html" class="flex gap-2 items-center">
                           <div class="contentListCircle"></div>
                           <div><p>Pola Argumentasi Toulmin</p></div>
                         </a>
@@ -146,13 +147,13 @@
                 </li>
               </ul>
             </li>
-            <!-- Argumentasi Toulmin Start -->
+            <!-- Argumentasi Toulmin end-->
 
             <!-- KD kelas 10 -->
             <li class="listClass">
               <!-- Tombol munculkan list materi kelas 10 start-->
 
-              <div class="opacity-50 classBtnDropdown relative" data-index="1" id="kelas10">
+              <div class="opacity-50 classBtnDropdown relative" dropdown="Kelas10" id="kelas10">
                 <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary" id="lockKelas10"></i>
 
                 <div class="gap-4 flex items-center">
@@ -164,7 +165,7 @@
               <!-- Tombol munculkan list materi kelas 10 end-->
 
               <!-- Materi kelas 10 start-->
-              <ul class="dropdown dropdown1 hidden" id="dropdown1">
+              <ul class="dropdown hidden dropdownKelas10">
                 <!-- Hakikat Fisika -->
                 <!-- Hakikat Fisika End -->
 
@@ -173,14 +174,14 @@
 
                 <!-- Pemanasan Global -->
                 <li>
-                  <div class="dropdown-button chapterBtnDropdown" data-index="6">
+                  <div class="dropdown-button chapterBtnDropdown" dropdown="BabPemanasanGlobal">
                     <div class="flex items-center gap-4">
                       <i class="fa-solid fa-earth-asia text-amber-500 w-4 text-center"></i>
                       <a>Gejala Pemanasan Global</a>
                     </div>
                   </div>
 
-                  <div class="dropdown6 hidden relative bg-primary/60">
+                  <div class="dropdownBabPemanasanGlobal hidden relative bg-primary/60">
                     <ul class="subChapterContent">
                       <li>
                         <a href="/src/materi kelas 10/Pemanasan Global/PemanasanGlobal.html" class="flex gap-2 items-center">
@@ -224,7 +225,7 @@
             <!-- KD kelas 11 -->
             <li class="listClass">
               <!-- Tombol munculkan list materi kelas 11 start-->
-              <div class="relative opacity-50 classBtnDropdown" data-index="2">
+              <div class="relative opacity-50 classBtnDropdown" dropdown="Kelas11">
                 <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
 
                 <div class="flex items-center gap-4">
@@ -243,7 +244,7 @@
             <!-- KD kelas 12 -->
             <li class="listClass">
               <!-- Tombol munculkan list materi kelas 12 start-->
-              <div class="relative opacity-50 classBtnDropdown" data-index="3">
+              <div class="relative opacity-50 classBtnDropdown" dropdown = "Kelas12">
                 <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
 
                 <div class="flex items-center gap-4">
@@ -273,7 +274,6 @@
 
     <main class="materi layout mt-20 mb-16">
       <section id="ToulminArgumentationPatern">
-
         <article>
           <!-- Title -->
           <div class="bg-forth rounded-tr-md rounded-bl-md relative mt-6 h-12 flex items-center justify-center mb-3">
@@ -282,18 +282,18 @@
           </div>
           <!-- Title -->
 
-          <img src="/img/SMA Bingung.png" alt="karakter" class="w-24 float-left p-4" loading="lazy"/>
+          <img src="/img/SMA Bingung.png" alt="karakter" class="w-24 float-left p-4" loading="lazy" />
           <p class="border-1 border-gray-400">
             Menurut Stepan E. Toulmin salah satu faktor yang menentukan valid tidaknya argumen adalah struktur argumen. Setidaknya ada 5 komponen dari suatu argumen yang lengkap. Komponen tersebut terdiri dari: Data, Claim, Warrant,
             Rebuttal, dan Qualifier. Oleh karena itu, pada bagian ini kita akan mempelajari bagimana menggunakan 5 komponen argumen dan bagaimana hubungan tiap komponen tersebut.
           </p>
           <h2>1. Data dan Claim</h2>
-          <p>Untuk memahami data dan claim perhatikan ilustrasi berikut: <br>Sutau hari pian menmghampiri sopi di kelas dan mengajukan pernyataan tentang temannya Romli:</p>
+          <p>Untuk memahami data dan claim perhatikan ilustrasi berikut: <br />Sutau hari pian menmghampiri sopi di kelas dan mengajukan pernyataan tentang temannya Romli:</p>
 
           <!-- Diskusi -->
           <div class="flex flex-col w-full h-72 bg-slate-300 p-3 rounded-md relative -z-20 my-3 md:w-[80%] lg:w-[70%] mx-auto">
             <div class="h-[45%] w-full bg-slate-200 p-3 relative rounded-md text-xs">
-              <a  class="leading-[1.2rem]"
+              <a class="leading-[1.2rem]"
                 ><span class="bg-green-200">Romli kecanduan bermain game, ia menghabiskan uang dan waktunya untuk bermain game tiap hari,</span><br /><span class="bg-red-200"
                   >jadi menurutku bermain game itu tidak ada manfaatnya sama sekali</span
                 >.</a
@@ -323,11 +323,13 @@
             oleh fakta yang mendukung.
           </p>
           <p>
-            <strong>Contoh lain:</strong><br> Misalkan dalam topik energi dan pemanasan global, kamu berpendapat bahwa:<br> <span class="bg-green-200"> “Penggunaan mobil listrik tidak menghasilkan gas \(CO_{2}\)</span>,
-            <span class="bg-red-200">jadi mobil listrik merupakan kendaran yang ramah lingkungan”</span> <br>Selanjutnya yang perlu diperhatikan adalah data yang digunakan pada sebuah argumen harus bersifat relevan dan menguatkan kesimpulan
-            yang diambil. Sekarang coba perhatikan argumen berikut:<br> <span class="bg-green-200">“Penggunaan mobil listrik lebih hemat dari segi biaya</span>,
-            <span class="bg-red-200">jadi mobil listrik merupakan kendaraan yang ramah lingkungan”.</span><br> Pada pernyataan diatas, data yang diajukan menjelaskan keunggulan mobil listrik dari segi biaya pernyataan ini tidak relevan dengan
-            kesimpulan bahwa mobil listrik merupakan kendaraan ramah lingkungan yang memaparkan karakteristik mobil lsitrik dari segi dampak terhadap lingkungan.
+            <strong>Contoh lain:</strong><br />
+            Misalkan dalam topik energi dan pemanasan global, kamu berpendapat bahwa:<br />
+            <span class="bg-green-200"> “Penggunaan mobil listrik tidak menghasilkan gas \(CO_{2}\)</span>, <span class="bg-red-200">jadi mobil listrik merupakan kendaran yang ramah lingkungan”</span> <br />Selanjutnya yang perlu
+            diperhatikan adalah data yang digunakan pada sebuah argumen harus bersifat relevan dan menguatkan kesimpulan yang diambil. Sekarang coba perhatikan argumen berikut:<br />
+            <span class="bg-green-200">“Penggunaan mobil listrik lebih hemat dari segi biaya</span>, <span class="bg-red-200">jadi mobil listrik merupakan kendaraan yang ramah lingkungan”.</span><br />
+            Pada pernyataan diatas, data yang diajukan menjelaskan keunggulan mobil listrik dari segi biaya pernyataan ini tidak relevan dengan kesimpulan bahwa mobil listrik merupakan kendaraan ramah lingkungan yang memaparkan
+            karakteristik mobil lsitrik dari segi dampak terhadap lingkungan.
           </p>
 
           <!-- Rangkuman start -->
@@ -351,7 +353,7 @@
           </p>
 
           <div class="flex flex-col w-full h-[20rem] bg-slate-300 p-3 rounded-md relative -z-20 my-3 md:w-[80%] lg:w-[70%] mx-auto">
-            <div class="h-[45%] w-full bg-slate-200 p-3 relative rounded-md text-[0.6rem]  lg:text-[0.75rem]">
+            <div class="h-[45%] w-full bg-slate-200 p-3 relative rounded-md text-[0.6rem] lg:text-[0.75rem]">
               <a class="leading-[0.5rem] text-justify"
                 ><span
                   >Alasan yang mendukung kesimpulan saya didasarkan pada data statistik yang diterbitkan oleh Mpowerwellness yang menyatakan bahwa gamers menghabiskan 8-12 jam dalam seminggu. Data lain menyatakan bahwa 1 dari 10 gamers muda
@@ -373,7 +375,7 @@
             dan claim yang diambil. Ketiga komponen argumen yang tekah kita gunakan yaitu, Data, Claim, dan Warrant merupakan struktur utama dalam mebentuk suatu argumen yang kuat. Jika digambarkan dalam diagram, hubungan data claim dan
             warrant digambarkan sebagai berikut:
           </p>
-          <img src="/img/struktur3.png" alt="Struktur" class="gambar md:w-[70%] lg:w-[50%] mx-auto"/>
+          <img src="/img/struktur3.png" alt="Struktur" class="gambar md:w-[70%] lg:w-[50%] mx-auto" />
           <figcaption>Gambar 3.</figcaption>
 
           <!-- Rangkuman start -->
@@ -429,11 +431,12 @@
         <article>
           <h2>4. Qualifier</h2>
           <p>
-            Tidak dapat dipungkiri bahwa beberapa argumen memiliki keterbatasan yang menyatakan pengecualian, syarat, atau pernyataan yang menguji seberapa universal argumen itu dapat diterapkan. Pernyataan jenis ini kita sebut dengan <span class="highlight">qualifier</span>.
+            Tidak dapat dipungkiri bahwa beberapa argumen memiliki keterbatasan yang menyatakan pengecualian, syarat, atau pernyataan yang menguji seberapa universal argumen itu dapat diterapkan. Pernyataan jenis ini kita sebut dengan
+            <span class="highlight">qualifier</span>.
           </p>
           <p>Mari kembali pada diskusi Pian dan Sopi! Dari argumen yang diberikan oleh Pian terkait manfaat bermain game Pian dapat memberikan qualifier sebagai berikut:</p>
 
-          <div class="flex flex-col w-full h-72 bg-slate-300 p-3 rounded-md relative -z-20 my-3 md:w-[80%] mx-auto lg:w-[70%] ">
+          <div class="flex flex-col w-full h-72 bg-slate-300 p-3 rounded-md relative -z-20 my-3 md:w-[80%] mx-auto lg:w-[70%]">
             <div class="h-[45%] w-full bg-slate-200 p-3 relative rounded-md text-[0.6rem] lg:text-[0.75rem]">
               <a id="textArgumen1" class="leading-[0.5rem] text-justify">
                 <span>Benar juga, mungkin jika dilakukan berlebihan, bermain game dapat memberikan dampak negatif, tetapi jika dilakukan secukupnya dapat bermanfaat bagi psikologis.</span></a
@@ -453,20 +456,21 @@
             pelajari sampai bagaian ini dapat digambarkan dalam diagram berikut:
           </p>
 
-          <img src="/img/struktur5.png" alt="struktur" class="my-3 gambar  lg:w-[40%] mx-auto md:w-[60%]" />
+          <img src="/img/struktur5.png" alt="struktur" class="my-3 gambar lg:w-[40%] mx-auto md:w-[60%]" />
 
           <p>
-            Berikut beberapa contoh lain dari penggunaan qualifier. <br>
+            Berikut beberapa contoh lain dari penggunaan qualifier. <br />
             <strong>Contoh 1:</strong>
           </p>
           <p>
-           <span class="bg-purple-200"> “Pembangunan jalan raya mungkin menyebabkan dampak negatif tetapi jika dampak positif yang diberikan lebih banyak maka pembangunan jalan raya dapat dilakukan”</span><br> Argumen di atas menyatakan syarat yang harus dipenuhi agar argumen
-            Pembangunan jalan raya dapat dilakukan yang mempertimbangkan dampak positif dan negatif.
+            <span class="bg-purple-200"> “Pembangunan jalan raya mungkin menyebabkan dampak negatif tetapi jika dampak positif yang diberikan lebih banyak maka pembangunan jalan raya dapat dilakukan”</span><br />
+            Argumen di atas menyatakan syarat yang harus dipenuhi agar argumen Pembangunan jalan raya dapat dilakukan yang mempertimbangkan dampak positif dan negatif.
           </p>
           <p>
-            <strong>Contoh 2:</strong> <br>
-            “Adit mendapatkan niali 100 dalam ulangan fisika, Adit adalah anak yang pintar” 
-            <br>Kita dapat memberikan qualifier untuk argument di atas misalnya: <br> <span class="bg-purple-200">“Adit mungkin pintar dalam fisika tetapi belum tentu ia pintar dalam bidang seni”</span>
+            <strong>Contoh 2:</strong> <br />
+            “Adit mendapatkan niali 100 dalam ulangan fisika, Adit adalah anak yang pintar”
+            <br />Kita dapat memberikan qualifier untuk argument di atas misalnya: <br />
+            <span class="bg-purple-200">“Adit mungkin pintar dalam fisika tetapi belum tentu ia pintar dalam bidang seni”</span>
             Pernyataan di atas menguji seberapa universal argumen yang diberikan dengan menyatakan bahwa mendapatkan nilai 100 dalam fisika belum berarti Adit merupakan siswa yang pintar. Adit hanya pintar dalam bidang fisika saja, dan
             belum tentu dalam bidang seni ia menmperoleh nilai yang sama.
           </p>
@@ -492,5 +496,6 @@
 
     <script src="/src/general.js"></script>
     <script src="/src/Argumentasi/ArgumentasiToulmin.js"></script>
+    <script src="/src/progresSiswa.js"></script>
   </body>
 </html>
