@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -211,6 +211,8 @@ textarea {
   /* 1 */
   line-height: inherit;
   /* 1 */
+  letter-spacing: inherit;
+  /* 1 */
   color: inherit;
   /* 1 */
   margin: 0;
@@ -234,9 +236,9 @@ select {
 */
 
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
   -webkit-appearance: button;
   /* 1 */
   background-color: transparent;
@@ -492,6 +494,10 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
 }
 
 ::backdrop {
@@ -542,40 +548,10 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
-}
-
-.container {
-  width: 100%;
-}
-
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
 }
 
 .fixed {
@@ -936,6 +912,10 @@ video {
   width: 100vw;
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
 .table-auto {
   table-layout: auto;
 }
@@ -1161,9 +1141,9 @@ video {
   border-color: transparent;
 }
 
-.bg-\[\#3F2280\] {
+.bg-\[\#D0CFD6\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(63 34 128 / var(--tw-bg-opacity));
+  background-color: rgb(208 207 214 / var(--tw-bg-opacity));
 }
 
 .bg-amber-300 {
@@ -1207,10 +1187,6 @@ video {
 
 .bg-primary\/60 {
   background-color: rgb(108 99 255 / 0.6);
-}
-
-.bg-primary\/70 {
-  background-color: rgb(108 99 255 / 0.7);
 }
 
 .bg-purple-200 {
@@ -1428,6 +1404,10 @@ video {
 
 .text-\[2\.3rem\] {
   font-size: 2.3rem;
+}
+
+.text-\[3rem\] {
+  font-size: 3rem;
 }
 
 .text-lg {
@@ -3384,11 +3364,6 @@ textarea {
 }
 
 @media (min-width: 640px) {
-  .sm\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -3588,6 +3563,10 @@ textarea {
 
   .lg\:w-48 {
     width: 12rem;
+  }
+
+  .lg\:w-\[100\%\] {
+    width: 100%;
   }
 
   .lg\:w-\[20rem\] {
