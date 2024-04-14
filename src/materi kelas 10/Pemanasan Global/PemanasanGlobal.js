@@ -1,116 +1,59 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Lock Aktivtas
-  const aktivitas1Key = "AKTIVITAS1KEY";
-  const localAktivitas1 = localStorage.getItem(aktivitas1Key);
-  const aktivitas2Key = "AKTIVITAS2KEY";
-  const localAktivitas2 = localStorage.getItem(aktivitas2Key);
-  const lanjutAktivitas2 = document.getElementById("lanjutAktivitas2");
-  const aktivitas3Key = "AKTIVITAS3KEY";
-  const localAktivitas3 = localStorage.getItem(aktivitas3Key);
-  const aktivitas4Key = "AKTIVITAS4KEY";
-  const localAktivitas4 = localStorage.getItem(aktivitas4Key);
-  const aktivitas5Key = "AKTIVITAS5KEY";
-  const localAktivitas5 = localStorage.getItem(aktivitas5Key);
+  const progresStorageKey = "Progres_Siswa";
 
-  const AktivitasDiskusiKey = "AKTIVITASDISKUSIKEY";
-  const AktivitasDiskusi = localStorage.getItem(AktivitasDiskusiKey);
-  const AktivitasEvaluasiKey = "AKTIVITASEVALUASIKEY";
-  const AktivitasEvaluasi = localStorage.getItem(AktivitasEvaluasiKey);
+  // inisialisasi local storage jika belum ada
+  const dataProgres = {
+    argumentasiToulmin: false,
+    pemanasanGlobal: false,
+    penyebabPemanasanGlobal: false,
+    dampakPemanasanGlobal: false,
+    solusiPemanasanGlobal: false,
+    diskusi: false,
+    evaluasi: false,
+  };
 
+  if (localStorage.getItem(progresStorageKey) === null) {
+    localStorage.setItem(progresStorageKey, JSON.stringify(dataProgres));
+  }
 
-  const lanjutAktivitas3 = document.getElementById("lanjutAktivitas3");
+  // elemen
+  const lanjutPenyebabPemanasanGlobal = document.getElementById("lanjutPenyebabPemanasanGlobal");
+  const notifTidakLulus = document.getElementById("notifTidakLulus");
 
+  const textPopUp = document.getElementById("textPopUp");
+  const popUpLoading = document.getElementById("popUpLoading");
+  const popUp = document.getElementById("popUp");
   const navList = document.querySelector(".nav-list");
   const lebarPerangkat = window.screen.width;
 
-  // List Materi
+  const contentList = document.querySelector(".contentList");
+  const openIcon = document.querySelector("#listIcon .openIcon");
+  const closeIcon = document.querySelector("#listIcon .closeIcon");
+  const listIcon = document.getElementById("listIcon");
+
+  // mengatur perilaku navlist
   window.addEventListener("load", function () {
     navList.classList.remove("initial-style");
+    perbaruiProgres();
 
-    renderAktivitas();
-
-    if (localAktivitas1 === null) {
-      localStorage.setItem(aktivitas1Key, false);
-    }
-
-    if (localAktivitas2 === null) {
-      localStorage.setItem(aktivitas2Key, false);
-    }
-
-    if (localAktivitas3 === null) {
-      localStorage.setItem(aktivitas3Key, false);
-    }
-    if (localAktivitas4 === null) {
-      localStorage.setItem(aktivitas4Key, false);
-    }
-    if (localAktivitas5 === null) {
-      localStorage.setItem(aktivitas5Key, false);
-    }
-    if (AktivitasDiskusi === null) {
-      localStorage.setItem(AktivitasDiskusiKey, false);
-    }
-    if (AktivitasEvaluasi === null) {
-      localStorage.setItem(AktivitasEvaluasiKey, false);
-    }
-
-    // Kirim Refleksi dan Tampilkan Pop-Up
-    const form = document.getElementById("my-form");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      popUpLoading.classList.remove("hidden");
-      const data = new FormData(form);
-      const action = e.target.action;
-      fetch(action, {
-        method: "POST",
-        body: data,
-      }).then(function () {
-        textPopUp.innerText = "Jawaban Anda Terkirim";
-        popUpLoading.classList.add("hidden");
-        popUp.classList.remove("hidden");
-
-        setTimeout(function () {
-          popUp.classList.add("hidden");
-
-          if (localStorage.getItem(aktivitas3Key) === "false") {
-            cekSkor();
-            renderAktivitas();
-          }
-          location.reload();
-        }, 2000);
-      });
-    });
-
-    // List Materi
-    const contentList = document.querySelector(".contentList");
-    const openIcon = document.querySelector("#listIcon .openIcon");
-    const closeIcon = document.querySelector("#listIcon .closeIcon");
-    const listIcon = document.getElementById("listIcon");
-
-    if (lebarPerangkat >= 1024) {
-      contentList.classList.add("active");
-    } else {
-      listIcon.addEventListener("click", function () {
-        openIcon.classList.toggle("hidden");
-        closeIcon.classList.toggle("hidden");
-        contentList.classList.toggle("active");
-      });
-    }
-
-    const buttons = document.querySelectorAll(".dropdown-button");
-    buttons.forEach((button) => {
+    // Mengatur perilaku dropdown list materi
+    const dropdownButton = document.querySelectorAll(".dropdown-button");
+    dropdownButton.forEach((button) => {
       button.addEventListener("click", () => {
-        const index = button.getAttribute("data-index");
-        toggleDropdown(`dropdown${index}`);
+        const namaDropdown = button.getAttribute("dropdown");
+        toggleDropdown(`dropdown${namaDropdown}`);
       });
     });
 
-    function toggleDropdown(className) {
-      const dropdown = document.querySelector(`.${className}`);
+    // Fungsi untuk menampilkan/menyembunyikan dropdown yang sesuai
+    function toggleDropdown(dropdownKelas) {
+      const dropdown = document.querySelector(`.${dropdownKelas}`);
       if (dropdown) {
         dropdown.classList.toggle("hidden");
       }
     }
 
+    // Putar tanda plus
     const putarIcon = document.querySelectorAll(".putar-icon");
     for (let i = 0; i < putarIcon.length; i++) {
       const elemen = putarIcon[i];
@@ -121,27 +64,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  function renderAktivitas() {
-    // Aktivitas 1
-    if (localStorage.getItem(aktivitas1Key) === "true") {
-      const aktivitas1IconLock = document.querySelectorAll(".aktivitas1Lock i");
-      aktivitas1IconLock.forEach(function (element) {
+  if (lebarPerangkat >= 1024) {
+    contentList.classList.add("active");
+  } else {
+    listIcon.addEventListener("click", function () {
+      openIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
+      contentList.classList.toggle("active");
+    });
+  }
+
+  // fungsi untuk mendapatkan data dari storage
+  function getDataFromStorage() {
+    const data = localStorage.getItem(progresStorageKey);
+    return JSON.parse(data);
+  }
+
+  // fungsi mengambil biodata dari storage
+  function getBio() {
+    return JSON.parse(localStorage.getItem("biodata"));
+  }
+
+  // perbarui progress
+  function perbaruiProgres() {
+    // Argumentasi toulmin
+    if (getDataFromStorage().argumentasiToulmin === true) {
+      const argumentasiToulminIconLock = document.querySelectorAll(".argumentasiToulminLock i");
+      argumentasiToulminIconLock.forEach(function (element) {
         element.classList.add("hidden");
       });
 
-      const menuList1 = document.querySelector(".nav-list .aktivitas1Lock");
+      const menuList1 = document.querySelector(".nav-list .argumentasiToulminLock");
 
       menuList1.classList.remove("opacity-50");
       menuList1.classList.add("opacity-100");
 
-      const aktivitas1Open = document.querySelectorAll(".aktivitas1Lock");
-      aktivitas1Open.forEach(function (element) {
+      const argumentasiToulminOpen = document.querySelectorAll(".argumentasiToulminLock");
+      argumentasiToulminOpen.forEach(function (element) {
         element.setAttribute("href", "/src/Argumentasi/Argumentasi.html");
       });
     }
 
-    // Aktivitas 2
-    if (localStorage.getItem(aktivitas2Key) === "true") {
+    // Pemanasan Global
+    if (getDataFromStorage().pemanasanGlobal === true) {
       const kelas10 = document.getElementById("kelas10");
       const lockKelas10 = document.getElementById("lockKelas10");
       kelas10.classList.remove("opacity-50");
@@ -151,30 +116,27 @@ document.addEventListener("DOMContentLoaded", function () {
       lockKelas10.classList.add("hidden");
     }
 
-    // Aktivitas 3
-    if (localStorage.getItem(aktivitas3Key) === "true") {
+    // Penyebab Pemanasan Global
+    if (getDataFromStorage().penyebabPemanasanGlobal === true) {
       const PenyebabPemanasanGlobalList = document.getElementById("PenyebabPemanasanGlobalList");
       const lockIcon = document.querySelector("#PenyebabPemanasanGlobalList i");
-      const nextButtonLink = document.getElementById("nextButton");
-      const nextButton = document.querySelector("#nextButton i");
-
-      nextButton.classList.remove("fa-lock", "opacity-50");
-      nextButton.classList.add("fa-circle-chevron-right");
-      nextButtonLink.setAttribute("href", "/src/materi kelas 10/Pemanasan Global/PenyebabPemanasanGlobal.html");
 
       PenyebabPemanasanGlobalList.setAttribute("href", "/src/materi kelas 10/Pemanasan Global/PenyebabPemanasanGlobal.html");
       PenyebabPemanasanGlobalList.classList.remove("opacity-50");
       PenyebabPemanasanGlobalList.classList.add("opacity-100");
       lockIcon.classList.add("hidden");
 
-      lanjutAktivitas3.classList.remove("hidden");
-      notifTidakLulus.classList.add("hidden");
-    } else {
-      notifTidakLulus.classList.remove("hidden");
+      // memperbarui tampilan
+      const nextButtonLink = document.getElementById("nextButton");
+      const nextButton = document.querySelector("#nextButton i");
+      nextButton.classList.remove("fa-lock", "opacity-50");
+      nextButton.classList.add("fa-circle-chevron-right");
+      nextButtonLink.setAttribute("href", "/src/materi kelas 10/Pemanasan Global/PenyebabPemanasanGlobal.html");
+      lanjutPenyebabPemanasanGlobal.classList.remove("hidden");
     }
 
-    //  Aktivitas 4
-    if (localStorage.getItem(aktivitas4Key) === "true") {
+    //  Dampak Pemanasan Global
+    if (getDataFromStorage().dampakPemanasanGlobal === true) {
       const DampakPemanasanGlobalList = document.getElementById("DampakPemanasanGlobalList");
       const lockIcon = document.querySelector("#DampakPemanasanGlobalList i");
 
@@ -184,8 +146,8 @@ document.addEventListener("DOMContentLoaded", function () {
       lockIcon.classList.add("hidden");
     }
 
-    //  Aktivitas 5
-    if (localStorage.getItem(aktivitas5Key) === "true") {
+    //  Soluasi Pemanasan Global
+    if (getDataFromStorage().solusiPemanasanGlobal === true) {
       const SolusiPemanasanGlobalList = document.getElementById("SolusiPemanasanGlobalList");
       const lockIcon = document.querySelector("#SolusiPemanasanGlobalList i");
 
@@ -193,20 +155,10 @@ document.addEventListener("DOMContentLoaded", function () {
       SolusiPemanasanGlobalList.classList.remove("opacity-50");
       SolusiPemanasanGlobalList.classList.add("opacity-100");
       lockIcon.classList.add("hidden");
-
-      const diskusi = document.querySelector(".diskusiMenu");
-      const diskusiLink = document.querySelector(".diskusiMenu a");
-      const diskusiIcon = document.querySelector(".diskusiMenu i");
-
-      diskusi.classList.remove("opacity-50");
-      diskusi.classList.add("opacity-100");
-
-      diskusiLink.setAttribute("href", "/src/diskusi.html");
-      diskusiIcon.classList.add("hidden");
     }
 
     //  Diskusi
-    if (localStorage.getItem(AktivitasDiskusiKey) === "true") {
+    if (getDataFromStorage().diskusi === true) {
       const diskusi = document.querySelector(".diskusiMenu");
       const diskusiLink = document.querySelector(".diskusiMenu a");
       const diskusiIcon = document.querySelector(".diskusiMenu i");
@@ -219,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //evaluasi
-    if (localStorage.getItem(AktivitasEvaluasiKey) === "true") {
+    if (getDataFromStorage().evaluasi === true) {
       const evaluasi = document.querySelector(".evaluasiMenu");
       const evaluasiLink = document.querySelector(".evaluasiMenu a");
       const evaluasiIcon = document.querySelector(".evaluasiMenu i");
@@ -232,9 +184,68 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // .................. refleksi form ..................//
+
+  // cek skor
+  function cekSkor() {
+    let jumlah = 0;
+    for (let i = 0; i < refleksiInput.length; i++) {
+      const elemen = refleksiInput[i];
+
+      jumlah += parseInt(elemen.value);
+    }
+    const skor = jumlah / refleksiInput.length;
+
+    if (skor >= 3) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // Kirim Refleksi dan Tampilkan Pop-Up
+  const form = document.getElementById("my-form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    popUpLoading.classList.remove("hidden");
+    const data = new FormData(form);
+    const action = e.target.action;
+    fetch(action, {
+      method: "POST",
+      body: data,
+    }).then(function () {
+      textPopUp.innerText = "Jawaban Anda Terkirim";
+      popUpLoading.classList.add("hidden");
+
+      if (getDataFromStorage().penyebabPemanasanGlobal === false) {
+        if (cekSkor() === true) {
+          const updateProgres = getDataFromStorage();
+          updateProgres.penyebabPemanasanGlobal = true;
+          localStorage.setItem(progresStorageKey, JSON.stringify(updateProgres));
+
+          notifTidakLulus.classList.add("hidden");
+          popUp.classList.remove("hidden");
+        } else {
+          notifTidakLulus.classList.remove("hidden");
+          popUp.classList.add("hidden");
+        }
+      } else {
+        textPopUp.innerText = "Kamus sudah lulus bab ini, silahkan lanjut ke bab berikutnya!";
+        popUp.classList.remove("hidden");
+      }
+
+      setTimeout(function () {
+        notifTidakLulus.classList.add("hidden");
+        popUp.classList.add("hidden");
+        perbaruiProgres();
+        location.reload();
+      }, 4000);
+    });
+  });
+
   // Refleksi
-  document.getElementById("NamaSiswa").value = localStorage.getItem("DATA-NAMA-SISWA-KEY");
-  document.getElementById("Kelas").value = localStorage.getItem("DATA-KELAS-SISWA-KEY");
+  document.getElementById("NamaSiswa").value = getBio().nama;
+  document.getElementById("Kelas").value = getBio().kelas;
 
   // Atur icon refleksi
   const refleksiIcon = document.querySelectorAll(".refleksiIcon");
@@ -277,22 +288,6 @@ document.addEventListener("DOMContentLoaded", function () {
         textElement.innerText = "Tidak Mengerti";
       }
     });
-  }
-
-  // cek skor
-  function cekSkor() {
-    let jumlah = 0;
-    for (let i = 0; i < refleksiInput.length; i++) {
-      const elemen = refleksiInput[i];
-
-      jumlah += parseInt(elemen.value);
-    }
-    const skor = jumlah / refleksiInput.length;
-
-    if (skor >= 3) {
-      localStorage.setItem(aktivitas3Key, true);
-    }
-    return skor;
   }
 
   // zoom gambar
