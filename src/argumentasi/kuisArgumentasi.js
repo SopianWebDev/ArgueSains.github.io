@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mengatur perilaku dropdown list materi
     const dropdownButton = document.querySelectorAll(".dropdown-button");
     dropdownButton.forEach((button) => {
-      console.log(button);
       button.addEventListener("click", () => {
         const namaDropdown = button.getAttribute("dropdown");
         toggleDropdown(`dropdown${namaDropdown}`);
@@ -342,16 +341,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const formPG = document.getElementById("kuisForm");
   document.getElementById("NamaKuis").value = getBio().nama;
   document.getElementById("KelasKuis").value = getBio().kelas;
+
   formPG.addEventListener("submit", function (e) {
     e.preventDefault();
 
     popUpLoading.classList.remove("hidden");
-    const data = new FormData(form);
+    const data = new FormData(formPG);
     const action = e.target.action;
     fetch(action, {
       method: "POST",
       body: data,
     }).then(() => {
+      console.log("ok");
       textPopUp.innerText = "Jawaban Anda Terkirim";
       popUpLoading.classList.add("hidden");
       popUp.classList.remove("hidden");
