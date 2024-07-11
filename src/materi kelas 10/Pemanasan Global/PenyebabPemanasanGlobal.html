@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penyebab Pemanasan Global</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Math Js -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- my style -->
+    <link rel="icon" href="/img/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+
+  <body class="overflow-x-hidden">
+    <div class="hidden" id="popUp">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="popUpCnt" id="popUpCnt">
+          <p id="textPopUp"></p>
+          <i class="fa-regular fa-circle-check fa-beat text-[2.3rem] text-green-600"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden" id="notifTidakLulus">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="popUpCnt">
+          <i class="fa-regular fa-face-sad-tear fa-shake text-[3rem] text-amber-500"></i>
+          <p>Sepertinya kamu belum memahami materi ini. Baca kembali materi, kemudian isi kemballi refleksi jika kamu sudah memahaminya</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden" id="popUpLoading">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="loading" id="loading"></div>
+      </div>
+    </div>
+
+    <!-- Next Button Start-->
+    <aside class="nextButtonPart">
+      <a href="/src/materi kelas 10/Pemanasan Global/PemanasanGlobal.html" class="nextButton" id="previousButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
+      <p class="text-xs text-center">Penyebab Pemanasan Global</p>
+
+      <a class="nextButton" id="nextButton"><i class="fa-solid fa-lock ransition-all duration-150 opacity-50"></i></a>
+    </aside>
+    <!-- Next Button End -->
+
+    <header class="fixed top-0 right-0 w-screen z-[998] bg-secondary">
+      <!-- Navbar start -->
+      <nav class="navbar layout">
+        <div class="logo flex items-center gap-[0.1rem]">
+          <div class="flex items-center gap-[0.1rem]">
+            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]" />
+            <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+          </div>
+          <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
+        </div>
+
+        <div class="nav-list initial-style">
+          <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6">
+            <li><a href="/src/beranda.html">Beranda</a></li>
+
+            <li class="relative active">
+              <a class="opacity-50 argumentasiToulminLock">Materi <i class="fa-solid fa-lock listIcon"></i></a>
+            </li>
+
+            <li class="opacity-50 relative diskusiMenu">
+              <a>Diskusi <i class="fa-solid fa-lock listIcon"></i></a>
+            </li>
+
+            <li class="opacity-50 relative evaluasiMenu">
+              <a>Evaluasi<i class="fa-solid fa-lock listIcon"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Bank Soal <i class="fa-solid fa-lock listIcon"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="menuToggle lg:hidden"></div>
+      </nav>
+      <!-- Navbar End -->
+
+      <!-- List Materi Start -->
+      <div class="contentList">
+        <div class="contentListMateri">
+          <ul>
+            <!-- Argumentasi Toulmin Start -->
+            <li class="listClass">
+              <div class="dropdown-button putar-icon classBtnDropdown" dropdown="KelasArgumentasiToulmin" id="materiArgumentasi">
+                <div class="gap-4 flex items-center">
+                  <i class="iconClass fa-solid fa-people-arrows transition-all duration-500"></i>
+                  <p class="textClass">Argumentasi Sains</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon0"></i>
+              </div>
+
+              <ul class="dropdown hidden dropdownKelasArgumentasiToulmin">
+                <li>
+                  <div class="dropdown-button chapterBtnDropdown" dropdown="BabCaraBerargumen">
+                    <div class="flex items-center gap-4">
+                      <i class="fa-solid fa-solid fa-people-group text-amber-500 w-4 text-center"></i>
+                      <a>Bagaimana berargumen dengan baik</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdownBabCaraBerargumen hidden relative bg-primary/60">
+                    <ul class="subChapterContent">
+                      <li>
+                        <a href="/src/Argumentasi/Argumentasi.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pentingnya Berargumen dengan Baik</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/src/Argumentasi/ArgumentasiToulmin.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pola Argumentasi Toulmin</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/src/Argumentasi/KuisArgumentasi.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Kuis pola argumentasi</p></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <!-- Argumentasi Toulmin end-->
+
+            <!-- KD kelas 10 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 10 start-->
+
+              <div class="opacity-50 classBtnDropdown relative" dropdown="Kelas10" id="kelas10">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary" id="lockKelas10"></i>
+
+                <div class="gap-4 flex items-center">
+                  <i class="iconClass fa-solid fa-temperature-arrow-down"></i>
+                  <p class="textClass">Kelas 10</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon1"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 10 end-->
+
+              <!-- Materi kelas 10 start-->
+              <ul class="dropdown hidden dropdownKelas10">
+                <!-- Hakikat Fisika -->
+                <!-- Hakikat Fisika End -->
+
+                <!-- Energi start -->
+                <!-- Energi End -->
+
+                <!-- Pemanasan Global -->
+                <li>
+                  <div class="dropdown-button chapterBtnDropdown" dropdown="BabPemanasanGlobal">
+                    <div class="flex items-center gap-4">
+                      <i class="fa-solid fa-charging-station text-amber-500 w-4 text-center"></i>
+                      <a>Sumber Energi</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdownBabPemanasanGlobal hidden relative bg-primary/60">
+                    <ul class="subChapterContent">
+                      <li>
+                        <a href="/src/materi kelas 10/Pemanasan Global/PemanasanGlobal.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Konsep Energ</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="PenyebabPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Energi Takterbarukan</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="DampakPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Energi Terbarukan</p></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <!-- Pemanasan Global End-->
+              </ul>
+              <!-- Materi kelas 10  End-->
+            </li>
+            <!-- KD kelas 10 end -->
+
+            <!-- KD kelas 11 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 11 start-->
+              <div class="relative opacity-50 classBtnDropdown" dropdown="Kelas11">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
+
+                <div class="flex items-center gap-4">
+                  <i class="iconClass fa-solid fa-gears"></i>
+                  <p class="textClass">Kelas 11</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon2"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 11 end-->
+
+              <!-- Materi kelas 11 start-->
+              <!-- Materi kelas 11  End-->
+            </li>
+            <!-- KD kelas 11 end -->
+
+            <!-- KD kelas 12 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 12 start-->
+              <div class="relative opacity-50 classBtnDropdown" dropdown="Kelas12">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
+
+                <div class="flex items-center gap-4">
+                  <i class="iconClass fa-solid fa-atom"></i>
+                  <p class="textClass">Kelas 12</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon3"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 12 end-->
+
+              <!-- Materi kelas 12 start-->
+              <!-- Materi kelas 12  End-->
+            </li>
+            <!-- KD kelas 12 end -->
+          </ul>
+        </div>
+
+        <!-- Tombol munculkan materi semua kelas start -->
+        <div class="listIconToggle" id="listIcon">
+          <i class="openIcon fa-solid fa-list text-[1rem]"></i>
+          <i class="closeIcon fa-solid fa-xmark text-[1rem] hidden"></i>
+        </div>
+        <!-- Tombol munculkan materi semua kelas end -->
+      </div>
+      <!-- List Materi End -->
+    </header>
+
+    <main class="materi mt-16 layout">
+      <!-- Materi Pemanasan Global -->
+      <section id="PenyebabPemanasanGlobal" class="my-8">
+        <article>
+          <!-- Judul -->
+          <div class="bg-forth rounded-tr-md rounded-bl-md relative mt-6 h-12 flex items-center justify-center mb-3">
+            <h1>Energi Tak Terbarukan</h1>
+            <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" /></div>
+          </div>
+          <img src="/img/Penyebab Pemanasan Global/PLTU.jpg" alt="Gambar PLTU" class="gambar py-2 mx-auto md:w-[50%] lg:w-[35%]" />
+          <figcaption>Gambar pembangkit listrik tenaga batu bara ,<br />Sumber: kompas.com</figcaption>
+
+          <p>
+            Energi tak terbarukan adalah energi yang dihasilkan oleh sumber energi yang ketersediaanya terbatas di alam. jika habis, sumber energi ini tidak dapat diperbaharui kembali. Sayangnya, sumber energi di Indonesia masih didominasi
+            oleh pembangkit listrik yang bersumber dari energi tak terbarukan sepeti batu-bara, minyak, dan gas alam alam sebagaimana data yang dilaporkan oleh statista.com pada tahun 2023.
+          </p>
+          <img src="/img/Penyebab Pemanasan Global/Data konsumsi bahan bakar fosil indonesia.png" alt="proses destilas bertingkat" class="gambar py-2 mx-auto md:w-[50%] lg:w-[45%]" />
+
+          <figcaption>Grafik persentase produksi energi di Indonesia berdasarkan sumbernya <br />sumber: statista.com</figcaption>
+
+          <p>Menurut Climate Transparncy, 82% sumber energi di Indonesia masih bersumber dari energi tak terbarukan. Adapun sumber energi tak terbarukan yang banyak dugunakan yaitu, batu bara, minyak bumi, dan gas alam.</p>
+
+          <p class="font-semibold">1. Energi Batu Bara</p>
+          <p>
+            Batu bara merupakan salah satu bahan bakar fosil yang terbentuk dari sisa tumbuhan prasejarah yang mengendap di dalam bumi. Batu bara terdiri dari senyawa hidrokarbon yang dapat dibakar. Batu bara terbentuk karen proses
+            pembatubaraan (coalification). Proses ini melibatkan proses biologi, kimia, dan fisika. Kualitaas dari batu bara yang terbentuk ditentukan oleh 3 faktor yaitu: waktu, panas dan tekanan yang dialami oleh endapan tumbuhan
+          </p>
+          <p>Batu bara menjadi sektor penghasil energi terbesar di Indonesia. Hal tersebut karena Indonesia merupakan salah satu negara pengehasil batu bara terbesar di dunia</p>
+          <img src="/img/Penyebab Pemanasan Global/Data produksi batu bara.png" alt="negara penghasil batu bara terbesar" class="gambar py-2 mx-auto md:w-[50%] lg:w-[50%]" />
+
+          <figcaption>Data negara penghasil batu bara terbesar <br />sumber: databoks.com</figcaption>
+          <p>
+            Laporan International Energy Agency (IEA) menunjukan bahwa pada tahun 2023 Indonesia menduduki posisi ketiga sebagai negara penghasil batu bara. Tak aneh jika Indonesia masih bergantung pada energi batu bara dalam produksi
+            energi listrik.
+          </p>
+
+          <p>Proses konversi energi batu bara menjadi energi listrik dapat dilihat pada video berikut!</p>
+
+          <video controls class="py-2 mx-auto md:w-[50%] lg:w-[40%]">
+            <source src="/img/Penyebab Pemanasan Global/Proses PLTU coal.mp4" type="video/mp4" />
+          </video>
+          <figcaption>Sumber: Channel youtube Lignite Energy Council</figcaption>
+
+          <p>
+            Batu bara dimanfaatkan sebagai bahan bakar pembangkit energi lstrik tenaga batu bara. Batu bara digiling dan dibakar untuk memanaskan tungku yang menghasilkan uap bertekanan tinggi. Uap ini digunakan untuk memutar turbin yang
+            terhubung dengan generator. Pada generator, kumparan berputar dalam medan magnet yang dapat menghasilkan energi listrik. Energi listrik ini kemudian diubah tegangannya menggunakan transformator, lalu ditransmisikan melalui
+            kabel.
+          </p>
+          <p>
+            Berdasarkan laporan yang diterbikan oleh energy institute tahun 2022, Indonesia menempati posisi ketiga sebagai negara penghasil batu bara terbesar di dunia. Tidak heran jika 62% sumber energi nasional yang dihasilkan berasal
+            dari pembakaran batu bara. Hal ini sangat memprihatinkan karena pembakaran batu bara menghasilkan gas rumah kaca yang memperparah pemanasan global.
+          </p>
+
+          <img src="/img/Penyebab Pemanasan Global/data produksi co2 dari berbagai pembangkit listrik.png" alt="negara penghasil batu bara terbesar" class="gambar py-2 mx-auto md:w-[50%] lg:w-[50%]" />
+          <figcaption>Grafik gas \(CO_{2}\) yang dihasilkan oleh berbagai pembangkit listrik. <br />sumber: statista.com</figcaption>
+
+          <p>Pada grafik di atas terlhat bahwa pembangkit listrik tenaga batu bara menghsilkan emisi gas \(CO_{2}\) paling tinggi daripada pembangkit listrik yang lain sehingga perlu dikurangi penggunaannya.</p>
+        </article>
+
+        <article>
+          <p class="font-semibold">2. Energi Minyak Bumi dan Gas</p>
+
+          <img src="/img/Penyebab Pemanasan Global/how oil and gas formed.png" alt="iminyak bumi" class="gambar py-2 mx-auto md:w-[50%] lg:w-[40%]" />
+          <figcaption>
+            Penambangan minyak dan gas<br />
+            Sumber: energyeducation.ca
+          </figcaption>
+
+          <p>
+            Minyak bumi merupakan campuran dari senyawa organik yang kompleks. Minyak bumi berasal dari sisa-sisa tumbuhan dan hewan yang tertimbun selama berjuta tahun. Sisa-sisa organisme tersebut mengendap dan tertutupi lumpur dan dalam
+            jangka waktu yang lama akhirnya berubah menjadi minyak.
+          </p>
+
+          <video controls class="py-2 mx-auto md:w-[60%] lg:w-[40%]">
+            <source src="/img/Penyebab Pemanasan Global/Proses pembentukan oil and gas.mp4" type="video/mp4" />
+          </video>
+          <figcaption>Sumber: Channel Youtube Earth Science Western Australia</figcaption>
+
+          <p>
+            Pembentukan minyak ini dipengaruhi oleh bakteri, tekanan, suhu, dan waktu. Gas alam terbentuk pada suhu yang lebih tinggi daripada minyak. Suhu yang berbeda mungkin menghasilkan campuran minyak bumi dan gas alam yang berbeda.
+            Sisa-sisa jasad renik yang tertimbun di bawah laut akan diuraikan oleh bakteri anaerob. Proses ini membutuhkan waktu jutaan tahun. Banyak sumber minyak bumi juga yang berada di daratan. Hal itu disebabkan karena adanya
+            pergerakan lempeng Bumi sehingga sebagian lautan menjadi daratan
+          </p>
+
+          <p>Untuk memperoleh minyak bumi yang berkualitas, dilakukan proses pemurnian (destlasi). Destillasi merupakan teknik pemisahan zat berdasarkan titik didih dan kemudahan suatu bahan menguap (volatilitas).</p>
+
+          <img src="/img/Penyebab Pemanasan Global/Minyak.png" alt="proses destilas bertingkat" class="gambar py-2 mx-auto md:w-[50%] lg:w-[40%]" />
+
+          <figcaption>Gambar proses destilasi bertingkat <br />Sumber: shutterstock.com</figcaption>
+
+          <div class="flex gap-2 md:gap-4 md:items-center">
+            <p>
+              Minyak mentah mengandung unsur hidrokarbon yang berbeda-beda sehingga menguap pada suhu yang berbeda-beda. Semakin ke atas suhu semakin dingin, hanya hidrokarbon ringan yang mengembun pada bagian ini, sedangkan bagian bawah
+              bagian terpanas yang menghasilkan sisa proses destilasi berupa aspal. Gas alam merupakan unsur yang paling mudah menguap sehingga akan berada pada posisi paling atas. Jika dibandingkan dengan sumber energi fosil lainnya, gas
+              alam memiliki tingkat polusi paling rendah karena menghasilkan gas karbon yang rendah.
+            </p>
+          </div>
+        </article>
+
+        <!-- Kuis Argumentasi start -->
+        <section id="KuisMateriArgumentasi">
+          <article>
+            <div class="bg-forth rounded-tr-md rounded-bl-md relative mt-6 h-12 flex items-center justify-center mb-3">
+              <h1>Mari mencari fakta dan data!</h1>
+              <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" /></div>
+            </div>
+            <form action="https://script.google.com/macros/s/AKfycbxNsqPNSDrB6Oa_8YWGCnf7NqrFWfUhNoV9VjVNXIx9rI9_iEH0W3Mdf9eN5wuAXAO1/exec" method="POST" class="text-[0.75rem]" id="kuisForm">
+              <!-- form identitas start-->
+              <div class="flex-col flex gap-2 mb-8 w-[200px]">
+                <input type="text" name="Nama" id="NamaKuis" class="hidden" autocomplete="off" />
+                <select name="Kelas" id="KelasKuis" class="hidden">
+                  <option value="">Pilih Kelas</option>
+                  <option value="X-1">X-1</option>
+                  <option value="X-2">X-2</option>
+                  <option value="X-3">X-3</option>
+                  <option value="X-4">X-4</option>
+                  <option value="XBIL-1">XBIL-1</option>
+                  <option value="XBIL-2">XBIL-2</option>
+                </select>
+              </div>
+              <!-- form identitas end -->
+
+              <div class="soalDiskusi">
+                <div class="imageSoalDiskusi">
+                  <img src="/img/grafik persentase produksi energi terbarukan 2021.png" alt="gambar" class="gambar" />
+                  <figcaption>Sumber: databoks.katadata.co.id</figcaption>
+                </div>
+                <div class="textSoalBerargumentasi">
+                  <p>Bacalah artikel di bawah ini!</p>
+                  <p>
+                    Menurut Menteri Perindustrian Republik Indonesia, produksi kendaraan bermotor listrik berbasis baterai (KBLBB) ditargetkan mencapai 600 ribu unit untuk roda empat atau lebih dan 2,45 juta unit untuk roda dua pada tahun
+                    2030. Pemerintah berharap industri otomotif di Indonesia dapat segera menjadi sektor unggulan dalam pengembangan mobil listrik. Beliau mengatakan bahwa target produksi KBLBB tersebut diharapkan mampu mengurangi emisi gas
+                    karbondioksida \(CO_{2}\) sebesar 2,7 juta ton untuk roda empat atau lebih dan sebesar 1,1 juta ton untuk roda dua. Hal ini karena kendaraan listrik menghasilkan emisi gas karbon dioksida lebih sedikit, sebagimana
+                    dinyatakan oleh Internasional Council on Clean Transportation (ICCT) yang menyatakan bahwa kendaraan listrik menghasilkan 56% emisi lebih sedikit daripada kendaraan BBM. Target ini bertujuan untuk meminimalkan dampak
+                    pemanasan global akibat penggunaan bahan bakar fosil.
+                  </p>
+                  <p>
+                    Namun, nampaknya hal tersebut bukan akar masalah utama dari transportasi ramah lingkungan di Indonesia. Masalah terbesar adalah sumber listrik itu sendiri. Dari data yang dipaparkan oleh databoks.co.id produksi listrik
+                    di Indonesia masih didominasi oleh pembangkit listrik berbahan bakar fosil, yaitu sebesar 82%. Peningkatan kendaran listrk yang digunakan, artinya semakin besar energi listrik yang diperlukan dan semakin banyak pula
+                    bahan bakar fosil yang dibakar untuk menghasilkan listrik yang justru memperparah pemanasan global.
+                  </p>
+                  <p>
+                    Untuk benar-benar mencapai transportasi ramah lingkungan, Indonesia perlu mengalihkan sumber energinya dari bahan bakar fosil ke energi terbarukan. Meskipun kendaraan listrik mengurangi emisi di tingkat pengguna, manfaat
+                    lingkungan penuh hanya bisa dicapai jika listrik yang digunakan untuk mengisi daya kendaraan tersebut berasal dari sumber yang bersih dan berkelanjutan.
+                  </p>
+                </div>
+              </div>
+
+              <div class="areaJawabanKuisArgumentasi w-full">
+                <p>Berdasarkan bacaan di atas, tuliskan data, fakta atau informasi yang menurutmu penting terkait dengan penggunaan kendaraan listrik di Indonesia! (minimal 5)</p>
+                <p class="font-semibold">Jawablah pada area di bawah ini!</p>
+                <textarea name="Jawaban" id="Jawaban" class="min-h-32 w-full p-2 text-[0.75rem] resize-none border-[1px] border-slate-400"></textarea>
+              </div>
+              <button class="diskusiButton">Kirim</button>
+            </form>
+          </article>
+        </section>
+        <!-- Kuis Argumentasi end -->
+
+        <form action="https://script.google.com/macros/s/AKfycbxFFdcHtrJjKwhtAbw06gqy0sBNtPYSL5TArkoHAUuH2n_EAPU5H4-uejCzc8A3Eqw/exec " method="POST" id="myForm" class="mt-8 bg-slate-200 rounded-xl p-4 md:w-[80%] mx-auto lg:w-[50%]">
+          <div class="hidden">
+            <input type="text" name="Nama" id="NamaSiswa" class="border-black border-2 px-2 rounded-md" />
+            <select name="Kelas" id="Kelas" class="border-[1px] border-third px-2">
+              <option value="">Pilih Kelas</option>
+              <option value="X-1">X-1</option>
+              <option value="X-2">X-2</option>
+              <option value="X-3">X-3</option>
+              <option value="X-4">X-4</option>
+              <option value="XBIL-1">XBIL-1</option>
+              <option value="XBIL-2">XBIL-2</option>
+            </select>
+          </div>
+
+          <div class="w-full p-2 bg-third text-white rounded-tl-md rounded-br-md">
+            <p>Mari Refleksi Diri</p>
+          </div>
+
+          <div class="mt-8">
+            <p class="block">Apakah kamu memahami proses produksi energi listrik pada pembangkit listrik tenaga batu bara?</p>
+
+            <div class="flex flex-col items-center gap-2">
+              <i class="refleksiIcon fa-regular fa-face-meh fa-beat text-yellow-500 iconRefleksiSize"></i>
+              <p class="textRefleksi">Cukup Mengerti</p>
+              <input type="range" min="1" max="5" value="3" class="refleksiInput w-44" name="Soal1" />
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <p class="block">Apakah kamu mengrtti proses terbentuknya minyak dan gas alam?</p>
+            <div class="flex flex-col items-center gap-2">
+              <i class="refleksiIcon fa-regular fa-face-meh fa-beat text-yellow-500 iconRefleksiSize"></i>
+              <p class="textRefleksi">Cukup Mengerti</p>
+              <input type="range" min="1" max="5" value="3" class="refleksiInput w-44" name="Soal2" />
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <p class="block">Apakah kamu memahami cara mencari data dan fakta dari suatu artikel?</p>
+            <div class="flex flex-col items-center gap-2">
+              <i class="refleksiIcon fa-regular fa-face-meh fa-beat text-yellow-500 iconRefleksiSize"></i>
+              <p class="textRefleksi">Cukup Mengerti</p>
+              <input type="range" min="1" max="5" value="3" class="refleksiInput w-44" name="Soal3" />
+            </div>
+          </div>
+
+          <button class="diskusiButton">Kirim</button>
+        </form>
+
+        <a href="/src/materi kelas 10/Pemanasan Global/DampakPemanasanGlobal.html " class="w-full flex justify-center mt-8 mb-20"><button class="diskusiButton hidden" id="lanjutDampakPemanasanGlobal">Lanjut Materi</button></a>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="/src/general.js"></script>
+    <script src="/src/materi kelas 10/Pemanasan Global/PenyebabPemanasanGlobal.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+  </body>
+</html>

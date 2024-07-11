@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-  
+     scale=1.0"
+    />
+    <title>Argumentation Pattern</title>
+
+    <!-- Sweeper Js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Math Js -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <!-- my style -->
+    <link rel="icon" href="/img/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+
+  <body class="overflow-x-hidden relative">
+    <!-- Pop-up Start -->
+    <div class="hidden" id="popUp">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="popUpCnt" id="popUpCnt">
+          <p id="textPopUp"></p>
+          <i class="fa-regular fa-circle-check fa-beat text-[2.3rem] text-green-600"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden" id="popUpLoading">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="loading" id="loading"></div>
+      </div>
+    </div>
+    <!-- Pop=up end -->
+
+    <!-- Next Button Start-->
+    <div class="nextButtonPart">
+      <a href="/src/Argumentasi/Argumentasi.html" class="nextButton" id="previousButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
+
+      <p class="text-xs text-center">Argumentasi Toulmin</p>
+
+      <a href="/src/Argumentasi/KuisArgumentasi.html" class="nextButton" id="nextButton"><i class="fa-solid fa-circle-chevron-right ransition-all duration-150"></i></a>
+    </div>
+    <!-- Next Button End -->
+
+    <header class="fixed top-0 right-0 w-screen z-[998] bg-secondary">
+      <!-- Navbar start -->
+      <nav class="navbar layout">
+        <div class="logo flex items-center gap-[0.1rem]">
+          <div class="flex items-center gap-[0.1rem]">
+            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]" />
+            <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+          </div>
+          <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
+        </div>
+
+        <div class="nav-list initial-style">
+          <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6">
+            <li><a href="/src/beranda.html">Beranda</a></li>
+
+            <li class="active relative">
+              <a class="opacity-50 argumentasiToulminLock">Materi <i class="fa-solid fa-lock listIcon"></i></a>
+            </li>
+
+            <li class="opacity-50 relative diskusiMenu">
+              <a>Diskusi <i class="fa-solid fa-lock listIcon"></i></a>
+            </li>
+
+            <li class="opacity-50 relative evaluasiMenu">
+              <a>Evaluasi<i class="fa-solid fa-lock listIcon"></i></a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Bank Soal <i class="fa-solid fa-lock listIcon"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="menuToggle lg:hidden"></div>
+      </nav>
+      <!-- Navbar End -->
+
+      <!-- List Materi Start -->
+      <div class="contentList">
+        <div class="contentListMateri">
+          <ul>
+            <!-- Argumentasi Toulmin Start -->
+            <li class="listClass">
+              <div class="dropdown-button putar-icon classBtnDropdown" dropdown="KelasArgumentasiToulmin" id="materiArgumentasi">
+                <div class="gap-4 flex items-center">
+                  <i class="iconClass fa-solid fa-people-arrows transition-all duration-500"></i>
+                  <p class="textClass">Argumentasi Sains</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon0"></i>
+              </div>
+
+              <ul class="dropdown hidden dropdownKelasArgumentasiToulmin">
+                <li>
+                  <div class="dropdown-button chapterBtnDropdown" dropdown="BabCaraBerargumen">
+                    <div class="flex items-center gap-4">
+                      <i class="fa-solid fa-solid fa-people-group text-amber-500 w-4 text-center"></i>
+                      <a>Bagaimana berargumen dengan baik</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdownBabCaraBerargumen hidden relative bg-primary/60">
+                    <ul class="subChapterContent">
+                      <li>
+                        <a href="/src/Argumentasi/Argumentasi.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pentingnya Berargumen dengan Baik</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/src/Argumentasi/ArgumentasiToulmin.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Pola Argumentasi Toulmin</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/src/Argumentasi/KuisArgumentasi.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Kuis pola argumentasi</p></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <!-- Argumentasi Toulmin end-->
+
+            <!-- KD kelas 10 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 10 start-->
+
+              <div class="opacity-50 classBtnDropdown relative" dropdown="Kelas10" id="kelas10">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary" id="lockKelas10"></i>
+
+                <div class="gap-4 flex items-center">
+                  <i class="iconClass fa-solid fa-temperature-arrow-down"></i>
+                  <p class="textClass">Kelas 10</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon1"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 10 end-->
+
+              <!-- Materi kelas 10 start-->
+              <ul class="dropdown hidden dropdownKelas10">
+                <!-- Hakikat Fisika -->
+                <!-- Hakikat Fisika End -->
+
+                <!-- Energi start -->
+                <!-- Energi End -->
+
+                <!-- Pemanasan Global -->
+                <li>
+                  <div class="dropdown-button chapterBtnDropdown" dropdown="BabPemanasanGlobal">
+                    <div class="flex items-center gap-4">
+                      <i class="fa-solid fa-charging-station text-amber-500 w-4 text-center"></i>
+                      <a>Sumber Energi</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdownBabPemanasanGlobal hidden relative bg-primary/60">
+                    <ul class="subChapterContent">
+                      <li>
+                        <a href="/src/materi kelas 10/Pemanasan Global/PemanasanGlobal.html" class="flex gap-2 items-center">
+                          <div class="contentListCircle"></div>
+                          <div><p>Konsep Energ</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="PenyebabPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Energi Takterbarukan</p></div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="flex gap-2 items-center relative opacity-50" id="DampakPemanasanGlobalList">
+                          <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-sky-400"></i>
+                          <div class="contentListCircle"></div>
+                          <div><p>Energi Terbarukan</p></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <!-- Pemanasan Global End-->
+              </ul>
+              <!-- Materi kelas 10  End-->
+            </li>
+            <!-- KD kelas 10 end -->
+
+            <!-- KD kelas 11 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 11 start-->
+              <div class="relative opacity-50 classBtnDropdown" dropdown="Kelas11">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
+
+                <div class="flex items-center gap-4">
+                  <i class="iconClass fa-solid fa-gears"></i>
+                  <p class="textClass">Kelas 11</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon2"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 11 end-->
+
+              <!-- Materi kelas 11 start-->
+              <!-- Materi kelas 11  End-->
+            </li>
+            <!-- KD kelas 11 end -->
+
+            <!-- KD kelas 12 -->
+            <li class="listClass">
+              <!-- Tombol munculkan list materi kelas 12 start-->
+              <div class="relative opacity-50 classBtnDropdown" dropdown="Kelas12">
+                <i class="fa-solid fa-lock absolute right-1/2 top-1/2 -translate-y-1/2 text-xl text-primary"></i>
+
+                <div class="flex items-center gap-4">
+                  <i class="iconClass fa-solid fa-atom"></i>
+                  <p class="textClass">Kelas 12</p>
+                </div>
+                <i class="fa-solid fa-plus transition-all duration-500" id="icon3"></i>
+              </div>
+              <!-- Tombol munculkan list materi kelas 12 end-->
+
+              <!-- Materi kelas 12 start-->
+              <!-- Materi kelas 12  End-->
+            </li>
+            <!-- KD kelas 12 end -->
+          </ul>
+        </div>
+
+        <!-- Tombol munculkan materi semua kelas start -->
+        <div class="listIconToggle" id="listIcon">
+          <i class="openIcon fa-solid fa-list text-[1rem]"></i>
+          <i class="closeIcon fa-solid fa-xmark text-[1rem] hidden"></i>
+        </div>
+        <!-- Tombol munculkan materi semua kelas end -->
+      </div>
+      <!-- List Materi End -->
+    </header>
+
+    <main class="materi layout mt-20 mb-16">
+      <section id="ToulminArgumentationPatern">
+        <article>
+          <!-- Title -->
+          <div class="bg-forth rounded-tr-md rounded-bl-md relative mt-6 h-12 flex items-center justify-center mb-3">
+            <h1>Struktur Argumentasi</h1>
+            <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" /></div>
+          </div>
+          <!-- Title -->
+
+          <img src="/img/SMA Bingung.png" alt="karakter" class="w-24 float-left p-4" loading="lazy" />
+          <p class="border-1 border-gray-400">
+            Salah satu faktor yang menentukan kualitas dari suatu argumen adalah kelengkapan struktur dari argumen. Ada 3 komponen penting yang perlu diperhatikan untuk membangun argumen yang baik yaitu klaim, justifikasi, dan sanggahan.
+          </p>
+          <p>Untuk memahami ketiga struktur tersebut, cermatilah ilustrasi berikut!</p>
+          <h2>Klaim dan Justifikasi</h2>
+          <p>Suatu hari Pian menghampiri Sopi dikantin. Mereka berdikusi mengenai jajanan yang mereka sukai.</p>
+
+          <!-- Diskusi -->
+          <div class="flex flex-col w-full h-72 bg-slate-300 p-3 rounded-md relative -z-20 my-3 md:w-[80%] lg:w-[70%] mx-auto">
+            <div class="h-[45%] w-full bg-slate-200 p-3 relative rounded-md text-xs">
+              <a class="leading-[1.2rem]"
+                ><span>Menurutku, yogurt adalah jajanan terbaik (klaim), tidak hanya enak dan bikin <i>good mood</i>, yogurt juga menyehatkan pencernaan karena mengandung bakteri probotik. (justifikasi)</span>.</a
+              >
+              <span class="absolute w-6 h-6 skew-x-12 rotate-45 -bottom-2 left-1 bg-slate-200 -z-10"></span>
+            </div>
+
+            <div class="flex h-[55%]">
+              <div class="w-1/2 h-full relative"><img src="/img/PianArgumen2.png" alt="karakter" class="h-[7rem] absolute left-0 bottom-0" /></div>
+
+              <div class="w-1/2 h-full relative"><img src="/img/SopiArgumen1.png" alt="karakter" class="h-[7rem] absolute right-0 bottom-0" /></div>
+            </div>
+          </div>
+          <!-- Diskusi end -->
+
+          <p>
+            Pada pernyataan di atas, Pian mangklaim bahwa yogurt adalah jajanan terbaik. Pernyataan ini merupakan komponen klaim dalam struktur argumentasi. Pernyataan di atas mengindikasikan bahwa pian ingin membuktikan bahwa yogurt adalah
+            jajanan terbaik. Jadi dapat disimpulkan bahwa <b>klaim merupakan pernyataan yang ingin dibuktikan kebenarannya</b>. Selain berbentuk pendapat terhadap suatu hal, klaim juga dapat berbentuk pernyataan kesetujuan atau
+            ketidaksetujuan. Misalnya. "Saya setuju bahwa yogurt adalah jajanan terbaik", "Saya tidak setuju jika robi menjadi ketua kelas".
+          </p>
+          <p>Klaim biasanya diawali dengan kata-kata sebagai berikut:</p>
+          <ul class="list-disc">
+            <li>Menurut saya...</li>
+            <li>Saya pikir...</li>
+            <li>Pendapat saya...</li>
+            <li>Saya tidak setuju dengan...</li>
+            <li>Saya setuju dengan...</li>
+          </ul>
+          <p>
+            Mari kita kembali ke pernyataan Pian lagi. Setelah menyatakan klaim, Pian kemudian memberikan pernyataan yang menjadi alasan mengapa ia mengklaim bahwa yogurt adalah jajanan terbaik. Pian beralasan bahwa yogurt memiliki rasa
+            yang enak, membuat good mood, dan sehat untuk pencernaan. Pernyataan ini disebut dengan justifikasi. <b>Justifikasi merupakan pernyataan yang menjadi alasan atau bukti diambilnya suatu klaim.</b>
+          </p>
+          <p>
+            Justifikasi ini dapat berbentuk fakta, bukti ilmiah, atau pernyataan lain yang berasal dari sumber yang dapat dipercaya, misalnya pendapat guru, pendapat ahli, siaran berita, artikel, buku, dan sebagainya.
+            <br />Contohnya:
+          </p>
+          <p>"Setelah saya mengkonsumsi yogurt setiap hari, saya tidak merasa stress lagi dan tidak pernah mengalami kesulitan BAB" (fakta).</p>
+          <p>
+            "Menurut artikel yang saya baca di medcom.id, kandungan bakteri probiotik pada yogurt dapat melancarkan system pencernaan. Selain itu, yogurt juga dapat mempengaruhi kadar hormon dopamin dan serotonin pada tubuh yang berperan
+            dalam menstimulasi rasa bahagia" (sumber artikel dan penelitian).
+          </p>
+
+          <p>Justifikasi biasanya diawali dengan kata-kata sebagai berikut:</p>
+          <ul class="list-disc">
+            <li>Alasan saya karena...</li>
+            <li>Bukti dari klaim saya adalah...</li>
+            <li>Menurut buku yang saya baca...</li>
+            <li>Berdasarkan pendapat dokter tirta pada video yang saya tonton, ia menjelaskan bahwa...</li>
+            <li>Berdasarkan undang-undang Nomor...</li>
+            <li>Menurut data statistik...</li>
+          </ul>
+
+          <p>
+            Pada diskusi formal, agar argumen yang dibuat dapat diterima, bukti yang kita berikan haruslah kuat. Bukti-bukti data statistik penelitian akan lebih dipercaya dalam perdebatan formal daripada fakta berdasarkan pengalaman
+            pribadi. Oleh karena itu, kemampuan mencari data yang valid menjadi kemampuan yang penting untuk kamu latih.
+          </p>
+        </article>
+        <article>
+          <h2>Sanggahan</h2>
+          <p>Mari kita kembali ke ilsutrasi Pian dan Sopi. Setelah Pian mengemukakan klaim dan justifikasi, Sopi kemudian menanggapi pendapat Pian.</p>
+
+          <!-- Diskusi start -->
+          <div class="flex flex-col w-full h-[20rem] bg-slate-300 p-3 rounded-md relative -z-20 my-3 md:w-[80%] lg:w-[70%] mx-auto">
+            <div class="h-[50%] w-full bg-yellow-200 p-3 relative rounded-md text-[0.75rem] lg:text-[0.75rem]">
+              <a id="textArgumen1" class="leading-[0.5rem] text-justify"
+                ><span>Saya tidak setuju denganmu Pian. Berdasarkan artikel yang saya baca, yogurt kemasan ternyata mengandung gula yang tinggi. Hal ini justru berbahaya bagi tubuh jika dikonsumsi berlebihan.</span></a
+              >
+              <span class="absolute w-6 h-6 skew-x-12 rotate-45 -bottom-2 right-1 bg-yellow-200 -z-10"></span>
+            </div>
+
+            <div class="flex h-[55%]">
+              <div class="w-1/2 h-full relative"><img src="/img/PianArgumen1.png" alt="karakter" class="h-[7rem] absolute left-0 bottom-0" /></div>
+
+              <div class="w-1/2 h-full relative"><img src="/img/SopiArgumen2.png" alt="karakter" class="h-[7rem] absolute right-0 bottom-0" /></div>
+            </div>
+          </div>
+          <!-- Diskus end -->
+          <p>
+            Pernyataan sopi mengemukakan kelemahan dari klaim Pian yang menyatakan bahwa yogurt membuat sehat. Pernyataan ini disebut dengan sanggahaan.
+            <b>Sanggahan merupakan pernyataan yang mengemukakan kelemahan dari klaim yang diambil</b>. Pernyataan sanggahan bisa berasal dari lawan bicara atau dari diri sendiri. Pada pembelajaran kali ini, kamu akan mempelajari bagaimana
+            membuat sanggahan dari argumen sendiri.
+          </p>
+          <p>
+            Mungkin kamu berpikir, untuk apa membuat sanggahan yang justru mengemukakan kelemahan argumen sendiri? Dalam berargumen, kebanyakan orang menganggap bahwa berargumen merupakan bentuk komunikasi untuk menemukan siapa yang menang
+            dan kalah. Padahal berargumen bertujuan untuk menemukan ide terbaik berdasarkan berbagai sudut pandang. Mengemukakan kelemahan argumen sendiri membuka ruang untuk orang lain memberikan sudut pandang lain untuk melengkapi argumen
+            yang sedang dibangun. Mengemukakan kelemahan dari argumen juga menghindari kebenaran absolut dari sebuah argumen. Misalnya, untuk Pian mungkin yogurt terasa enak dan menyehatkan, tetapi ada juga kemungkinan orang lain yang tidak
+            menyukai rasa dan justru alergi terhadap yogurt. Oleh karena itu, kebenaran absolut dari argumentasi perlu dihindari.
+          </p>
+          <p>Sanggahan biasanya diawali dengan kata-kata sebagai berikut:</p>
+          <ul class="list-disc">
+            <li>Kelemahan dari argumen saya adalah...</li>
+            <li>Akan tetapi ada beberapa hal yang perlu diperhatikan yaitu...</li>
+            <li>Pendapat saya dapat diterima jika...</li>
+            <li>Walaupun demikian...</li>
+          </ul>
+
+          <p>Dalam konteks ilustrasi tadi, sanggahan berasal dari lawan bicara. Jika sanggahan berasal dari Pian sendiri, bentuk argumen lengkap yang dibuat adalah sebagai berikut:</p>
+          <!-- Diskusi -->
+          <div class="flex flex-col w-full h-[32rem] md:h-[25rem] bg-slate-300 p-3 rounded-md relative -z-20 my-3 md:w-[80%] lg:w-[70%] mx-auto">
+            <div class="h-[70%] md:h-[60%] w-full bg-slate-200 p-3 relative rounded-md text-xs">
+              <a class="leading-[1.2rem] overflow-auto"
+                ><span
+                  >Menurut saya, yogurt merupakan jajanan terbaik (klaim), alasan saya karena yogurt rasanya enak. Selain itu, berdasarkan artikel pada medcom.id menjelaskan bahwa kandungan bakteri probiotik pada yogurt dapat menyehatkan
+                  pencernaan dan nutrisinya mempengaruhi kadar dopamin dan serotonin dalam tubuh yang berperan dalam menstrimulasi rasa bahagia. (justifikasi). Walaupun demikian yogurt kemasan memiliki kadar gula yang tinggi. Jika
+                  dikonsumsi berlebihan justru dapat berbahaya. Selain itu, bagi beberapa orang rasa asam dari yogurt mungkin tidak akan disukai dan bagi penderita alergi laktosa akan menimbulkan alergi yang mungkin berbahaya bagi
+                  tubuh</span
+                >.</a
+              >
+              <span class="absolute w-6 h-6 skew-x-12 rotate-45 -bottom-2 left-1 bg-slate-200 -z-10"></span>
+            </div>
+
+            <div class="flex h-[30%] md:h-[40%]">
+              <div class="w-1/2 h-full relative"><img src="/img/PianArgumen2.png" alt="karakter" class="h-[7rem] absolute left-0 bottom-0" /></div>
+
+              <div class="w-1/2 h-full relative"><img src="/img/SopiArgumen1.png" alt="karakter" class="h-[7rem] absolute right-0 bottom-0" /></div>
+            </div>
+          </div>
+          <!-- Diskusi end -->
+          <p>Untuk lebih jelasnya struktur argumentasi dari topik tersebut dapat digambarkan pada bagan berikut!</p>
+          <img src="/img/strukturArgumentasi.png" alt="struktur" class="my-3 gambar lg:w-[60%] mx-auto md:w-[60%]" />
+          <figcaption>Gambar struktur argumentasi</figcaption>
+
+          <!-- Rangkuman start -->
+          <div class="rangkuman mt-8">
+            <div class="bg-gray-400 w-fit p-2 -rotate-12"><i class="fa-solid fa-list-check fa-beat"></i></div>
+            <ul class="list-disc">
+              <h2>Rangkuman</h2>
+              <li>Klaim adalah pernyataan yang ingin dibuktikan kebenarannya. </li>
+              <li>Klaim bisa berupa pernyataan terhadap suatu hal ataau pernyataan persetujuan dan ketidaksetujuan.</li>
+              <li>Justifikaasi adalah pernyataan yang menjadi alasan atau bukti diambilnya suatu klaim.</li>
+              <li>Justifikasi dapat berbentuk fakta, bukti ilmiah, atau pernyataan lain yang berasal dari sumber yang dapat dipercaya, misalnya pendapat guru, pendapat ahli, siaran berita, artikel, buku, dan sebagainya.</li>
+              <li>Sanggahan merupakan pernyataan yang mengemukakan kelemahan dari klaim yang diambil.</li>
+            </ul>
+          </div>
+          <!-- Rangkuman End -->
+        </article>
+      </section>
+    </main>
+
+    <script src="/src/general.js"></script>
+    <script src="/src/Argumentasi/ArgumentasiToulmin.js"></script>
+    <script src="/src/progresSiswa.js"></script>
+  </body>
+</html>

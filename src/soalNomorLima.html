@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evaluasi</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Math Js -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <!-- my style -->
+    <link rel="icon" href="/img/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="output.css" />
+  </head>
+
+  <body class="overflow-x-hidden relative">
+    <div class="hidden" id="popUp">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="popUpCnt" id="popUpCnt">
+          <p id="textPopUp"></p>
+          <i class="fa-regular fa-circle-check fa-beat text-[2.3rem] text-green-600"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden" id="popUpLoading">
+      <div class="fixed top-0 bottom-0 w-screen z-[999] bg-black/70 flex justify-center items-center">
+        <div class="loading" id="loading"></div>
+      </div>
+    </div>
+
+    <!-- Next Button Start-->
+    <aside class="nextButtonPart">
+      <a href="soalNomorEmpat.html" class="nextButton" id="previousButton"> <i class="fa-solid fa-circle-chevron-right rotate-180 ransition-all duration-200"></i> </a>
+      <p class="text-xs text-center">Soal Nomor 5</p>
+
+      <a class="nextButton" href="#" id="nextButton"><i class="fa-solid fa-circle-chevron-left rotate-180 ransition-all duration-200"></i></a>
+    </aside>
+    <!-- Next Button End -->
+
+    <header class="fixed top-0 right-0 w-screen z-[998] bg-secondary">
+      <!-- Navbar start -->
+      <nav class="navbar layout">
+        <div class="logo flex items-center gap-[0.1rem]">
+          <div class="flex items-center gap-[0.1rem]">
+            <img src="/img/icon.png" alt="icon" class="h-[1.5rem]" />
+            <h5 class="text-lg md:text-xl tracking-wider font-semibold">rgu</h5>
+          </div>
+          <h5 class="text-lg md:text-xl tracking-wider text-amber-400 font-semibold">Sains</h5>
+        </div>
+
+        <div class="nav-list initial-style">
+          <ul class="flex flex-col gap-2 justify-center lg:flex-row lg:gap-6">
+            <li><a href="/src/beranda.html">Beranda</a></li>
+
+            <li class="relative">
+              <a href="/src/argumentasi/argumentasi.html">Materi </a>
+            </li>
+
+            <li class="relative diskusiMenu">
+              <a href="/src/diskusi.html">Diskusi</a>
+            </li>
+
+            <li class="relative evaluasiMenu active">
+              <a href="/src/evaluasi.html">Evaluasi</a>
+            </li>
+
+            <li class="opacity-50 relative">
+              <a>Bank Soal <i class="fa-solid fa-lock listIcon"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="menuToggle lg:hidden"></div>
+      </nav>
+      <!-- Navbar End -->
+      <!-- List Materi Start -->
+      <div class="contentList">
+        <div class="contentListMateri">
+          <div class="w-full h-full px-4">
+            <div class="grid grid-cols-2 gap-x-[2.3rem] gap-y-[2.5rem]">
+              <a href="evaluasi.html"> <div class="bg-amber-600 listSoal" id="soalNomorSatu">Soal 1</div> </a>
+              <a href="soalNomorDua.html"> <div class="bg-amber-600 listSoal" id="soalNomorDua">Soal 2</div> </a>
+              <a href="soalNomorTiga.html"> <div class="bg-amber-600 listSoal" id="soalNomorTiga">Soal 3</div> </a>
+              <a href="soalNomorEmpat.html"> <div class="bg-amber-600 listSoal" id="soalNomorEmpat">Soal 4</div> </a>
+              <a href="soalNomorLima.html"> <div class="bg-yellow-400 active listSoal" id="soalNomorLima">Soal 5</div> </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tombol munculkan materi semua kelas start -->
+        <div class="listIconToggle" id="listIcon">
+          <i class="openIcon fa-solid fa-list text-[1rem]"></i>
+          <i class="closeIcon fa-solid fa-xmark text-[1rem] hidden"></i>
+        </div>
+        <!-- Tombol munculkan materi semua kelas end -->
+      </div>
+      <!-- List Materi End -->
+    </header>
+
+    <main class="materi mb-20">
+      <!-- Kuis Argumentasi start -->
+      <section id="Soal Nomor 1">
+        <article>
+          <div class="bg-forth rounded-tr-md rounded-bl-md relative mt-6 h-12 flex items-center justify-center mb-3">
+            <h1>Mari berargumentasi!</h1>
+            <div class="absolute w-8 -left-4 -top-4 rounded-full bg-amber-300 p-2"><img src="/img/question mark.png" alt="question mark" /></div>
+          </div>
+          <form action="https://script.google.com/macros/s/AKfycbyvmqcAe4yjMog5fJI8y0xQkWDpFp1eB4EaL29BQ54yUEo-oaDwu42En4OBHC3aP8Vu/exec" method="POST" class="text-[0.75rem]" id="kuisForm">
+            <!-- form identitas start-->
+            <div class="flex-col flex gap-2 mb-8 w-[200px]">
+              <input type="text" name="Nama" id="NamaKuis" class="hidden" autocomplete="off" />
+              <select name="Kelas" id="KelasKuis" class="hidden">
+                <option value="">Pilih Kelas</option>
+                <option value="X-1">X-1</option>
+                <option value="X-2">X-2</option>
+                <option value="X-3">X-3</option>
+                <option value="X-4">X-4</option>
+                <option value="XBIL-1">XBIL-1</option>
+                <option value="XBIL-2">XBIL-2</option>
+              </select>
+            </div>
+            <!-- form identitas end -->
+
+            <div class="soalDiskusi">
+              <div class="imageSoalDiskusi">
+                <img src="/img/grafik jumlah sampah tiap tahun.png" alt="gambar" class="gambar" />
+                <figcaption>Grafik produksi sampah Indonesia tiap tahun<br />Sumber: databoks.co.id</figcaption>
+              </div>
+              <div class="textSoalBerargumentasi mt-6">
+                <p class="font-semibold">Petunjuk</p>
+                <ul class="list-decimal">
+                  <li>Bacalah artikel dibawah ini dengan sekasama!</li>
+                  <li>Jawab pertanyaan berdasarkan bacaan dibawah ini!</li>
+                  <li>
+                    Pada pertanyaan Anda diperintahkan untuk memberikan bukti dari argumen yang Anda buat. Bukti dapat berasal dari artikel pada soal, pengalaman dan pengamatan yang pernah Anda lakukan, atau informasi dari sumber lain yang
+                    Anda ketahui seperti buku, koran, pendapat guru, berita dan sebagainya.
+                  </li>
+                </ul>
+
+                <p class="font-semibold">Bacalah artikel berikut!</p>
+                <p>
+                  Persoalan sampah menjadi isu penting dalam masyarakat akhir-akhir ini. Permasalahan yang umum terjadi adalah tempat pembuangan akhir memiliki keterbatasan lahan, dan jumlah timbulan sampah meningkat. Salah satu sampah yang
+                  bermasalah adalah sampah plastik yang berkontribusi 16% dari total limbah di Indonesia pada tahun 2020. Melihat jumlahnya yang besar, pemanfaatan sampah plastik sebagai sumber energi sangat potensial untuk dilakukan.
+                  Sampah plastik diolah dengan metode pirolisis sehingga menghasilkan bahan bakar cair. Nilai kalor plastik sangat tinggi, diketahui mencapai 40 MJ/kg. Nilai ini hampir setara dengan bahan bakar bensin dan solar. Oleh karena
+                  itu, pengegunaan sampah plastik sebagai bahan bakar perlu diteliti pemanfaatannya.
+                </p>
+                <p>
+                  Namun, dalam penggunaannya sebagai bahan bakar tak luput dari maslah. Kasus yang terjadi di Indonesia menanggapi Peraturan Presiden Nomor 18/2016 tentang percepatan pembangunan pembangkit listrik tenaga sampah menimbulkan
+                  polemik di kalangan aktivis lingkungan. Pembangkit listrik tenaga sampah diduga justru akan mengeluarkan lebih banyak energi untuk mendapat listrik yang tak seberapa, mengingat karakteristik sampah Indonesia yang tak
+                  dipilah sehingga cenderung basah. Sampah yang basah membutuhkan energi tambahan untuk dikeringkan dan juga agar suhu tungku pembakaran tetap tinggi. Belum lagi, setelah pembakaran akan tersisa abu yang dicemaskan
+                  mengandung zat pencemar yang berbahaya bagi lingkungan. Teknologi yang tidak mumpuni mengakibatkan penanganan yang tidak tepat dari limbah yang dihasilkan. Hasil abu dari pembakaran sampah sangat berbahaya zat-zat seperti
+                  dioksin, BAP, PAH, merkuri, arsenik yang jika dihirup dalam jangka panjang akan menimbulkan kanker.
+                </p>
+              </div>
+            </div>
+
+            <div class="areaJawabanKuisArgumentasi w-full">
+              <p class="font-semibold">Berdasarkan artikel di atas, jawablah pertanyaan berikut!</p>
+              <ul class="list-lower-alpha">
+                <li>Apakah Anda setuju dengan pengolahan sampah plastik sebagai bahan bakar di Indonesia?</li>
+                <p class="font-semibold">Jawablah pada area di bawah ini!</p>
+                <textarea name="Klaim" id="Klaim" class="min-h-32 w-full p-2 text-[0.75rem] resize-none border-[1px] border-slate-400"></textarea>
+                <li>Berikan bukti atau alasan yang membuat Anda setuju/tidak setuju?</li>
+                <p class="font-semibold">Jawablah pada area di bawah ini!</p>
+                <textarea name="Justifikasi" id="Justifikasi" class="min-h-32 w-full p-2 text-[0.75rem] resize-none border-[1px] border-slate-400"></textarea>
+                <li>Berikan minimal 2 pernyataan yang dapat membantah (melemahkan) pendapat Anda?</li>
+                <p class="font-semibold">Jawablah pada area di bawah ini!</p>
+                <textarea name="Sanggahan" id="Sanggahan" class="min-h-32 w-full p-2 text-[0.75rem] resize-none border-[1px] border-slate-400"></textarea>
+              </ul>
+            </div>
+            <button class="diskusiButton" id="tombolSoalNomor1">Kirim</button>
+          </form>
+        </article>
+      </section>
+      <!-- Kuis Argumentasi end -->
+    </main>
+
+    <script src="general.JS"></script>
+    <script src="soalNomorLima.js"></script>
+  </body>
+</html>
